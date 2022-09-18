@@ -1,0 +1,14 @@
+/**
+  Contains all mixins
+ */
+
+@mixin flex-center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin set-transition($duration) {
+  transition: all $duration ease-in-out;
+}

@@ -1,0 +1,26 @@
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 15vw;
+  background-color: getMainColor("black");
+  color: getTextColor("primary");
+  @include flex-center("row");
+
+  & > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      margin-bottom: 1rem;
+      font-weight: getFontWeight("medium");
+      font-size: getFontSize("sm");
+      cursor: pointer;
+    }
+  }
+}

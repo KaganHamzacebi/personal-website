@@ -1,0 +1,49 @@
+/**
+  Contains all variables in order to use in other scss files
+ */
+
+// Responsive Window Sizes
+$screen-sizes: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px
+);
+
+// Font Weights
+$font-weights: (
+  "thin": 100,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "sbold": 600,
+  "bold": 700
+);
+
+// Font Size
+$font-sizes: (
+  "xxs": xx-small,
+  "xs": x-small,
+  "sm": small,
+  "md": medium,
+  "lg": large,
+  "xl": x-large,
+  "xxl": xx-large,
+  "xxxl": xxx-large
+);
+
+// Theme Colors
+$main-colors: (
+  "primary": #2A2A2A,
+  "secondary": #202020,
+  "dark-gray": #191919,
+  "gray": #333333,
+  "light-gray": #4A4A4A,
+  "black": #000000
+);
+
+$text-colors: (
+  "primary": #FFFFFF,
+  "secondary": #DDDDDD
+);

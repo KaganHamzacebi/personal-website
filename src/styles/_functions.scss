@@ -1,0 +1,25 @@
+/**
+  Contains all functions
+ */
+
+@import 'variables';
+
+@function getScreenSize($size) {
+  @return map-get($screen-sizes, $size)
+}
+
+@function getFontWeight($size) {
+  @return map-get($font-weights, $size)
+}
+
+@function getFontSize($size) {
+  @return map-get($font-sizes, $size)
+}
+
+@function getMainColor($color) {
+  @return map-get($main-colors, $color)
+}
+
+@function getTextColor($color) {
+  @return map-get($text-colors, $color)
+}

@@ -1,3 +1,7 @@
+/**
+ * Router Config File
+ */
+
 import {
     createBrowserRouter,
     RouterProvider
