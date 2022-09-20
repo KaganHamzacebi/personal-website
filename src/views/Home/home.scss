@@ -2,7 +2,6 @@
 @import "../../styles/mixins";
 
 .main {
-  padding: 10% 5% 10%;
   background-color: getMainColor("primary");
 
   @include media-md {
@@ -10,4 +9,26 @@
     left: 200px;
     width: calc(100vw - 200px);
   }
+
+}
+
+.aboutMeSection {
+  width: 100%;
+  height: 100vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  @include flex-center(row);
+
+  @include media-xl {
+    padding-right: 20%;
+  }
+}
+
+.skillsSection {
+  width: 100%;
+  height: 100vh;
+  padding: 5% 10%;
+  @include flex-center(column);
+  background-color: getMainColor("secondary");
+
 }

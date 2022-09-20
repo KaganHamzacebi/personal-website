@@ -13,14 +13,14 @@
   border-top-right-radius: 30px;
   background-color: getMainColor("dark-gray");
 
-  @include media-md {
+  @include media-xl {
     visibility: visible;
   }
 
   & > ul {
     gap: 1rem;
     list-style-type: none;
-    @include flex-center("row")
+    @include flex-center(row)
   }
 
   &__github {

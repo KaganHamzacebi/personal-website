@@ -1,17 +1,13 @@
 @import '../../../styles/functions';
 @import '../../../styles/mixins';
 
-.firstSection {
+.aboutMeMain {
   position: relative;
   border-radius: 0.25rem;
   padding: 4rem;
   background-color: getMainColor("dark-gray");
   color: getTextColor("primary");
   @include shadow-lg;
-
-  @include media-xl {
-    width: 75%;
-  }
 
   &__pp {
     position: absolute;
@@ -50,13 +46,10 @@
     color: getTextColor("secondary");
     margin-top: 1rem;
 
-    @include media-lg {
+    @include media-xl {
       max-width: 75%;
     }
 
-    @include media-lg {
-      max-width: 50%;
-    }
 
     &__unilink {
       color: getTextColor("light-gray");

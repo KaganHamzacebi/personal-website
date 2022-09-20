@@ -12,11 +12,12 @@
   color: getTextColor("primary");
   border-right: 0.1rem solid rgba(74, 74, 74, 0.8);
   transform: translateX(-20rem);
-  @include flex-center("row");
+  @include flex-center(row);
   @include set-transition(0.5s);
 
   &.active {
     transform: translateX(0);
+    opacity: 80%;
   }
 
   @include media-md {

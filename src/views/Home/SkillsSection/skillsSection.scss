@@ -1,0 +1,100 @@
+@import "../../../styles/functions";
+@import "../../../styles/mixins";
+
+.skillsMain {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  @include shadow-lg;
+}
+
+.grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+
+  &__item {
+    background-color: getMainColor("thirdy");
+    border-radius: 0.25rem;
+    gap: 2rem;
+    padding: 1rem;
+    @include flex-center(column);
+    @include shadow-xl;
+
+    //REACT
+    &__react-logo  {
+      width: 25%;
+      height: 25%;
+      color: #61DAFB;
+    }
+
+    &__react-h1 {
+      margin-top: -1.5rem;
+      color: #61DAFB;
+    }
+
+    // NodeJS
+    &__nodejs-logo  {
+      width: 25%;
+      height: 25%;
+      color: #71B953;
+    }
+
+    &__nodejs-h1 {
+      margin-top: -1.5rem;
+      color: #71B953;
+    }
+
+    // HTML & CSS
+    &__htmlcss-h1 {
+      margin-top: -1rem;
+    }
+
+    &__double-container {
+      @include flex-center(row);
+      flex-grow: 0.4;
+      gap: 0.1rem;
+
+      &__html {
+        width: 100%;
+        height: 100%;
+        color: #DD4B25;
+      }
+
+      &__css {
+        width: 100%;
+        height: 100%;
+        color: #2E49D4;
+      }
+
+    }
+
+    & > p {
+      font-weight: getFontWeight("sbold");
+      color: getTextColor("secondary");
+    }
+
+    &__btn {
+      @include standard-btn;
+    }
+
+  }
+
+}
+
+.html-h1 {
+  color: #DD4B25;
+}
+
+.css-h1 {
+  color: #2E49D4;
+}
+
+.middle_text {
+  color: getTextColor("secondary");
+}
+
+.grid_btn {
+  @include standard-btn;
+}
