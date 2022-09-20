@@ -1,0 +1,70 @@
+@import '../../../styles/functions';
+@import '../../../styles/mixins';
+
+.firstSection {
+  position: relative;
+  border-radius: 0.25rem;
+  padding: 4rem;
+  background-color: getMainColor("dark-gray");
+  color: getTextColor("primary");
+  @include shadow-lg;
+
+  @include media-xl {
+    width: 75%;
+  }
+
+  &__pp {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    border: 0.25rem solid getMainColor("primary");
+    border-radius: 50%;
+    right: -1rem;
+    top: -1rem;
+
+    @include media-md {
+      right: -1.5rem;
+      top: -1.5rem;
+    }
+  }
+
+  &__name {
+    color: getTextColor("primary");
+    font-weight: getFontWeight("light");
+    font-size: getFontSize("lg")
+  }
+
+  &__surname {
+    color: getTextColor("red");
+    font-weight: getFontWeight("bold");
+  }
+
+  &__webdev {
+    margin-top: 1rem;
+    font-weight: getFontWeight("bold");
+    font-size: getFontSize("3xl")
+  }
+
+  &__bio {
+    font-size: getFontSize("sm");
+    color: getTextColor("secondary");
+    margin-top: 1rem;
+
+    @include media-lg {
+      max-width: 75%;
+    }
+
+    @include media-lg {
+      max-width: 50%;
+    }
+
+    &__unilink {
+      color: getTextColor("light-gray");
+    }
+  }
+}
+
+.contact_button {
+  margin-top: 1.5rem;
+  @include standard-btn;
+}

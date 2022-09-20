@@ -1,0 +1,17 @@
+@mixin shimmer-effect {
+  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  animation: shimmer 2.5s infinite;
+
+  @keyframes shimmer {
+    100% {-webkit-mask-position:left}
+  }
+}
+
+@mixin set-transition($duration) {
+  transition: all $duration ease-in-out;
+}
+
+@mixin scale-rotate($duration, $scale, $deg) {
+  @include set-transition($duration);
+  transform: scale($scale) rotate($deg);
+}

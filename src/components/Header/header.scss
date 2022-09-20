@@ -6,21 +6,60 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 15vw;
-  background-color: getMainColor("black");
+  width: 200px;
+  z-index: 2;
+  background-color: getMainColor("dark-gray");
   color: getTextColor("primary");
+  border-right: 0.1rem solid rgba(74, 74, 74, 0.8);
+  transform: translateX(-20rem);
   @include flex-center("row");
+  @include set-transition(0.5s);
 
-  & > ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  &.active {
+    transform: translateX(0);
+  }
 
-    & > li {
-      margin-bottom: 1rem;
-      font-weight: getFontWeight("medium");
-      font-size: getFontSize("sm");
-      cursor: pointer;
+  @include media-md {
+    transform: translateX(0);
+  }
+
+  &__btn {
+    position: fixed;
+    visibility: visible;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    right: 0.35rem;
+    top: 0.35rem;
+    cursor: pointer;
+    color: getTextColor("secondary");
+
+    @include media-md {
+      visibility: hidden;
     }
   }
+
+  &__nav {
+    @include media-md {
+      visibility: visible;
+    }
+
+    & > ul {
+      list-style-type: none;
+      padding: 0;
+      margin-right: 40px;
+
+      & > li {
+        margin-bottom: 1rem;
+        font-weight: getFontWeight("normal");
+        font-size: getFontSize("normal");
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+a.active {
+  color: red
 }

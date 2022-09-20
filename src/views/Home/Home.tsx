@@ -1,15 +1,21 @@
 import './home.scss';
+// Partial Components
 import Header from "../../components/Header/Header";
+import SocialBar from "../../components/SocialBar/SocialBar";
+// All Sections of Home screen
+import FirstSection from "./FirstSection/FirstSection";
+
 
 export function Home() {
 
     return (
         <div className="root">
-            <div className="header__wrapper">
-                <Header />
-            </div>
+            <Header />
+            <SocialBar />
             <div className="main">
-                123
+                <section>
+                    <FirstSection />
+                </section>
             </div>
         </div>
     )

@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import languageConfigReducer from '../features/langConfig/LangConfigSlice'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    languageConfig: languageConfigReducer
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;

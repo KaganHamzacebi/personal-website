@@ -23,14 +23,14 @@ $font-weights: (
 
 // Font Size
 $font-sizes: (
-  "xxs": xx-small,
+  "2xs": xx-small,
   "xs": x-small,
   "sm": small,
   "md": medium,
   "lg": large,
   "xl": x-large,
-  "xxl": xx-large,
-  "xxxl": xxx-large
+  "2xl": xx-large,
+  "3xl": xxx-large
 );
 
 // Theme Colors
@@ -45,5 +45,7 @@ $main-colors: (
 
 $text-colors: (
   "primary": #FFFFFF,
-  "secondary": #DDDDDD
+  "secondary": #afafaf,
+  "red": #ce2929,
+  "light-gray": #757575
 );
