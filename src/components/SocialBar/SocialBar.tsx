@@ -1,9 +1,12 @@
 import './socialBar.scss'
 
 import {GoMarkGithub} from 'react-icons/go'
-import {FaLinkedinIn} from 'react-icons/fa'
+import {FaLinkedinIn, FaDiscord} from 'react-icons/fa'
+import {useState} from "react";
 
 function SocialBar() {
+    const [showClipboardCopy, setShowClipboardCopy] = useState(false);
+
     return (
         <div className="socialBar">
             <ul>
@@ -22,6 +25,24 @@ function SocialBar() {
                             window.open('https://www.linkedin.com/in/kaganhamzacebi/', '_target')
                         }}
                     />
+                </li>
+                <li className="socialBar-li-discord">
+                    <FaDiscord
+                        className="socialBar__discord"
+                        onClick={() => {
+                            navigator.clipboard.writeText("Classy#5334")
+                                .then(() => {
+                                    setShowClipboardCopy(true);
+                                    setTimeout(() => {
+                                        setShowClipboardCopy(false);
+                                    }, 2000)
+                                });
+                        }}
+                    />
+                    {/* Discord Copy Clipboard */}
+                    <div className={`socialBar-li-discord__clipboard tri-right btm-left-in ${showClipboardCopy && 'active'} `}>
+                        Copied!
+                    </div>
                 </li>
                 <li>
                     <hr className="socialBar__divider" />

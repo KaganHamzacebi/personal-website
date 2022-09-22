@@ -4,15 +4,25 @@
 .skillsMain {
   width: 100%;
   height: 100%;
+  margin-top: 3rem;
   border-radius: 0.25rem;
   @include shadow-lg;
 }
 
 .grid {
-  display: grid;
   height: 100%;
-  grid-template-columns: auto auto auto;
-  gap: 2rem;
+  margin: 0 auto;
+  display: grid;
+  align-items: stretch;
+  gap: 1rem;
+
+  @include media-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__item {
     background-color: getMainColor("thirdy");
@@ -32,6 +42,7 @@
     &__react-h1 {
       margin-top: -1.5rem;
       color: #61DAFB;
+      font-size: getFontSize("lg");
     }
 
     // NodeJS
@@ -44,6 +55,7 @@
     &__nodejs-h1 {
       margin-top: -1.5rem;
       color: #71B953;
+      font-size: getFontSize("lg");
     }
 
     // HTML & CSS
@@ -51,27 +63,75 @@
       margin-top: -1rem;
     }
 
+    // TS & JS
+    &__tsjs-h1 {
+      margin-top: -1rem;
+    }
+
+    // 3rd Party Integrations
+    &__integration-logo {
+      width: 25%;
+      height: 25%;
+      color: getTextColor("secondary");
+      font-size: getFontSize("lg");
+    }
+
+    &__integration-h1 {
+      color: getTextColor("primary");
+      margin-top: -1.5rem;
+    }
+
+    // Mongo
+    &__mongo-logo {
+      width: 25%;
+      height: 25%;
+      color: #3FA037;
+    }
+
+    &__mongo-h1 {
+      color: #3FA037;
+      font-size: getFontSize("lg");
+      margin-top: -1.5rem;
+    }
+
     &__double-container {
       @include flex-center(row);
+      column-gap: 0.5rem;
+      width: 35%;
+      height: 25%;
       flex-grow: 0.4;
-      gap: 0.1rem;
 
+      // HTML & CSS
       &__html {
         width: 100%;
         height: 100%;
-        color: #DD4B25;
+        color: #2E49D4;
       }
 
       &__css {
         width: 100%;
         height: 100%;
-        color: #2E49D4;
+        color: #DD4B25;
+      }
+
+      // TS & JS
+      &__js {
+        width: 85%;
+        height: 85%;
+        color: #FCDC00;
+      }
+
+      &__ts {
+        width: 85%;
+        height: 85%;
+        color: #3278C6;
       }
 
     }
 
     & > p {
       font-weight: getFontWeight("sbold");
+      font-size: getFontSize("sm");
       color: getTextColor("secondary");
     }
 
@@ -85,14 +145,29 @@
 
 .html-h1 {
   color: #DD4B25;
+  font-size: getFontSize("lg");
 }
 
 .css-h1 {
   color: #2E49D4;
+  font-size: getFontSize("lg");
+}
+
+.js-h1 {
+  color: #FCDC00;
+  font-size: getFontSize("lg");
+
+}
+
+.ts-h1 {
+  color: #3278C6;
+  font-size: getFontSize("lg");
+
 }
 
 .middle_text {
   color: getTextColor("secondary");
+  font-size: getFontSize("md");
 }
 
 .grid_btn {

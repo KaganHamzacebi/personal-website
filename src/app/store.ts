@@ -1,9 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import languageConfigReducer from '../features/langConfig/LangConfigSlice'
+import languageConfigReducer from '../features/langConfig/LangConfigSlice';
+import notificationCenterReducer from '../features/notificationCenter/NotificationCenterSlice';
+import scrollCenterReducer from '../features/scrollController/ScrollController';
 
 export const store = configureStore({
   reducer: {
-    languageConfig: languageConfigReducer
+    languageConfig: languageConfigReducer,
+    notificationCenter: notificationCenterReducer,
+    scrollController: scrollCenterReducer
   },
 });
 

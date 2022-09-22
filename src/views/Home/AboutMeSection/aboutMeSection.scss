@@ -4,10 +4,14 @@
 .aboutMeMain {
   position: relative;
   border-radius: 0.25rem;
-  padding: 4rem;
+  padding: 1rem;
   background-color: getMainColor("dark-gray");
   color: getTextColor("primary");
   @include shadow-lg;
+
+  @include media-md {
+    padding: 4rem;
+  }
 
   &__pp {
     position: absolute;
@@ -25,6 +29,7 @@
   }
 
   &__name {
+    padding-top: 2rem;
     color: getTextColor("primary");
     font-weight: getFontWeight("light");
     font-size: getFontSize("lg")
@@ -59,5 +64,10 @@
 
 .contact_button {
   margin-top: 1.5rem;
+  width: 100%;
   @include standard-btn;
+
+  @include media-md {
+    width: auto;
+  }
 }

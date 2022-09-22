@@ -4,16 +4,20 @@ export interface ISupportedLanguages {
 }
 
 export interface IEnglishTranslates {
-    firstSectionScripts: IEnglishFirstSection;
+    aboutMeSectionScripts: IEnglishAboutMeSectionScripts;
 }
 
-export interface IEnglishFirstSection {
+export interface IEnglishAboutMeSectionScripts {
     name: string;
     surname: string;
     webdev: string;
     bio_first_part: string;
     bio_unilink: string;
     bio_second_part: string;
+}
+
+export interface IEnglishSkillsSectionScripts {
+    //TODO: implement this
 }
 
 export interface ILanguageConfigState {

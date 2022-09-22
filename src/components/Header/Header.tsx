@@ -1,27 +1,36 @@
 import './header.scss'
 import {useState} from "react";
 import {MdMenu} from 'react-icons/md'
+import {useDispatch, useSelector} from "react-redux";
+import {getScrollSelector, setScroll} from "../../features/scrollController/ScrollController";
 
 function Header() {
     const [showHeader, setShowHeader] = useState(false);
+    const s = useSelector(getScrollSelector)
+    const dispatch = useDispatch();
 
     return (
         <div>
-            <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn" />
+            <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn"/>
             <div className={`header ${showHeader && "active"}`}>
                 <nav className="header__nav">
                     <ul>
                         <li>
-                            <a className="" href="/">About Me</a>
+                            <span
+                                onClick={() => dispatch(setScroll('aboutMeSection'))}
+                                className={`${s === 'aboutMeSection' && 'active'}`}
+                            >
+                                About Me
+                            </span>
                         </li>
                         <li>
-                            <a className="" href="/">Skills & Interests</a>
+                            <span onClick={() => dispatch(setScroll('skillsSection'))}>Skills & Interests</span>
                         </li>
                         <li>
-                            <a className="" href="/">Projects</a>
+                            <span onClick={() => dispatch(setScroll('projectsSection'))}>Projects</span>
                         </li>
                         <li>
-                            <a className="" href="/">Contact Me</a>
+                            <span onClick={() => dispatch(setScroll('contactMeSection'))}>Contact Me</span>
                         </li>
                     </ul>
                 </nav>

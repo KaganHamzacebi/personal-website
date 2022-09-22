@@ -23,10 +23,16 @@ a {
   text-decoration: none;
 }
 
-section > h1 {
-  color: getTextColor("primary");
-  font-weight: getFontWeight("nm");
-  font-size: getFontSize("2xl");
-  margin-top: -2rem;
-  margin-bottom: 2rem;
+section {
+  & > h1 {
+    color: getTextColor("primary");
+    font-weight: getFontWeight("nm");
+    font-size: getFontSize("2xl");
+  }
+
+  & > h2 {
+    color: getTextColor("secondary");
+    font-weight: getFontWeight("nm");
+    font-size: getFontSize("sm");
+  }
 }

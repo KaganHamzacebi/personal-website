@@ -1,8 +1,8 @@
 import {IEnglishTranslates} from '../../utils/LanguageConfigInterfaces';
-import FirstSectionScripts from "./FirstSectionScripts";
+import AboutMeSectionScripts from "./AboutMeSectionScripts";
 
 const EnglishScripts: IEnglishTranslates = {
-    firstSectionScripts: FirstSectionScripts
+    aboutMeSectionScripts: AboutMeSectionScripts
 }
 
 export default EnglishScripts;
