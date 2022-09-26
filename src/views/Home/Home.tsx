@@ -33,8 +33,12 @@ export function Home() {
         const aboutMeSection = document.getElementById('aboutMeSection');
         const skillsSection = document.getElementById('skillsSection');
         const projectsSection = document.getElementById('projectsSection');
+        const contactMeSection = document.getElementById('contactMeSection');
 
-        if (isReachedElement(projectsSection!)) {
+        if (isReachedElement(contactMeSection!)) {
+            dispatch(setNav('contactMeSection'))
+        }
+        else if (isReachedElement(projectsSection!)) {
             dispatch(setNav('projectsSection'))
         }
         else if (isReachedElement(skillsSection!)) {
@@ -53,7 +57,6 @@ export function Home() {
                 skillsSectionRef,
                 projectsSectionRef,
                 contactMeSectionRef
-
             }}
             />
             <div className="main">
@@ -68,7 +71,12 @@ export function Home() {
                 </section>
                 <section id="projectsSection" ref={projectsSectionRef} className="projectsSection">
                     <h1>Projects</h1>
-                    <h2>My core skills that i like to use</h2>
+                    <h2>My projects that i worked on</h2>
+                    <ProjectsSection />
+                </section>
+                <section id="contactMeSection" ref={contactMeSectionRef} className="contactMeSection">
+                    <h1>Contact Me</h1>
+                    <h2>My projects that i worked on</h2>
                     <ProjectsSection />
                 </section>
                 <Footer />

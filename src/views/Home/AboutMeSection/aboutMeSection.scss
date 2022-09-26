@@ -62,12 +62,24 @@
   }
 }
 
-.contact_button {
-  margin-top: 1.5rem;
-  width: 100%;
-  @include standard-btn;
+.btnContainer {
+  display: flex;
+  column-gap: 0.5rem;
 
-  @include media-md {
-    width: auto;
+  &__contactBtn {
+    margin-top: 1.5rem;
+    width: 100%;
+    font-size: getFontSize("sm");
+    @include standard-btn;
+
+    @include media-md {
+      width: auto;
+    }
+  }
+
+  &__resumeBtn {
+    @extend .btnContainer__contactBtn;
   }
 }
+
+

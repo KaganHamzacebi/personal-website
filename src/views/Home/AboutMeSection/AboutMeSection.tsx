@@ -2,6 +2,8 @@ import './aboutMeSection.scss'
 import profilePhoto  from '../../../assets/profilePhoto.png'
 import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
 import {useSelector} from "react-redux";
+import Resume from '../../../assets/KaganHamzacebiResume.pdf';
+
 
 function AboutMeSection() {
     const t = useSelector(selectTranslations);
@@ -16,7 +18,15 @@ function AboutMeSection() {
                 <a className="aboutMeMain__bio__unilink" target="_blank" rel="noopener noreferrer" href="https://www.etu.edu.tr/en"> {t.aboutMeSectionScripts.bio_unilink} </a>
                 {t.aboutMeSectionScripts.bio_second_part}
             </p>
-            <button className="contact_button">Contact Me</button>
+            <div className="btnContainer">
+                <button className="btnContainer__contactBtn">Contact Me</button>
+                <a
+                    href={Resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btnContainer__resumeBtn"
+                >Resume</a>
+            </div>
         </div>
     )
 }
