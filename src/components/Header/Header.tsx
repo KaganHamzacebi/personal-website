@@ -1,5 +1,5 @@
 import './header.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {MdMenu} from 'react-icons/md'
 import {useDispatch, useSelector} from "react-redux";
 import {getScrollSelector, setScroll} from "../../features/scrollController/ScrollController";
@@ -8,6 +8,20 @@ function Header() {
     const [showHeader, setShowHeader] = useState(false);
     const s = useSelector(getScrollSelector)
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowSize);
+        };
+    }, []);
+
+    function handleWindowSize() {
+        if (window.innerWidth > 800) {
+            setShowHeader(false);
+        }
+    }
 
     return (
         <div>

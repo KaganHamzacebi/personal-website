@@ -17,6 +17,7 @@
 
   &.active {
     transform: translateX(0);
+    width: 100%;
     opacity: 80%;
   }
 
@@ -27,7 +28,7 @@
   &__btn {
     position: fixed;
     visibility: visible;
-    z-index: 2;
+    z-index: 3;
     width: 2rem;
     height: 2rem;
     right: 0.35rem;
