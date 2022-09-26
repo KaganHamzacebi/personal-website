@@ -15,3 +15,8 @@
   @include set-transition($duration);
   transform: scale($scale) rotate($deg);
 }
+
+@mixin slide-right($duration, $slide) {
+  @include set-transition($duration);
+  margin-left: $slide;
+}

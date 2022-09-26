@@ -15,10 +15,10 @@
   @include flex-center(row);
   @include set-transition(0.5s);
 
-  &.active {
+  &.mobile {
     transform: translateX(0);
     width: 100%;
-    opacity: 80%;
+    opacity: 0.99;
   }
 
   @include media-md {
@@ -42,26 +42,50 @@
   }
 
   &__nav {
+    padding: 4rem 2rem;
+    width: 100%;
+    height: 100%;
+
     @include media-md {
-      visibility: visible;
+      padding-left: 3rem;
+      @include flex-center(column);
     }
 
     & > ul {
+      width: 100%;
       list-style-type: none;
       padding: 0;
       margin-right: 40px;
 
       & > li {
-        margin-bottom: 1rem;
-        font-weight: getFontWeight("normal");
-        font-size: getFontSize("normal");
+        font-weight: getFontWeight("sbold");
+        width: 100%;
         cursor: pointer;
+        margin-bottom: 2rem;
 
+        & > span.active {
+          width: 100%;
+          font-weight: getFontWeight("bold");
+          font-size: getFontSize("2xl");
+          @include slide-right(0.5s, 1rem);
+
+          @include media-md {
+            font-size: getFontSize("lg");
+          }
+        }
+
+        & > :not(span.active) {
+          width: 100%;
+          font-weight: getFontWeight("sbold");
+          font-size: getFontSize("xl");
+          color: getTextColor("secondary");
+          @include slide-right(0.5s, 0);
+
+          @include media-md {
+            font-size: getFontSize("lg");
+          }
+        }
       }
     }
   }
-}
-
-a.active {
-  color: red
 }

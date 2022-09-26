@@ -35,7 +35,7 @@ function SocialBar() {
                                     setShowClipboardCopy(true);
                                     setTimeout(() => {
                                         setShowClipboardCopy(false);
-                                    }, 2000)
+                                    }, 1000)
                                 });
                         }}
                     />

@@ -1,4 +1,7 @@
 import './home.scss';
+import {useAppDispatch} from "../../app/hooks";
+import {isReachedElement} from "../../features/scrollController/ScrollUtils";
+import {setNav} from "../../features/scrollController/ScrollController";
 // Partial Components
 import {useEffect, useRef} from "react";
 import Header from "../../components/Header/Header";
@@ -6,51 +9,69 @@ import SocialBar from "../../components/SocialBar/SocialBar";
 // All Sections of Home screen
 import AboutMeSection from "./AboutMeSection/AboutMeSection";
 import SkillsSection from "./SkillsSection/SkillsSection";
-import {store} from "../../app/store";
-import {getScrollSelector, scrollTo} from "../../features/scrollController/ScrollController";
-
+import Footer from "../../components/Footer/Footer";
+import ProjectsSection from "./ProjectsSection/ProjectsSection";
 
 export function Home() {
-
     const aboutMeSectionRef = useRef(null);
-    const skillsActionRef = useRef(null);
-
-    let currentVal: string;
-    function handleScroll() {
-        let previousVal = currentVal;
-        currentVal = getScrollSelector(store.getState())
-
-        if (previousVal !== currentVal) {
-            switch (currentVal) {
-                case 'aboutMeSection':
-                    scrollTo(aboutMeSectionRef);
-                    break;
-                case 'skillsSection':
-                    scrollTo(skillsActionRef);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+    const skillsSectionRef = useRef(null);
+    const projectsSectionRef = useRef(null);
+    const contactMeSectionRef = useRef(null);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        store.subscribe(handleScroll);
-    });
+        window.addEventListener('scroll', scrollTracker);
+        return () => {
+            window.removeEventListener('scroll', scrollTracker);
+        };
+    })
+
+    /**
+     * Scroll Listener that assigns which section is currently active
+     */
+    function scrollTracker() {
+        const aboutMeSection = document.getElementById('aboutMeSection');
+        const skillsSection = document.getElementById('skillsSection');
+        const projectsSection = document.getElementById('projectsSection');
+
+        if (isReachedElement(projectsSection!)) {
+            dispatch(setNav('projectsSection'))
+        }
+        else if (isReachedElement(skillsSection!)) {
+            dispatch(setNav('skillsSection'))
+        }
+        else if (isReachedElement(aboutMeSection!)) {
+            dispatch(setNav('aboutMeSection'))
+        }
+
+    }
 
     return (
         <div>
-            <Header />
-            <SocialBar />
-            <div className="main" ref={aboutMeSectionRef}>
-                <section className="aboutMeSection">
+            <Header refs={{
+                aboutMeSectionRef,
+                skillsSectionRef,
+                projectsSectionRef,
+                contactMeSectionRef
+
+            }}
+            />
+            <div className="main">
+                <section id="aboutMeSection" ref={aboutMeSectionRef} className="aboutMeSection">
                     <AboutMeSection />
+                    <SocialBar />
                 </section>
-                <section className="skillsSection">
-                    <h1 ref={skillsActionRef}>My Skills</h1>
+                <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
+                    <h1>My Skills</h1>
                     <h2>My core skills that i like to use</h2>
                     <SkillsSection />
                 </section>
+                <section id="projectsSection" ref={projectsSectionRef} className="projectsSection">
+                    <h1>Projects</h1>
+                    <h2>My core skills that i like to use</h2>
+                    <ProjectsSection />
+                </section>
+                <Footer />
             </div>
         </div>
     )
