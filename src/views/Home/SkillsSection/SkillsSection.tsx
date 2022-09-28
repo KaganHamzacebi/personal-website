@@ -16,7 +16,7 @@ import {
     from 'react-icons/si'
 
 import {TbSocial} from 'react-icons/tb'
-import {DetailedHTMLProps, HTMLAttributes, useEffect, useRef, useState} from "react";
+import {useState} from "react";
 
 
 function SkillsSection() {
@@ -38,8 +38,8 @@ function SkillsSection() {
                 >
                     <div className="grid__item__bg">
                         <div className={`service-dot ${isReactDotActive && 'active'}`}>
-                            <div className="dot1"></div>
-                            <div className="dot2"></div>
+                            <div className="dot1"/>
+                            <div className="dot2"/>
                         </div>
                         <FaReact className="grid__item__bg__react-logo"/>
                     </div>
@@ -53,8 +53,8 @@ function SkillsSection() {
                 >
                     <div className="grid__item__bg">
                         <div className={`service-dot ${isNodeDotActive && 'active'}`}>
-                            <div className="dot1"></div>
-                            <div className="dot2"></div>
+                            <div className="dot1"/>
+                            <div className="dot2"/>
                         </div>
                         <FaNodeJs className="grid__item__bg__nodejs-logo"/>
                     </div>
@@ -68,13 +68,14 @@ function SkillsSection() {
                 >
                     <div className="grid__item__double-container">
                         <div className='service-dot-double'>
-                            <div className={`dot1-double ${isHtmlCssDotActive && 'active'}`}></div>
-                            <div className={`dot2-double ${isHtmlCssDotActive && 'active'}`}></div>
+                            <div className={`dot1-double ${isHtmlCssDotActive && 'active'}`}/>
+                            <div className={`dot2-double ${isHtmlCssDotActive && 'active'}`}/>
                         </div>
                         <FaHtml5 className="grid__item__double-container__css"/>
                         <FaCss3Alt className="grid__item__double-container__html"/>
                     </div>
-                    <h1 className="grid__item__htmlcss-h1"><span className="html-h1">HTML</span> <span className="middle_text">&</span> <span className="css-h1">CSS</span></h1>
+                    <h1 className="grid__item__htmlcss-h1"><span className="html-h1">HTML</span> <span
+                        className="middle_text">&</span> <span className="css-h1">CSS</span></h1>
                     <p>React bla bla</p>
                     <button className="grid__item__btn">Read More</button>
                 </div>
@@ -84,13 +85,14 @@ function SkillsSection() {
                 >
                     <div className="grid__item__double-container">
                         <div className='service-dot-double'>
-                            <div className={`dot1-double ${isJSTSDotActive && 'active'}`}></div>
-                            <div className={`dot2-double ${isJSTSDotActive && 'active'}`}></div>
+                            <div className={`dot1-double ${isJSTSDotActive && 'active'}`}/>
+                            <div className={`dot2-double ${isJSTSDotActive && 'active'}`}/>
                         </div>
                         <SiJavascript className="grid__item__double-container__js"/>
                         <SiTypescript className="grid__item__double-container__ts"/>
                     </div>
-                    <h1 className="grid__item__tsjs-h1"><span className="js-h1">JavaScript</span> <span className="middle_text">&</span> <span className="ts-h1">TypeScript</span></h1>
+                    <h1 className="grid__item__tsjs-h1"><span className="js-h1">JavaScript</span> <span
+                        className="middle_text">&</span> <span className="ts-h1">TypeScript</span></h1>
                     <p>React bla bla</p>
                     <button className="grid__item__btn">Read More</button>
                 </div>
@@ -100,8 +102,8 @@ function SkillsSection() {
                 >
                     <div className="grid__item__bg">
                         <div className={`service-dot ${isMongoDotActive && 'active'}`}>
-                            <div className="dot1"></div>
-                            <div className="dot2"></div>
+                            <div className="dot1"/>
+                            <div className="dot2"/>
                         </div>
                         <SiMongodb className="grid__item__bg__mongo-logo"/>
                     </div>
@@ -115,8 +117,8 @@ function SkillsSection() {
                 >
                     <div className="grid__item__bg">
                         <div className={`service-dot ${isIntegrationsDotActive && 'active'}`}>
-                            <div className="dot1"></div>
-                            <div className="dot2"></div>
+                            <div className="dot1"/>
+                            <div className="dot2"/>
                         </div>
                         <TbSocial className="grid__item__bg__integration-logo"/>
                     </div>
