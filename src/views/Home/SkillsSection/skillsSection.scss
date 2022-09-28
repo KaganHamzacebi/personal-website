@@ -32,11 +32,38 @@
     @include flex-center(column);
     @include shadow-xl;
 
-    //REACT
-    &__react-logo  {
-      width: 25%;
-      height: 25%;
-      color: #61DAFB;
+    &__bg {
+      position: relative;
+      width: 120px;
+      padding: 1.5rem;
+      border: 1px solid getTextColor("gray");
+      border-radius: 50%;
+      @include flex-center(row);
+
+      &__react-logo  {
+        width: 100%;
+        height: 100%;
+        color: #61DAFB;
+      }
+
+      &__nodejs-logo  {
+        width: 100%;
+        height: 100%;
+        color: #71B953;
+      }
+
+      &__mongo-logo {
+        width: 100%;
+        height: 100%;
+        color: #3FA037;
+      }
+
+      &__integration-logo {
+        width: 100%;
+        height: 100%;
+        color: getMainColor("xlight-gray");
+        font-size: getFontSize("lg");
+      }
     }
 
     &__react-h1 {
@@ -45,47 +72,23 @@
       font-size: getFontSize("lg");
     }
 
-    // NodeJS
-    &__nodejs-logo  {
-      width: 25%;
-      height: 25%;
-      color: #71B953;
-    }
-
     &__nodejs-h1 {
       margin-top: -1.5rem;
       color: #71B953;
       font-size: getFontSize("lg");
     }
 
-    // HTML & CSS
     &__htmlcss-h1 {
       margin-top: -1rem;
     }
 
-    // TS & JS
     &__tsjs-h1 {
       margin-top: -1rem;
-    }
-
-    // 3rd Party Integrations
-    &__integration-logo {
-      width: 25%;
-      height: 25%;
-      color: getTextColor("secondary");
-      font-size: getFontSize("lg");
     }
 
     &__integration-h1 {
       color: getTextColor("primary");
       margin-top: -1.5rem;
-    }
-
-    // Mongo
-    &__mongo-logo {
-      width: 25%;
-      height: 25%;
-      color: #3FA037;
     }
 
     &__mongo-h1 {
@@ -95,11 +98,15 @@
     }
 
     &__double-container {
+      position: relative;
       @include flex-center(row);
       column-gap: 0.5rem;
-      width: 35%;
-      height: 25%;
+      padding: 2rem 0;
+      width: 184px;
+      height: 120px;
       flex-grow: 0.4;
+      border: 1px solid getTextColor("gray");
+      border-radius: 0.25rem;
 
       // HTML & CSS
       &__html {
@@ -172,4 +179,78 @@
 
 .grid_btn {
   @include standard-btn;
+}
+
+.service-dot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(22.5deg);
+  @include rotate-full(2s);
+  animation-play-state: paused;
+
+  &.active {
+    animation-play-state: running;
+  }
+
+  .dot1 {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: getTextColor("gray");
+    top: 20px;
+  }
+
+  .dot2 {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: getTextColor("gray");
+    bottom: 20px;
+    right: 0;
+  }
+}
+
+.service-dot-double {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .dot1-double {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: getTextColor("gray");
+    top: 4px;
+    left: -8px;
+    @include rotate-dot1(4s);
+    animation-play-state: paused;
+
+    &.active {
+      animation-play-state: running;
+    }
+  }
+
+  .dot2-double {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: getTextColor("gray");
+    bottom: 4px;
+    right: -8px;
+    @include rotate-dot2(4s);
+    animation-play-state: paused;
+
+    &.active {
+      animation-play-state: running;
+    }
+  }
 }

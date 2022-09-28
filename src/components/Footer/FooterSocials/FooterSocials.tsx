@@ -7,10 +7,6 @@ import {useEffect, useState} from "react";
 function FooterSocials() {
     const [showClipboard, setShowClipboard] = useState(false);
 
-    useEffect(() => {
-        console.log(showClipboard)
-    }, [showClipboard])
-
     function copyDiscordTag() {
         navigator.clipboard.writeText("Classy#5334");
         setShowClipboard(true);

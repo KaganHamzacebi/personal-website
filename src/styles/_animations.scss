@@ -1,9 +1,11 @@
 @mixin shimmer-effect {
-  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
   animation: shimmer 2.5s infinite;
 
   @keyframes shimmer {
-    100% {-webkit-mask-position:left}
+    100% {
+      -webkit-mask-position: left
+    }
   }
 }
 
@@ -19,4 +21,87 @@
 @mixin slide-right($duration, $slide) {
   @include set-transition($duration);
   margin-left: $slide;
+}
+
+@mixin rotate-full($duration) {
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin rotate-dot1($duration) {
+  animation-name: rotate-special-1;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+  @keyframes rotate-special-1 {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    17.7% {
+      transform: translateY(107px) translateX(0px);
+    }
+    48% {
+      transform: translateY(107px) translateX(183px);
+    }
+    67.7% {
+      transform: translateY(-12px) translateX(183px);
+    }
+    98% {
+      transform: translateY(-12px) translateX(0px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+}
+
+@mixin rotate-dot2($duration) {
+  animation-name: rotate-special-2;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+  @keyframes rotate-special-2 {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    17.7% {
+      transform: translateY(-107px) translateX(0px);
+    }
+    48% {
+      transform: translateY(-107px) translateX(-183px);
+    }
+    67.7% {
+      transform: translateY(12px) translateX(-183px);
+    }
+    98% {
+      transform: translateY(12px) translateX(0px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
 }

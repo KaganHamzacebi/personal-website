@@ -25,7 +25,7 @@ const resolver: Resolver<FormValues> = async (values) => {
 
 function ContactMeMessage() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<FormValues>({ resolver });
-    const onSubmit = () => console.log();
+    const onSubmit = () => {};
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

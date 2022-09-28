@@ -2,11 +2,9 @@
 @import "../../../../styles/mixins";
 
 .contactMessageMain {
-  width: 100%;
-  height: 100%;
   padding: 2rem;
   border-radius: 0.25rem;
-  background-color: getMainColor("dark-gray");
+  background-color: getMainColor("secondary");
 
   & > h1 {
     color: getTextColor("primary");
@@ -31,11 +29,15 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background-color: getMainColor("secondary");
-  color: getTextColor("secondary");
+  background-color: getMainColor("gray");
+  color: getTextColor("primary");
+
+  &::placeholder {
+    color: getTextColor("secondary");
+  }
 
   &:focus {
-
+    outline: 1px solid getMainColor("xxlight-gray")
   }
 }
 
