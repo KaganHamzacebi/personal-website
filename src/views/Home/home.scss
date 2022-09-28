@@ -45,5 +45,6 @@
 
 .contactMeSection {
   @extend .skillsSection;
+  min-height: calc(100vh - 300px);
   background-color: getMainColor("primary");
 }

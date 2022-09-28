@@ -1,7 +1,7 @@
-import {IEnglishSkillsSectionScripts} from "../../utils/LanguageConfigInterfaces";
+import {ISkillsSectionScripts} from "../../utils/LanguageConfigInterfaces";
 
 const SkillsSectionScripts = {
 
-} as IEnglishSkillsSectionScripts;
+} as ISkillsSectionScripts;
 
 export default SkillsSectionScripts;

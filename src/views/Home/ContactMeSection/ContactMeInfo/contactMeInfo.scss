@@ -1,0 +1,95 @@
+@import '../../../../styles/functions';
+@import '../../../../styles/mixins';
+
+.contactMeInfo {
+  width: 100%;
+  height: 100%;
+  @include flex-center(column);
+  row-gap: 1rem;
+
+  &__email {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: getMainColor("secondary");
+    border-radius: 0.25rem;
+    row-gap: 1rem;
+    @include flex-start(column);
+    text-align: center;
+
+    @include media-md {
+      flex-direction: row;
+      row-gap: 0;
+    }
+
+    &__h1 {
+      width: 100%;
+      height: 100%;
+      color: getTextColor("secondary");
+      font-size: getFontSize("md");
+      font-weight: getFontWeight("normal");
+    }
+
+    &__container {
+      width: 50%;
+      @include flex-start(column);
+      row-gap: 0.5rem;
+
+      &__logo {
+        width: 2rem;
+        height: 2rem;
+        color: getTextColor("dark-gray");
+      }
+
+      &__h1 {
+        color: getTextColor("primary");
+      }
+    }
+  }
+
+  &__address {
+    @extend .contactMeInfo__email;
+
+    &__h1 {
+      @extend .contactMeInfo__email__h1;
+    }
+
+    &__container {
+      @extend .contactMeInfo__email__container;
+
+      &__logo {
+        @extend .contactMeInfo__email__container__logo;
+      }
+
+      &__h1 {
+        @extend .contactMeInfo__email__container__h1;
+      }
+    }
+  }
+
+  &__phone {
+    @extend .contactMeInfo__email;
+
+    &__h1 {
+      @extend .contactMeInfo__email__h1;
+    }
+
+    &__container {
+      @extend .contactMeInfo__email__container;
+
+      &__logo {
+        @extend .contactMeInfo__email__container__logo;
+      }
+
+      &__h1 {
+        @extend .contactMeInfo__email__container__h1;
+      }
+    }
+  }
+}
+
+.logoBG {
+  padding: 1rem;
+  border-radius: 100%;
+  background-color: getMainColor("xlight-gray");
+  @include flex-center(row);
+}

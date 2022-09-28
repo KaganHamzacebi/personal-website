@@ -4,10 +4,11 @@ export interface ISupportedLanguages {
 }
 
 export interface IEnglishTranslates {
-    aboutMeSectionScripts: IEnglishAboutMeSectionScripts;
+    homeScripts: IHomeScripts;
+    aboutMeSectionScripts: IAboutMeSectionScripts;
 }
 
-export interface IEnglishAboutMeSectionScripts {
+export interface IAboutMeSectionScripts {
     name: string;
     surname: string;
     webdev: string;
@@ -16,8 +17,17 @@ export interface IEnglishAboutMeSectionScripts {
     bio_second_part: string;
 }
 
-export interface IEnglishSkillsSectionScripts {
+export interface ISkillsSectionScripts {
     //TODO: implement this
+}
+
+export interface IHomeScripts {
+    "skills_h1": string;
+    "skills_h2": string;
+    "projects_h1": string;
+    "projects_h2": string;
+    "contact_h1": string;
+    "contact_h2": string;
 }
 
 export interface ILanguageConfigState {

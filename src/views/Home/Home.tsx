@@ -11,12 +11,17 @@ import AboutMeSection from "./AboutMeSection/AboutMeSection";
 import SkillsSection from "./SkillsSection/SkillsSection";
 import Footer from "../../components/Footer/Footer";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
+import {useSelector} from "react-redux";
+import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
+import ContactMeSection from "./ContactMeSection/ContactMeSection";
 
 export function Home() {
     const aboutMeSectionRef = useRef(null);
     const skillsSectionRef = useRef(null);
     const projectsSectionRef = useRef(null);
     const contactMeSectionRef = useRef(null);
+
+    const t = useSelector(selectTranslations);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -65,19 +70,19 @@ export function Home() {
                     <SocialBar />
                 </section>
                 <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
-                    <h1>My Skills</h1>
-                    <h2>My core skills that i like to use</h2>
+                    <h1>{t.homeScripts.skills_h1}</h1>
+                    <h2>{t.homeScripts.skills_h2}</h2>
                     <SkillsSection />
                 </section>
                 <section id="projectsSection" ref={projectsSectionRef} className="projectsSection">
-                    <h1>Projects</h1>
-                    <h2>My projects that i worked on</h2>
+                    <h1>{t.homeScripts.projects_h1}</h1>
+                    <h2>{t.homeScripts.projects_h2}</h2>
                     <ProjectsSection />
                 </section>
                 <section id="contactMeSection" ref={contactMeSectionRef} className="contactMeSection">
-                    <h1>Contact Me</h1>
-                    <h2>My projects that i worked on</h2>
-                    <ProjectsSection />
+                    <h1>{t.homeScripts.contact_h1}</h1>
+                    <h2>{t.homeScripts.contact_h2}</h2>
+                    <ContactMeSection />
                 </section>
                 <Footer />
             </div>
