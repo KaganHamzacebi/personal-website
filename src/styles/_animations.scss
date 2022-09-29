@@ -105,3 +105,19 @@
     }
   }
 }
+
+@mixin slide-bottom($duration, $slide) {
+  animation-name: slide-bottom;
+  animation-duration: $duration;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+
+  @keyframes slide-bottom {
+    0% {
+      transform: translateY($slide);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
