@@ -2,7 +2,7 @@ import "./footerSocials.scss";
 // Social Links
 import {GoMarkGithub} from 'react-icons/go';
 import {FaLinkedinIn, FaDiscord} from 'react-icons/fa';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function FooterSocials() {
     const [showClipboard, setShowClipboard] = useState(false);

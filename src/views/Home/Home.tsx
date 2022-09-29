@@ -14,6 +14,7 @@ import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import {useSelector} from "react-redux";
 import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
 import ContactMeSection from "./ContactMeSection/ContactMeSection";
+import GoHomeButton from "../../components/GoHomeButton/GoHomeButton";
 
 export function Home() {
     const aboutMeSectionRef = useRef(null);
@@ -64,10 +65,10 @@ export function Home() {
                 contactMeSectionRef
             }}
             />
+            <SocialBar />
             <div className="main">
                 <section id="aboutMeSection" ref={aboutMeSectionRef} className="aboutMeSection">
                     <AboutMeSection />
-                    <SocialBar />
                 </section>
                 <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
                     <h1>{t.homeScripts.skills_h1}</h1>
@@ -84,6 +85,9 @@ export function Home() {
                     <h2>{t.homeScripts.contact_h2}</h2>
                     <ContactMeSection />
                 </section>
+                <GoHomeButton refs={{
+                    aboutMeSectionRef
+                }} />
                 <Footer />
             </div>
         </div>
