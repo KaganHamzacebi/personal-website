@@ -1,0 +1,21 @@
+@import '../../../styles/functions';
+@import '../../../styles/mixins';
+
+.projectsSectionMain {
+  width: 100%;
+  margin-top: 3rem;
+
+  @include media-md {
+    max-width: calc(100vw - 216.6px);
+  }
+}
+
+.projectsSlider {
+  background-color: getMainColor('primary');
+  width: 100%;
+}
+
+.slide {
+  background-color: white;
+  padding: 1rem;
+}

@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {getNavSelector, setNav} from "../../features/scrollController/ScrollController";
 import {useAppDispatch} from "../../app/hooks";
 import {scrollTo} from "../../features/scrollController/ScrollUtils";
-import {GiAbstract002} from 'react-icons/gi';
+import Logo from '../../assets/k-logo.png';
 
 function Header(
     {
@@ -33,12 +33,12 @@ function Header(
     return (
         <div>
             <div className="header-btn-wrapper">
-                <GiAbstract002 className="header__nav__mobile__logo" />
+                <img src={Logo} className="header__nav__mobile__logo" />
                 <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn"/>
             </div>
             <div className={`header ${showHeader && "mobile"}`}>
                 <nav className="header__nav">
-                    <GiAbstract002 onClick={() => setShowHeader(false)} className="header__nav__logo" />
+                    <img src={Logo} onClick={() => setShowHeader(false)} className="header__nav__logo" />
                     <ul>
                         <li>
                             <span
