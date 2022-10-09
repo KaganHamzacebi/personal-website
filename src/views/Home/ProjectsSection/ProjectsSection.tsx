@@ -1,56 +1,73 @@
 import './projectsSection.scss'
 
+// Swiper
 import {Swiper, SwiperSlide} from "swiper/react";
-import 'swiper/swiper.scss'
-import {useEffect, useState} from "react";
+import {Pagination, A11y, Keyboard, Mousewheel} from 'swiper';
+// Swiper Styles
+import 'swiper/scss'
+import 'swiper/scss/pagination';
+
+import {useState} from "react";
+import {useSelector} from "react-redux";
+import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
+import {IProjectsSectionScripts} from "../../../utils/LanguageConfigInterfaces";
+import ProjectModal from "./ProjectModal/ProjectModal";
 
 function ProjectsSection() {
-
-    const slides = {
-        a: 1,
-        b: 2,
-        c: 3,
-        d: 4
-    }
-
-    const [slidesPerView, setSlidesPerView] = useState(3);
-
-    useEffect(() => {
-        window.addEventListener('scroll', scrollTracker);
-        return () => {
-            window.removeEventListener('scroll', scrollTracker);
-        };
-    })
-
-    function scrollTracker() {
-        console.log(window.innerWidth)
-        if (window.innerWidth > 1200) {
-            setSlidesPerView(3);
-        }
-    }
+    const t = useSelector(selectTranslations);
+    const slides: IProjectsSectionScripts = t.projectsSectionScripts;
+    const [openModal, setOpenModal] = useState(false);
 
     return (
         <div className="projectsSectionMain">
             <Swiper
                 className="projectsSlider"
+                modules={[Pagination, A11y, Keyboard, Mousewheel]}
                 spaceBetween={50}
-                slidesPerView={slidesPerView}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                pagination={{
+                    clickable: true,
+                }}
+                keyboard={{
+                    enabled: true,
+                }}
+                mousewheel={true}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 1,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    },
+                    1280: {
+                        slidesPerView: 3,
+                    },
+                    1536: {
+                        slidesPerView: 3,
+                    }
+                }}
             >
                 {
-                    Object.entries(slides).map(slide => {
-                        const [k, v] = slide;
+                    Object.entries(slides).map((slide, i) => {
+                        const data = slide[1];
                         return (
-                            <SwiperSlide>
-                                <div>
-                                    {v}
-                                </div>
+                            <SwiperSlide key={i} className="slide">
+                                <span className="slide__h1">{data.heading}</span>
+                                <p className="slide__desc">{data.description}</p>
+                                <button className="slide__btn" onClick={() => setOpenModal(true)}>Read</button>
                             </SwiperSlide>
                         )
                     })
                 }
             </Swiper>
+            <ProjectModal
+                props={{
+                    openModal: openModal,
+                    setOpenModal: setOpenModal,
+                }}
+            />
         </div>
     )
 }

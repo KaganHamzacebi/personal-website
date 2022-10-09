@@ -17,6 +17,7 @@
   @include set-transition(0.15s);
   @include flex-center(column);
   outline: none;
+  z-index: 3;
 
   &.active {
     opacity: 100;

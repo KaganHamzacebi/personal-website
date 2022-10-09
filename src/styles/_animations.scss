@@ -121,3 +121,29 @@
     }
   }
 }
+
+@mixin fade-in($duration) {
+  animation: fade-in $duration;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin fade-out($duration) {
+  animation: fade-out $duration;
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

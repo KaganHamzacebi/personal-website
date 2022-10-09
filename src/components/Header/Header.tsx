@@ -33,12 +33,12 @@ function Header(
     return (
         <div>
             <div className="header-btn-wrapper">
-                <img src={Logo} className="header__nav__mobile__logo" />
+                <img src={Logo} alt="header_mobile_logo" className="header__nav__mobile__logo" />
                 <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn"/>
             </div>
             <div className={`header ${showHeader && "mobile"}`}>
                 <nav className="header__nav">
-                    <img src={Logo} onClick={() => setShowHeader(false)} className="header__nav__logo" />
+                    <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)} className="header__nav__logo" />
                     <ul>
                         <li>
                             <span

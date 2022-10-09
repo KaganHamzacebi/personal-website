@@ -142,10 +142,6 @@
       color: getTextColor("secondary");
     }
 
-    &__btn {
-      @include standard-btn;
-    }
-
   }
 
 }
