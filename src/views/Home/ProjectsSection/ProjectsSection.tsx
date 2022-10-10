@@ -17,6 +17,7 @@ function ProjectsSection() {
     const t = useSelector(selectTranslations);
     const slides: IProjectsSectionScripts = t.projectsSectionScripts;
     const [openModal, setOpenModal] = useState(false);
+    const [modalProps, setModalProps] = useState("");
 
     return (
         <div className="projectsSectionMain">
@@ -45,7 +46,7 @@ function ProjectsSection() {
                         slidesPerView: 3,
                     },
                     1536: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                     }
                 }}
             >
@@ -56,7 +57,14 @@ function ProjectsSection() {
                             <SwiperSlide key={i} className="slide">
                                 <span className="slide__h1">{data.heading}</span>
                                 <p className="slide__desc">{data.description}</p>
-                                <button className="slide__btn" onClick={() => setOpenModal(true)}>Read</button>
+                                <button className="slide__btn"
+                                        onClick={() => {
+                                            setOpenModal(true);
+                                            setModalProps(data.modal);
+                                        }}
+                                >
+                                    Read
+                                </button>
                             </SwiperSlide>
                         )
                     })
@@ -66,6 +74,7 @@ function ProjectsSection() {
                 props={{
                     openModal: openModal,
                     setOpenModal: setOpenModal,
+                    modalProps: modalProps
                 }}
             />
         </div>

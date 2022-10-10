@@ -1,11 +1,14 @@
 import './aboutMeSection.scss'
-import profilePhoto  from '../../../assets/profilePhoto.png'
+import profilePhoto  from '../../../assets/general/profilePhoto.png'
 import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
 import {useSelector} from "react-redux";
-import Resume from '../../../assets/KaganHamzacebiResume.pdf';
+import Resume from '../../../assets/general/KaganHamzacebiResume.pdf';
+import {scrollTo} from '../../../features/scrollController/ScrollUtils';
 
 
-function AboutMeSection() {
+function AboutMeSection({
+    refs
+                        }: any) {
     const t = useSelector(selectTranslations);
 
     return (
@@ -19,7 +22,12 @@ function AboutMeSection() {
                 {t.aboutMeSectionScripts.bio_second_part}
             </p>
             <div className="btnContainer">
-                <button className="btnContainer__contactBtn">Contact Me</button>
+                <button
+                    className="btnContainer__contactBtn"
+                    onClick={() => scrollTo(refs.contactMeSectionRef)}
+                >
+                    Contact Me
+                </button>
                 <a
                     href={Resume}
                     target="_blank"

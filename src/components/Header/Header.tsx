@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {getNavSelector, setNav} from "../../features/scrollController/ScrollController";
 import {useAppDispatch} from "../../app/hooks";
 import {scrollTo} from "../../features/scrollController/ScrollUtils";
-import Logo from '../../assets/k-logo.png';
+import Logo from '../../assets/general/k-logo.png';
 
 function Header(
     {

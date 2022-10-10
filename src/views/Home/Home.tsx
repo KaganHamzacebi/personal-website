@@ -68,7 +68,9 @@ export function Home() {
             <SocialBar />
             <div className="main">
                 <section id="aboutMeSection" ref={aboutMeSectionRef} className="aboutMeSection">
-                    <AboutMeSection />
+                    <AboutMeSection refs={{
+                        contactMeSectionRef: contactMeSectionRef
+                    }} />
                 </section>
                 <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
                     <h1>{t.homeScripts.skills_h1}</h1>

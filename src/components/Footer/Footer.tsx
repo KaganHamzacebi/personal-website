@@ -1,5 +1,5 @@
 import './footer.scss';
-import Logo from '../../assets/k-logo.png';
+import Logo from '../../assets/general/k-logo.png';
 import FooterSocials from "./FooterSocials/FooterSocials";
 
 function Footer() {
