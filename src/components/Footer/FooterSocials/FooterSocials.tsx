@@ -2,6 +2,7 @@ import "./footerSocials.scss";
 // Social Links
 import {GoMarkGithub} from 'react-icons/go';
 import {FaLinkedinIn, FaDiscord} from 'react-icons/fa';
+import {IoLogoWhatsapp} from "react-icons/io";
 import {useState} from "react";
 
 function FooterSocials() {
@@ -25,6 +26,12 @@ function FooterSocials() {
                 <FaLinkedinIn
                     className="footerSocialsMain__bg__linkedin"
                     onClick={() => window.open('https://www.linkedin.com/in/kaganhamzacebi/', '_target')}
+                />
+            </div>
+            <div className="footerSocialsMain__bg">
+                <IoLogoWhatsapp
+                    className="footerSocialsMain__bg__whatsapp"
+                    onClick={() => window.open('https://wa.me/+905342067893', '_target')}
                 />
             </div>
             <div className="footerSocialsMain__bg">

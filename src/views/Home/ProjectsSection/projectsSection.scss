@@ -3,7 +3,10 @@
 
 .projectsSectionMain {
   width: 100%;
-  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  text-align: center;
 
   @include media-md {
     max-width: calc(100vw - 216.6px);

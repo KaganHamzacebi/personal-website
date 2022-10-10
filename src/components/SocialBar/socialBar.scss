@@ -44,6 +44,11 @@
     @extend .socialBar__github;
   }
 
+  &__whatsapp {
+    position: relative;
+    @extend .socialBar__github;
+  }
+
   &__discord {
     position: relative;
     @extend .socialBar__github;

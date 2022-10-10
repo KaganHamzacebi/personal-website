@@ -2,7 +2,7 @@ import './projectsSection.scss'
 
 // Swiper
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Pagination, A11y, Keyboard, Mousewheel} from 'swiper';
+import {Pagination, A11y} from 'swiper';
 // Swiper Styles
 import 'swiper/scss'
 import 'swiper/scss/pagination';
@@ -23,15 +23,11 @@ function ProjectsSection() {
         <div className="projectsSectionMain">
             <Swiper
                 className="projectsSlider"
-                modules={[Pagination, A11y, Keyboard, Mousewheel]}
+                modules={[Pagination, A11y]}
                 spaceBetween={50}
                 pagination={{
                     clickable: true,
                 }}
-                keyboard={{
-                    enabled: true,
-                }}
-                mousewheel={true}
                 breakpoints={{
                     640: {
                         slidesPerView: 1,

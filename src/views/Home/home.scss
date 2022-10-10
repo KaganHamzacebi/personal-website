@@ -43,6 +43,8 @@
 
 .projectsSection {
   @extend .skillsSection;
+  display: flex;
+  flex-direction: column;
   background-color: getMainColor("secondary");
 }
 

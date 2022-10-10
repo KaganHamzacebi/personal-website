@@ -10,7 +10,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 0.55rem;
+    padding: 0.625rem;
     border-radius: 50%;
     cursor: pointer;
     background-color: getMainColor("gray");
@@ -49,6 +49,10 @@
     }
 
     &__linkedin {
+      @extend .footerSocialsMain__bg__github;
+    }
+
+    &__whatsapp {
       @extend .footerSocialsMain__bg__github;
     }
 

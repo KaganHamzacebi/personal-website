@@ -3,6 +3,7 @@ import './socialBar.scss'
 import {GoMarkGithub} from 'react-icons/go'
 import {FaLinkedinIn, FaDiscord} from 'react-icons/fa'
 import {useState} from "react";
+import {IoLogoWhatsapp} from "react-icons/io";
 
 function SocialBar() {
     const [showClipboardCopy, setShowClipboardCopy] = useState(false);
@@ -23,6 +24,14 @@ function SocialBar() {
                         className="socialBar__linkedin"
                         onClick={() => {
                             window.open('https://www.linkedin.com/in/kaganhamzacebi/', '_target')
+                        }}
+                    />
+                </li>
+                <li>
+                    <IoLogoWhatsapp
+                        className="socialBar__whatsapp"
+                        onClick={() => {
+                            window.open('https://wa.me/+905342067893', '_target')
                         }}
                     />
                 </li>

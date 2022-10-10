@@ -45,6 +45,7 @@
   width: 100%;
   margin-top: 1rem;
   @include standard-btn;
+  cursor: not-allowed;
 
   @include media-md {
     width: 25%;
