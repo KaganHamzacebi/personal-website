@@ -5,9 +5,10 @@ import {IoMdClose} from 'react-icons/io'
 
 // Swiper
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Pagination, Navigation, A11y, Zoom} from 'swiper';
+import {Pagination, Navigation, A11y, Zoom, Lazy} from 'swiper';
 // Swiper Styles
 import 'swiper/scss'
+import "swiper/css/lazy";
 import "swiper/scss/zoom";
 import 'swiper/scss/pagination';
 import 'swiper/scss/navigation';
@@ -65,11 +66,12 @@ function ProjectModal({
                 <div className="modal-content-gallery">
                     <Swiper
                         className="modal-slider"
-                        modules={[Pagination, Navigation, A11y, Zoom]}
+                        modules={[Pagination, Navigation, A11y, Zoom, Lazy]}
                         centeredSlides={true}
                         slidesPerView={1}
                         navigation={true}
                         zoom={true}
+                        lazy={true}
                         pagination={{clickable: true}}
                     >
                         {
