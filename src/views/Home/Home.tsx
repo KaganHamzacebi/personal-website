@@ -58,6 +58,7 @@ export function Home() {
 
     return (
         <div>
+            test
             <Header refs={{
                 aboutMeSectionRef,
                 skillsSectionRef,
