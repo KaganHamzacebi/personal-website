@@ -1,5 +1,6 @@
 import './contactMeMessage.scss';
 import {Resolver, useForm} from "react-hook-form";
+import ReactGA from "react-ga";
 
 type FormValues = {
     firstName: string;
@@ -43,7 +44,12 @@ function ContactMeMessage() {
                 <div>
                     <textarea {...register("content")} rows={5} className="input-field" placeholder="Message"/>
                 </div>
-                <button className="send-btn">Send</button>
+                <button
+                    className="send-btn"
+                    onClick={() => ReactGA.event({category: "ContactMeSection", action: "SendButton"})}
+                >
+                    Send
+                </button>
             </div>
         </form>
     )

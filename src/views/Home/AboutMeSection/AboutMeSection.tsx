@@ -4,6 +4,7 @@ import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
 import {useSelector} from "react-redux";
 import Resume from '../../../assets/general/KaganHamzacebiResume.pdf';
 import {scrollTo} from '../../../features/scrollController/ScrollUtils';
+import ReactGA from "react-ga";
 
 
 function AboutMeSection({
@@ -24,12 +25,16 @@ function AboutMeSection({
             <div className="btnContainer">
                 <button
                     className="btnContainer__contactBtn"
-                    onClick={() => scrollTo(refs.contactMeSectionRef)}
+                    onClick={() => {
+                        scrollTo(refs.contactMeSectionRef);
+                        ReactGA.event({category: "AboutMeSection", action: "Resume"});
+                    }}
                 >
                     Contact Me
                 </button>
                 <a
                     href={Resume}
+                    onClick={() => ReactGA.event({category: "AboutMeSection", action: "Resume"})}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btnContainer__resumeBtn"

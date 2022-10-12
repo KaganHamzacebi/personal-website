@@ -7,8 +7,14 @@ import {
     RouterProvider
 } from "react-router-dom";
 import {Home} from "../views/Home/Home";
+import {useEffect} from "react";
+import ReactGA from "react-ga";
 
 function Router() {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     const router = createBrowserRouter([
         {

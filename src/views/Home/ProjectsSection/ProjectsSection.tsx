@@ -12,6 +12,7 @@ import {useSelector} from "react-redux";
 import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
 import {IProjectsSectionScripts} from "../../../utils/LanguageConfigInterfaces";
 import ProjectModal from "./ProjectModal/ProjectModal";
+import ReactGA from "react-ga";
 
 function ProjectsSection() {
     const t = useSelector(selectTranslations);
@@ -57,6 +58,7 @@ function ProjectsSection() {
                                         onClick={() => {
                                             setOpenModal(true);
                                             setModalProps(data.modal);
+                                            ReactGA.event({category: "ProjectsSection", action: data.modal.tag})
                                         }}
                                 >
                                     Read

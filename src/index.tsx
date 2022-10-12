@@ -5,9 +5,14 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/_global.scss';
+import ReactGA from 'react-ga';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+
+
+const TRACKING_ID = "UA-245283332-1";
+ReactGA.initialize(TRACKING_ID);
 
 root.render(
     <React.StrictMode>
