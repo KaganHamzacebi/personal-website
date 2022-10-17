@@ -60,8 +60,8 @@ export function Home() {
                 <title>Kağan Hamzaçebi - Home</title>
                 <meta
                     name="description"
-                    content="Personal playground, blog and portfolio website. I will demonstrate my experience and works
-                    here."
+                    content="I am Kağan Hamzaçebi and here is my personal playground, blog and portfolio website.
+                    I will demonstrate my experience and projects here. Welcome and feel free to contact!"
                 />
                 <meta
                     name="keywords"
