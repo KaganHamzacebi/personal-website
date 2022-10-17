@@ -15,6 +15,7 @@ import {useSelector} from "react-redux";
 import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
 import ContactMeSection from "./ContactMeSection/ContactMeSection";
 import GoHomeButton from "../../components/GoHomeButton/GoHomeButton";
+import {Helmet} from "react-helmet-async";
 
 export function Home() {
     const aboutMeSectionRef = useRef(null);
@@ -43,14 +44,11 @@ export function Home() {
 
         if (isReachedElement(contactMeSection!)) {
             dispatch(setNav('contactMeSection'))
-        }
-        else if (isReachedElement(projectsSection!)) {
+        } else if (isReachedElement(projectsSection!)) {
             dispatch(setNav('projectsSection'))
-        }
-        else if (isReachedElement(skillsSection!)) {
+        } else if (isReachedElement(skillsSection!)) {
             dispatch(setNav('skillsSection'))
-        }
-        else if (isReachedElement(aboutMeSection!)) {
+        } else if (isReachedElement(aboutMeSection!)) {
             dispatch(setNav('aboutMeSection'))
         }
 
@@ -58,39 +56,54 @@ export function Home() {
 
     return (
         <div>
-            <Header refs={{
-                aboutMeSectionRef,
-                skillsSectionRef,
-                projectsSectionRef,
-                contactMeSectionRef
-            }}
-            />
-            <SocialBar />
-            <div className="main">
-                <section id="aboutMeSection" ref={aboutMeSectionRef} className="aboutMeSection">
-                    <AboutMeSection refs={{
-                        contactMeSectionRef: contactMeSectionRef
-                    }} />
-                </section>
-                <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
-                    <h1>{t.homeScripts.skills_h1}</h1>
-                    <h2>{t.homeScripts.skills_h2}</h2>
-                    <SkillsSection />
-                </section>
-                <section id="projectsSection" ref={projectsSectionRef} className="projectsSection">
-                    <h1>{t.homeScripts.projects_h1}</h1>
-                    <h2>{t.homeScripts.projects_h2}</h2>
-                    <ProjectsSection />
-                </section>
-                <section id="contactMeSection" ref={contactMeSectionRef} className="contactMeSection">
-                    <h1>{t.homeScripts.contact_h1}</h1>
-                    <h2>{t.homeScripts.contact_h2}</h2>
-                    <ContactMeSection />
-                </section>
-                <GoHomeButton refs={{
-                    aboutMeSectionRef
-                }} />
-                <Footer />
+            <Helmet>
+                <title>Kağan Hamzaçebi - Home</title>
+                <meta
+                    name="description"
+                    content="Personal playground, blog and portfolio website. I will demonstrate my experience and works
+                    here."
+                />
+                <meta
+                    name="keywords"
+                    content="Kağan, Kagan, Hamzacebi, Hamzaçebi, Personal, Website, Portfolio, Blog, Fullstack, Web, Developer"
+                />
+                <link rel="canonical" href="/" />
+            </Helmet>
+            <div>
+                <Header refs={{
+                    aboutMeSectionRef,
+                    skillsSectionRef,
+                    projectsSectionRef,
+                    contactMeSectionRef
+                }}
+                />
+                <SocialBar/>
+                <div className="main">
+                    <section id="aboutMeSection" ref={aboutMeSectionRef} className="aboutMeSection">
+                        <AboutMeSection refs={{
+                            contactMeSectionRef: contactMeSectionRef
+                        }}/>
+                    </section>
+                    <section id="skillsSection" ref={skillsSectionRef} className="skillsSection">
+                        <h1>{t.homeScripts.skills_h1}</h1>
+                        <h2>{t.homeScripts.skills_h2}</h2>
+                        <SkillsSection/>
+                    </section>
+                    <section id="projectsSection" ref={projectsSectionRef} className="projectsSection">
+                        <h1>{t.homeScripts.projects_h1}</h1>
+                        <h2>{t.homeScripts.projects_h2}</h2>
+                        <ProjectsSection/>
+                    </section>
+                    <section id="contactMeSection" ref={contactMeSectionRef} className="contactMeSection">
+                        <h1>{t.homeScripts.contact_h1}</h1>
+                        <h2>{t.homeScripts.contact_h2}</h2>
+                        <ContactMeSection/>
+                    </section>
+                    <GoHomeButton refs={{
+                        aboutMeSectionRef
+                    }}/>
+                    <Footer/>
+                </div>
             </div>
         </div>
     )
