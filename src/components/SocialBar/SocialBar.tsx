@@ -4,9 +4,12 @@ import {GoMarkGithub} from 'react-icons/go'
 import {FaLinkedinIn, FaDiscord} from 'react-icons/fa'
 import {useState} from "react";
 import {IoLogoWhatsapp} from "react-icons/io";
+import {useSelector} from "react-redux";
+import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
 
 function SocialBar() {
     const [showClipboardCopy, setShowClipboardCopy] = useState(false);
+    const t = useSelector(selectTranslations);
 
     return (
         <div className="socialBar">
@@ -49,12 +52,13 @@ function SocialBar() {
                         }}
                     />
                     {/* Discord Copy Clipboard */}
-                    <div className={`socialBar-li-discord__clipboard tri-right btm-left-in ${showClipboardCopy && 'active'} `}>
-                        Copied!
+                    <div
+                        className={`socialBar-li-discord__clipboard tri-right btm-left-in ${showClipboardCopy && 'active'} `}>
+                        {t.headerFooterScripts.copied}
                     </div>
                 </li>
                 <li>
-                    <hr className="socialBar__divider" />
+                    <hr className="socialBar__divider"/>
                 </li>
                 <li>
                     <span className="socialBar__writing">socials</span>

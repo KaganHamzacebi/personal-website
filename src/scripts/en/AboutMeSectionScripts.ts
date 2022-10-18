@@ -11,7 +11,9 @@ const AboutMeSectionScripts = {
         "I like to learn new technologies and develop projects. " +
         "Trying to push forward as much as I can and keep working on personal projects. " +
         "In this website, I will try to represent myself and demonstrate my personal works." +
-        "The main purpose of this website is the test new things (frameworks, libs and more) and not getting rusted."
+        "The main purpose of this website is the test new things (frameworks, libs and more) and not getting rusted.",
+    "contact_me": "Contact Me",
+    "resume": "Resume"
 } as IAboutMeSectionScripts;
 
 export default AboutMeSectionScripts;

@@ -4,9 +4,12 @@ import {GoMarkGithub} from 'react-icons/go';
 import {FaLinkedinIn, FaDiscord} from 'react-icons/fa';
 import {IoLogoWhatsapp} from "react-icons/io";
 import {useState} from "react";
+import {useSelector} from "react-redux";
+import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
 
 function FooterSocials() {
     const [showClipboard, setShowClipboard] = useState(false);
+    const t = useSelector(selectTranslations);
 
     function copyDiscordTag() {
         navigator.clipboard.writeText("Classy#5334");
@@ -37,7 +40,7 @@ function FooterSocials() {
             <div className="footerSocialsMain__bg">
                 <div
                     className={`footerSocialsMain__bg__clipboard tri-right btm-left-in ${showClipboard && 'active'}`}>
-                    Copied!
+                    {t.headerFooterScripts.copied}
                 </div>
                 <FaDiscord className="footerSocialsMain__bg__discord" onClick={copyDiscordTag}/>
             </div>

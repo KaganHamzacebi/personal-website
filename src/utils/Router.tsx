@@ -9,6 +9,7 @@ import {
 import {Home} from "../views/Home/Home";
 import {useEffect} from "react";
 import ReactGA from "react-ga";
+import NotFound from "../views/NotFound/NotFound";
 
 function Router() {
 
@@ -20,6 +21,7 @@ function Router() {
         {
             path: "/",
             element: <Home />,
+            errorElement: <NotFound />
         },
     ]);
 

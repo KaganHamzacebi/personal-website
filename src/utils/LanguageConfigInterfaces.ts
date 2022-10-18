@@ -6,7 +6,10 @@ export interface ISupportedLanguages {
 export interface IEnglishTranslates {
     homeScripts: IHomeScripts;
     aboutMeSectionScripts: IAboutMeSectionScripts;
+    skillsSectionScripts: ISkillsSectionScripts;
     projectsSectionScripts: IProjectsSectionScripts;
+    contactMeSectionScripts: IContactMeSectionScripts;
+    headerFooterScripts: IHeaderFooterScripts;
 }
 
 export interface IAboutMeSectionScripts {
@@ -26,7 +29,18 @@ export interface IProjectsSectionScripts {
     //TODO: implement this
 }
 
+export interface IContactMeSectionScripts {
+    //TODO: implement this
+}
+
+export interface IHeaderFooterScripts {
+    //TODO: implement this
+}
+
 export interface IHomeScripts {
+    "title": string;
+    "description": string;
+    "keywords": string;
     "skills_h1": string;
     "skills_h2": string;
     "projects_h1": string;

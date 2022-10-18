@@ -57,15 +57,14 @@ export function Home() {
     return (
         <div>
             <Helmet>
-                <title>Kağan Hamzaçebi - Home</title>
+                <title>{t.homeScripts.title}</title>
                 <meta
                     name="description"
-                    content="I am Kağan Hamzaçebi and here is my personal playground, blog and portfolio website.
-                    I will demonstrate my experience and projects here. Welcome and feel free to contact!"
+                    content={t.homeScripts.description}
                 />
                 <meta
                     name="keywords"
-                    content="Kağan, Kagan, Hamzacebi, Hamzaçebi, Personal, Website, Portfolio, Blog, Fullstack, Web, Developer"
+                    content={t.homeScripts.keywords}
                 />
                 <link rel="canonical" href="/" />
             </Helmet>

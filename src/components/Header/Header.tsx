@@ -6,6 +6,7 @@ import {getNavSelector, setNav} from "../../features/scrollController/ScrollCont
 import {useAppDispatch} from "../../app/hooks";
 import {scrollTo} from "../../features/scrollController/ScrollUtils";
 import Logo from '../../assets/general/k-logo.png';
+import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
 
 function Header(
     {
@@ -14,6 +15,7 @@ function Header(
 
     const [showHeader, setShowHeader] = useState(false);
     const s = useSelector(getNavSelector)
+    const t = useSelector(selectTranslations);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -33,12 +35,13 @@ function Header(
     return (
         <div>
             <div className="header-btn-wrapper">
-                <img src={Logo} alt="header_mobile_logo" className="header__nav__mobile__logo" />
+                <img src={Logo} alt="header_mobile_logo" className="header__nav__mobile__logo"/>
                 <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn"/>
             </div>
             <div className={`header ${showHeader && "mobile"}`}>
                 <nav className="header__nav">
-                    <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)} className="header__nav__logo" />
+                    <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)}
+                         className="header__nav__logo"/>
                     <ul>
                         <li>
                             <span
@@ -49,7 +52,7 @@ function Header(
                                 })}
                                 className={`${s === 'aboutMeSection' && 'active'}`}
                             >
-                                About Me
+                                {t.headerFooterScripts.about_me}
                             </span>
                         </li>
                         <li>
@@ -61,7 +64,7 @@ function Header(
                                 })}
                                 className={`${s === 'skillsSection' && 'active'}`}
                             >
-                                Skills
+                                {t.headerFooterScripts.skills}
                             </span>
                         </li>
                         <li>
@@ -73,7 +76,7 @@ function Header(
                                 })}
                                 className={`${s === 'projectsSection' && 'active'}`}
                             >
-                                Projects
+                                {t.headerFooterScripts.projects}
                             </span>
                         </li>
                         <li>
@@ -85,7 +88,7 @@ function Header(
                                 })}
                                 className={`${s === 'contactMeSection' && 'active'}`}
                             >
-                                Contact Me
+                                {t.headerFooterScripts.contact_me}
                             </span>
                         </li>
                     </ul>
