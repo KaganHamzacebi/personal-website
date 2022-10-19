@@ -157,8 +157,11 @@
     }
 
     & > p {
+      padding: 0 2rem;
       font-weight: getFontWeight("sbold");
       font-size: getFontSize("sm");
+      text-align: center;
+      line-height: 1.25rem;
 
       &.dark {
         color: getTextColor("grid_text", dark);
