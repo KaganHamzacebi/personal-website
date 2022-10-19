@@ -8,14 +8,16 @@ import 'swiper/scss'
 import 'swiper/scss/pagination';
 
 import {useState} from "react";
-import {useSelector} from "react-redux";
-import {selectTranslations} from "../../../features/langConfig/LangConfigSlice";
-import {IProjectsSectionScripts} from "../../../utils/LanguageConfigInterfaces";
+import {selectTranslations} from "../../../features/languageController/LanguageControllerSlice";
+import {IProjectsSectionScripts} from "../../../features/languageController/LanguageControllerInterfaces";
 import ProjectModal from "./ProjectModal/ProjectModal";
 import ReactGA from "react-ga";
+import {useAppSelector} from "../../../app/hooks";
+import {selectTheme} from "../../../features/themeController/ThemeControllerSlice";
 
 function ProjectsSection() {
-    const t = useSelector(selectTranslations);
+    const t = useAppSelector(selectTranslations);
+    const theme = useAppSelector(selectTheme);
     const slides: IProjectsSectionScripts = t.projectsSectionScripts;
     const [openModal, setOpenModal] = useState(false);
     const [modalProps, setModalProps] = useState("");
@@ -51,10 +53,10 @@ function ProjectsSection() {
                     Object.entries(slides).map((slide, i) => {
                         const data = slide[1];
                         return (
-                            <SwiperSlide key={i} className="slide">
-                                <span className="slide__h1">{data.heading}</span>
-                                <p className="slide__desc">{data.description}</p>
-                                <button className="slide__btn"
+                            <SwiperSlide key={i} className={`slide ${theme === 'dark' ? 'dark' : 'light'}`}>
+                                <span className={`slide__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{data.heading}</span>
+                                <p className={`slide__desc ${theme === 'dark' ? 'dark' : 'light'}`}>{data.description}</p>
+                                <button className={`slide__btn ${theme === 'dark' ? 'dark' : 'light'}`}
                                         onClick={() => {
                                             setOpenModal(true);
                                             setModalProps(data.modal);

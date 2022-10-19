@@ -1,12 +1,13 @@
 import './header.scss'
 import {useEffect, useState} from "react";
 import {MdMenu} from 'react-icons/md'
-import {useSelector} from "react-redux";
-import {getNavSelector, setNav} from "../../features/scrollController/ScrollController";
-import {useAppDispatch} from "../../app/hooks";
+import {getNavSelector, setNav} from "../../features/scrollController/ScrollControllerSlice";
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {scrollTo} from "../../features/scrollController/ScrollUtils";
 import Logo from '../../assets/general/k-logo.png';
-import {selectTranslations} from "../../features/langConfig/LangConfigSlice";
+import {selectTranslations} from "../../features/languageController/LanguageControllerSlice";
+import ThemeChangerButton from "../ThemeChangerButton/ThemeChangerButton";
+import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
 
 function Header(
     {
@@ -14,8 +15,9 @@ function Header(
     }: any) {
 
     const [showHeader, setShowHeader] = useState(false);
-    const s = useSelector(getNavSelector)
-    const t = useSelector(selectTranslations);
+    const s = useAppSelector(getNavSelector)
+    const t = useAppSelector(selectTranslations);
+    const theme = useAppSelector(selectTheme);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -34,11 +36,14 @@ function Header(
 
     return (
         <div>
-            <div className="header-btn-wrapper">
-                <img src={Logo} alt="header_mobile_logo" className="header__nav__mobile__logo"/>
-                <MdMenu onClick={() => setShowHeader(!showHeader)} className="header__btn"/>
+            <div className={`header-btn-wrapper ${theme === 'dark' ? 'dark' : 'light'}`}>
+                <img src={Logo} alt="header_mobile_logo" className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                <div className="themeChangerMobileWrapper">
+                    <ThemeChangerButton/>
+                </div>
+                <MdMenu onClick={() => setShowHeader(!showHeader)} className={`header__btn ${theme === 'dark' ? 'dark' : 'light'}`}/>
             </div>
-            <div className={`header ${showHeader && "mobile"}`}>
+            <div className={`header ${showHeader && "mobile"} ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <nav className="header__nav">
                     <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)}
                          className="header__nav__logo"/>
@@ -50,7 +55,7 @@ function Header(
                                     scrollTo(refs.aboutMeSectionRef);
                                     setShowHeader(false);
                                 })}
-                                className={`${s === 'aboutMeSection' && 'active'}`}
+                                className={`${s === 'aboutMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
                             >
                                 {t.headerFooterScripts.about_me}
                             </span>
@@ -62,7 +67,7 @@ function Header(
                                     scrollTo(refs.skillsSectionRef);
                                     setShowHeader(false);
                                 })}
-                                className={`${s === 'skillsSection' && 'active'}`}
+                                className={`${s === 'skillsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
                             >
                                 {t.headerFooterScripts.skills}
                             </span>
@@ -74,7 +79,7 @@ function Header(
                                     scrollTo(refs.projectsSectionRef);
                                     setShowHeader(false);
                                 })}
-                                className={`${s === 'projectsSection' && 'active'}`}
+                                className={`${s === 'projectsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
                             >
                                 {t.headerFooterScripts.projects}
                             </span>
@@ -86,13 +91,16 @@ function Header(
                                     scrollTo(refs.contactMeSectionRef);
                                     setShowHeader(false);
                                 })}
-                                className={`${s === 'contactMeSection' && 'active'}`}
+                                className={`${s === 'contactMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
                             >
                                 {t.headerFooterScripts.contact_me}
                             </span>
                         </li>
                     </ul>
                 </nav>
+                <div className="themeChangerWrapper">
+                    <ThemeChangerButton/>
+                </div>
             </div>
         </div>
     )

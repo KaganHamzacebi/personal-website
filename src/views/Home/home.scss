@@ -2,7 +2,13 @@
 @import "../../styles/mixins";
 
 .main {
-  background-color: getMainColor("primary");
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 
   @include media-md {
     position: absolute;
@@ -19,8 +25,15 @@
 .aboutMeSection {
   min-height: 100vh;
   padding: 7rem 5% 2rem 5%;
-  background-color: getMainColor("secondary");
   @include flex-center(row);
+
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
 
   @include media-md {
     padding: 2rem 5%;
@@ -34,7 +47,14 @@
 .skillsSection {
   min-height: 100vh;
   padding: 3rem 5%;
-  background-color: getMainColor("primary");
+
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 
   > h1, h2 {
     text-align: center;
@@ -45,10 +65,21 @@
   @extend .skillsSection;
   display: flex;
   flex-direction: column;
-  background-color: getMainColor("secondary");
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
 }
 
 .contactMeSection {
   @extend .skillsSection;
-  background-color: getMainColor("primary");
+
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 }

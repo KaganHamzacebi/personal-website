@@ -48,7 +48,6 @@
 
 .modal-content {
   position: relative;
-  background-color: getMainColor("secondary");
   border-radius: 0.25rem;
   max-height: 100%;
   overflow-y: auto;
@@ -59,6 +58,14 @@
   width: 100%;
   height: 100%;
 
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
+
   @include media-sm {
     padding: 4rem 2rem;
   }
@@ -68,47 +75,82 @@
   position: absolute;
   right: 1rem;
   top: 1rem;
-  color: getMainColor("xlight-gray");
   width: 1.925rem;
   height: 1.925rem;
   cursor: pointer;
   @include set-transition(0.25s);
 
+  &.dark {
+    color: getMainColor("xlight-gray", dark);
+  }
+
+  &.light {
+    color: getMainColor("dark-gray", light);
+  }
+
   &:hover {
-    color: getTextColor("red");
+    color: getTextColor("red", dark);
   }
 }
 
 .modal-content-heading {
-  color: getTextColor("primary");
   font-size: getFontSize("3xl");
   font-weight: getFontWeight("sbold");
+
+  &.dark {
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    color: getTextColor("primary", light);
+  }
 }
 
 .modal-private-icon {
   width: 1.25rem;
   height: auto;
-  color: getTextColor("light-gray");
   margin-left: 1rem;
+
+  &.dark {
+    color: getTextColor("light-gray", dark);
+  }
+
+  &.light {
+    color: getTextColor("gray", light);
+  }
 }
 
 .modal-link {
   width: 1.25rem;
   height: auto;
-  color: getTextColor("light-gray");
   margin-left: 0.5rem;
   cursor: pointer;
+
+  &.dark {
+    color: getTextColor("light-gray", dark);
+  }
+
+  &.light {
+    color: getTextColor("light-gray", light);
+  }
 }
 
 .modal-content-desc {
   width: 100%;
-  background-color: getMainColor("primary");
   border-radius: 0.25rem;
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 
   @include media-sm {
     padding: 2rem 4rem;
@@ -117,13 +159,27 @@
   & > div {
     width: 100%;
     text-align: center;
-    color: getTextColor("primary");
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 }
 
 .middle-desc {
-  border-left: 1px solid hsla(0, 0%, 100%, .2);
-  border-right: 1px solid hsla(0, 0%, 100%, .2);
+  &.dark {
+    border-left: 1px solid hsla(0, 0%, 100%, .2);
+    border-right: 1px solid hsla(0, 0%, 100%, .2);
+  }
+
+  &.light {
+    border-left: 1px solid hsla(0, 12%, 90%, 0.2);
+    border-right: 1px solid hsla(0, 12%, 90%, 0.2);
+  }
 }
 
 .modal-desc-container {
@@ -137,22 +193,43 @@
 }
 
 .desc-upper-text {
-  color: getTextColor("secondary");
   font-size: getFontSize("md");
   font-weight: getFontWeight("medium");
+
+  &.dark {
+    color: getTextColor("secondary", dark);
+  }
+
+  &.light {
+    color: getTextColor("secondary", light);
+  }
 }
 
 .desc-lower-text {
-  color: getTextColor("primary");
   font-size: getFontSize("lg");
   font-weight: getFontWeight("sbold");
+
+  &.dark {
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    color: getTextColor("primary", light);
+  }
 }
 
 .modal-content-paragraph {
-  color: getTextColor("paragraph");
   font-size: getFontSize("md");
   font-weight: getFontWeight("normal");
   text-align: left;
+
+  &.dark {
+    color: getTextColor("paragraph", dark);
+  }
+
+  &.light {
+    color: getTextColor("paragraph", light);
+  }
 }
 
 .modal-slider {
@@ -167,7 +244,7 @@
 
   & > .swiper-button-prev {
     visibility: hidden;
-    color: getTextColor("primary");
+    color: getTextColor("primary", dark);
 
     @include media-sm {
       visibility: visible;
@@ -176,7 +253,7 @@
 
   & > .swiper-button-next {
     visibility: hidden;
-    color: getTextColor("primary");
+    color: getTextColor("primary", dark);
 
     @include media-sm {
       visibility: visible;
@@ -192,7 +269,14 @@
   @include flex-center(row);
   padding: 1.25rem;
   border-radius: 0.25rem;
-  background-color: getMainColor("primary");
+
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 
   @include media-sm {
     padding: 2rem 4rem;
@@ -201,10 +285,17 @@
 
 .modal-content-footer {
   padding: 1rem;
-  background-color: getMainColor("primary");
   border-radius: 0.25rem;
   @include flex-center(row);
   column-gap: 1rem;
+
+  &.dark {
+    background-color: getMainColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("primary", light);
+  }
 
   @include media-sm {
     column-gap: 2rem;
@@ -214,5 +305,12 @@
 .fw-icon {
   width: 2rem;
   height: 2rem;
-  color: getTextColor("secondary");
+
+  &.dark {
+    color: getTextColor("secondary", dark);
+  }
+
+  &.light {
+    color: getTextColor("gray", light);
+  }
 }

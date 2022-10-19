@@ -26,7 +26,6 @@
 }
 
 .slide {
-  background-color: getMainColor("dark-gray");
   display: flex;
   row-gap: 1.25rem;
   flex-direction: column;
@@ -34,17 +33,39 @@
   border-radius: 0.25rem;
   padding: 4rem 2rem;
 
+  &.dark {
+    background-color: getMainColor("dark-gray", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("dark-gray", light);
+  }
+
   &__h1 {
-    color: getTextColor("primary");
     font-weight: getFontWeight("light");
     font-size: getFontSize("xl");
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 
   &__desc {
-    color: getTextColor("secondary");
     font-weight: getFontWeight("normal");
     font-size: getFontSize("sm");
     min-height: 6rem;
+
+    &.dark {
+      color: getTextColor("secondary", dark);
+    }
+
+    &.light {
+      color: getTextColor("secondary", light);
+    }
   }
 
   &__btn {
@@ -58,9 +79,10 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: getMainColor("light-gray") !important;
   opacity: 1 !important;
+  background-color: getMainColor("light-gray", dark) !important;
 }
+
 
 .swiper-pagination-bullet-active {
   background-color: #fff !important;

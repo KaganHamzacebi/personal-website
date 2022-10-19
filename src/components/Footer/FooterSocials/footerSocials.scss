@@ -11,7 +11,14 @@
     padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
-    background-color: getMainColor("gray");
+
+    &.dark {
+      background-color: getMainColor("gray", dark);
+    }
+
+    &.light {
+      background-color: getMainColor("button", light);
+    }
 
     &:hover {
       @include set-transition(0.2s);
@@ -25,8 +32,6 @@
 
     &__clipboard {
       position: absolute;
-      background-color: #4ece74;
-      color: #FFFFFF;
       border-radius: 0.25rem;
       font-size: getFontSize("sm");
       top: -3rem;
@@ -34,6 +39,16 @@
       opacity: 0;
       padding: 0.5rem 1rem;
       @include set-transition(0.3s);
+
+      &.dark {
+        background-color: #4ece74;
+        color: #FFFFFF;
+      }
+
+      &.light {
+        background-color: #4ece74;
+        color: #FFFFFF;
+      }
 
       &.active {
         opacity: 100;
@@ -43,7 +58,14 @@
     &__github {
       width: 1.825rem;
       height: 1.825rem;
-      color: getTextColor("primary");
+
+      &.dark {
+        color: getTextColor("primary", dark);
+      }
+
+      &.light {
+        color: getTextColor("primary", light);
+      }
     }
 
     &__linkedin {
@@ -60,7 +82,7 @@
   }
 }
 
-.tri-right.btm-left-in:before{
+.tri-right.btm-left-in:before {
   content: ' ';
   position: absolute;
   left: 25%;
@@ -69,7 +91,7 @@
   border-color: #4ece74 transparent transparent #4ece74;
 }
 
-.tri-right.btm-left-in:after{
+.tri-right.btm-left-in:after {
   content: ' ';
   position: absolute;
   right: 75%;

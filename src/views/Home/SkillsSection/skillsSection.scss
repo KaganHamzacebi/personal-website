@@ -6,7 +6,6 @@
   height: 100%;
   margin-top: 3rem;
   border-radius: 0.25rem;
-  @include shadow-lg;
 }
 
 .grid {
@@ -25,20 +24,34 @@
   }
 
   &__item {
-    background-color: getMainColor("thirdy");
     border-radius: 0.25rem;
     gap: 2rem;
     padding: 1rem;
     @include flex-center(column);
     @include shadow-xl;
 
+    &.dark {
+      background-color: getMainColor("thirdy", dark);
+    }
+
+    &.light {
+      background-color: getMainColor("thirdy", light);
+    }
+
     &__bg {
       position: relative;
       width: 120px;
       padding: 1.5rem;
-      border: 1px solid getTextColor("gray");
       border-radius: 50%;
       @include flex-center(row);
+
+      &.dark {
+        border: 1px solid getTextColor("gray", dark);
+      }
+
+      &.light {
+        border: 1px solid getTextColor("gray", light);
+      }
 
       &__react-logo  {
         width: 100%;
@@ -61,7 +74,7 @@
       &__integration-logo {
         width: 100%;
         height: 100%;
-        color: getMainColor("xlight-gray");
+        color: getMainColor("xlight-gray", dark);
         font-size: getFontSize("lg");
       }
     }
@@ -87,7 +100,7 @@
     }
 
     &__integration-h1 {
-      color: getTextColor("primary");
+      color: getTextColor("primary", dark);
       margin-top: -1.5rem;
     }
 
@@ -105,8 +118,15 @@
       width: 184px;
       height: 120px;
       flex-grow: 0.4;
-      border: 1px solid getTextColor("gray");
       border-radius: 0.25rem;
+
+      &.dark {
+        border: 1px solid getTextColor("gray", dark);
+      }
+
+      &.light {
+        border: 1px solid getTextColor("gray", light);
+      }
 
       // HTML & CSS
       &__html {
@@ -139,7 +159,14 @@
     & > p {
       font-weight: getFontWeight("sbold");
       font-size: getFontSize("sm");
-      color: getTextColor("secondary");
+
+      &.dark {
+        color: getTextColor("grid_text", dark);
+      }
+
+      &.light {
+        color: getTextColor("grid_text", light);
+      }
     }
 
   }
@@ -169,7 +196,7 @@
 }
 
 .middle_text {
-  color: getTextColor("secondary");
+  color: getTextColor("secondary", dark);
   font-size: getFontSize("md");
 }
 
@@ -195,8 +222,15 @@
     content: '';
     width: 15px;
     height: 15px;
-    background-color: getTextColor("gray");
     top: 20px;
+
+    &.dark {
+      background-color: getTextColor("gray", dark);
+    }
+
+    &.light {
+      background-color: getTextColor("gray", light);
+    }
   }
 
   .dot2 {
@@ -205,9 +239,16 @@
     content: '';
     width: 15px;
     height: 15px;
-    background-color: getTextColor("gray");
     bottom: 20px;
     right: 0;
+
+    &.dark {
+      background-color: getTextColor("gray", dark);
+    }
+
+    &.light {
+      background-color: getTextColor("gray", light);
+    }
   }
 }
 
@@ -222,11 +263,18 @@
     content: '';
     width: 15px;
     height: 15px;
-    background-color: getTextColor("gray");
     top: 4px;
     left: -8px;
     @include rotate-dot1(4s);
     animation-play-state: paused;
+
+    &.dark {
+      background-color: getTextColor("gray", dark);
+    }
+
+    &.light {
+      background-color: getTextColor("gray", light);
+    }
 
     &.active {
       animation-play-state: running;
@@ -239,7 +287,7 @@
     content: '';
     width: 15px;
     height: 15px;
-    background-color: getTextColor("gray");
+    background-color: getTextColor("gray", dark);
     bottom: 4px;
     right: -8px;
     @include rotate-dot2(4s);

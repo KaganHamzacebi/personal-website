@@ -34,7 +34,7 @@ $font-sizes: (
 );
 
 // Theme Colors
-$main-colors: (
+$main-colors-dark: (
         "primary": #2A2A2A,
         "secondary": #202020,
         "thirdy": #222222,
@@ -43,15 +43,43 @@ $main-colors: (
         "light-gray": #4A4A4A,
         "xlight-gray": #C6C6C6,
         "xxlight-gray": #F5F5F5,
-        "black": #000000
+        "black": #000000,
+        "button": #222222
 );
 
-$text-colors: (
-        "primary": #FFFFFF,
+$main-colors-light: (
+        "primary": #daccb9,
+        "secondary": #D1C0A8,
+        "thirdy": #eedbcc,
+        "dark-gray": #A0816C,
+        "gray": #c9c9c9,
+        "light-gray": #989898,
+        "xlight-gray": #c2bfbf,
+        "xxlight-gray": #e8dbce,
+        "black": #000000,
+        "button": #725b46
+);
+
+$text-colors-dark: (
+        "primary": #F5F6F7,
         "secondary": #afafaf,
         "paragraph": #cccccc,
+        "grid_text": #afafaf,
         "red": #963232,
         "gray": #5A5A5A,
         "light-gray": #757575,
-        "dark-gray": #212529
+        "dark-gray": #212529,
+        "button": #afafaf
+);
+
+$text-colors-light: (
+        "primary": #FFFFFF,
+        "secondary": #ebe4da,
+        "paragraph": #ebe4da,
+        "grid_text": #625446,
+        "red": #963232,
+        "gray": #A0816C,
+        "light-gray": #757575,
+        "dark-gray": #212529,
+        "button": #ebe4da
 );

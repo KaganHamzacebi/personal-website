@@ -1,4 +1,4 @@
-import {IProjectsSectionScripts} from "../../utils/LanguageConfigInterfaces";
+import {IProjectsSectionScripts} from "../../features/languageController/LanguageControllerInterfaces";
 import personalWebsite from '../../assets/personal_website/personal-website.png';
 
 // Icons

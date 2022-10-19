@@ -1,4 +1,4 @@
-import {IContactMeSectionScripts} from "../../utils/LanguageConfigInterfaces";
+import {IContactMeSectionScripts} from "../../features/languageController/LanguageControllerInterfaces";
 
 const ContactMeSectionScripts: IContactMeSectionScripts = {
     "firstname" : "Firstname",

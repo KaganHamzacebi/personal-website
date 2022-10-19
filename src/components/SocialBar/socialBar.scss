@@ -12,8 +12,14 @@
   padding: 1.5rem 2.5rem;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  background-color: getMainColor("dark-gray");
-  @include set-transition(0.2s);
+
+  &.dark {
+    background-color: getMainColor("dark-gray", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("dark-gray", light);
+  }
 
   @include media-xl {
     visibility: visible;
@@ -28,8 +34,15 @@
   &__github {
     width: 1.2rem;
     height: 1.2rem;
-    color: getTextColor("primary");
     cursor: pointer;
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
 
     &:not(:hover) {
       @include scale-rotate(0.8s, 1, 0deg);
@@ -56,8 +69,14 @@
 
   &__divider {
     width: 7rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 
+    &.dark {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &.light {
+      border-top: 1px solid rgba(185, 183, 159, 0.8);
+    }
   }
 
   &__writing {
@@ -65,7 +84,14 @@
     font-size: getFontSize("lg");
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    color: getTextColor("primary");
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 }
 
@@ -74,8 +100,6 @@
 
   &__clipboard {
     position: absolute;
-    background-color: #4ece74;
-    color: #FFFFFF;
     transform: rotate(90deg);
     border-radius: 0.25rem;
     font-size: getFontSize("sm");
@@ -87,6 +111,16 @@
 
     &.active {
       opacity: 100;
+    }
+
+    &.dark {
+      background-color: #4ece74;
+      color: #FFFFFF;
+    }
+
+    &.light {
+      background-color: #4ece74;
+      color: #FFFFFF;
     }
   }
 }

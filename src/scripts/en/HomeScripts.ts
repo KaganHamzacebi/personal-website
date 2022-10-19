@@ -1,4 +1,4 @@
-import {IHomeScripts} from "../../utils/LanguageConfigInterfaces";
+import {IHomeScripts} from "../../features/languageController/LanguageControllerInterfaces";
 
 const HomeScripts: IHomeScripts = {
     "title": "Kağan Hamzaçebi - Home",

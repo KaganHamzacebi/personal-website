@@ -49,7 +49,7 @@ export interface IHomeScripts {
     "contact_h2": string;
 }
 
-export interface ILanguageConfigState {
+export interface ILanguageControllerState {
     language: string;
     supportedLanguages: ISupportedLanguages;
     translations: ITranslations;

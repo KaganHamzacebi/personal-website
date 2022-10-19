@@ -1,13 +1,13 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
-import languageConfigReducer from '../features/langConfig/LangConfigSlice';
-import notificationCenterReducer from '../features/notificationCenter/NotificationCenterSlice';
-import scrollCenterReducer from '../features/scrollController/ScrollController';
+import languageControllerReducer from '../features/languageController/LanguageControllerSlice';
+import scrollCenterReducer from '../features/scrollController/ScrollControllerSlice';
+import themeControllerReducer from '../features/themeController/ThemeControllerSlice';
 
 export const store = configureStore({
     reducer: {
-        languageConfig: languageConfigReducer,
-        notificationCenter: notificationCenterReducer,
-        scrollController: scrollCenterReducer
+        languageController: languageControllerReducer,
+        scrollController: scrollCenterReducer,
+        themeController: themeControllerReducer
     },
     middleware: (getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false

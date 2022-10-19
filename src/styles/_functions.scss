@@ -16,10 +16,20 @@
   @return map-get($font-sizes, $size)
 }
 
-@function getMainColor($color) {
-  @return map-get($main-colors, $color)
+@function getMainColor($color, $theme) {
+  @if ($theme == dark) {
+    @return map-get($main-colors-dark, $color)
+  }
+  @else {
+    @return map-get($main-colors-light, $color)
+  }
 }
 
-@function getTextColor($color) {
-  @return map-get($text-colors, $color)
+@function getTextColor($color, $theme) {
+  @if ($theme == dark) {
+    @return map-get($text-colors-dark, $color)
+  }
+  @else {
+    @return map-get($text-colors-light, $color)
+  }
 }

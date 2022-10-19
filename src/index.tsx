@@ -8,12 +8,11 @@ import './styles/_global.scss';
 import ReactGA from 'react-ga';
 import {HelmetProvider} from 'react-helmet-async';
 
-const container = document.getElementById('root')!;
-const root = createRoot(container);
-
-
 const TRACKING_ID = "UA-245283332-1";
 ReactGA.initialize(TRACKING_ID);
+
+const container = document.getElementById('root')!;
+const root = createRoot(container);
 
 root.render(
     <React.StrictMode>

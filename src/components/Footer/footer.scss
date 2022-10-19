@@ -6,20 +6,41 @@
   width: 100%;
   height: 300px;
   padding: 2rem 1rem;
-  background-color: getMainColor("secondary");
   @include flex-center(column);
   row-gap: 2rem;
+
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
 
   &__logo {
     width: 6rem;
     height: 6rem;
-    color: getTextColor("primary")
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 
   &__copyright {
     height: 20%;
     font-weight: getFontWeight("thin");
     font-size: getFontSize("nm");
-    color: getTextColor("primary")
+
+    &.dark {
+      color: getTextColor("primary", dark)
+    }
+
+    &.light {
+      color: getTextColor("primary", light)
+    }
   }
 }

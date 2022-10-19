@@ -5,9 +5,17 @@
   position: relative;
   border-radius: 0.25rem;
   padding: 1rem;
-  background-color: getMainColor("dark-gray");
-  color: getTextColor("primary");
   @include shadow-lg;
+
+  &.dark {
+    background-color: getMainColor("dark-gray", dark);
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("dark-gray", light);
+    color: getTextColor("primary", light);
+  }
 
   @include media-md {
     padding: 4rem;
@@ -17,10 +25,17 @@
     position: absolute;
     width: 6rem;
     height: 6rem;
-    border: 0.25rem solid getMainColor("primary");
     border-radius: 50%;
     right: -1rem;
     top: -1rem;
+
+    &.dark {
+      border: 0.25rem solid getMainColor("primary", dark);
+    }
+
+    &.light {
+      border: 0.25rem solid getMainColor("primary", light);
+    }
 
     @include media-md {
       right: -1.5rem;
@@ -30,14 +45,28 @@
 
   &__name {
     padding-top: 2rem;
-    color: getTextColor("primary");
     font-weight: getFontWeight("light");
-    font-size: getFontSize("lg")
+    font-size: getFontSize("lg");
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 
   &__surname {
-    color: getTextColor("red");
     font-weight: getFontWeight("bold");
+
+    &.dark {
+      color: getTextColor("red", dark);
+    }
+
+    &.light {
+      color: getTextColor("red", light);
+    }
   }
 
   &__webdev {
@@ -48,8 +77,15 @@
 
   &__bio {
     font-size: getFontSize("sm");
-    color: getTextColor("secondary");
     margin-top: 1rem;
+
+    &.dark {
+      color: getTextColor("secondary", dark);
+    }
+
+    &.light {
+      color: getTextColor("secondary", light);
+    }
 
     @include media-xl {
       max-width: 75%;
@@ -57,7 +93,13 @@
 
 
     &__unilink {
-      color: getTextColor("light-gray");
+      &.dark {
+        color: getTextColor("light-gray", dark);
+      }
+
+      &.light {
+        color: getTextColor("light-gray", light);
+      }
     }
   }
 }

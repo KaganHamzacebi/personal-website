@@ -9,8 +9,6 @@
   right: 2rem;
   border-radius: 50%;
   padding: 0.5rem;
-  border: 2px solid getMainColor("light-gray");
-  background-color: getMainColor('light-gray');
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -19,18 +17,41 @@
   outline: none;
   z-index: 3;
 
+  &.dark {
+    border: 2px solid getMainColor("light-gray", dark);
+    background-color: getMainColor('light-gray', dark);
+  }
+
+  &.light {
+    border: 2px solid getMainColor("button", light);
+    background-color: getMainColor('button', light);
+  }
+
   &.active {
     opacity: 100;
     visibility: visible;
   }
 
   &:hover {
-    background-color: getMainColor("gray");
+    &.dark {
+      background-color: getMainColor("gray", dark);
+    }
+
+    &.light {
+      background-color: getMainColor("dark-gray", light);
+    }
   }
 
   &__arrow {
-    color: getTextColor("primary");
     width: 1.5rem;
     height: 1.5rem;
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import {ISkillsSectionScripts} from "../../utils/LanguageConfigInterfaces";
+import {ISkillsSectionScripts} from "../../features/languageController/LanguageControllerInterfaces";
 
 const SkillsSectionScripts = {
     "react_h1": "React.JS",
@@ -8,7 +8,7 @@ const SkillsSectionScripts = {
     "html_h1": "HTML",
     "css_h1": "CSS",
     "html_css_desc": "React bla bla",
-    "js_h1": "JavaScript",
+    "js_h1": "JavaScript ",
     "ts_h1": "TypeScript",
     "js_ts_desc": "React bla bla",
     "mongo_h1": "MongoDB",

@@ -19,20 +19,41 @@ p {
 }
 
 a {
-  color: getTextColor("primary");
   text-decoration: none;
+
+  &.dark {
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    color: getTextColor("primary", light);
+  }
 }
 
 section {
   & > h1 {
-    color: getTextColor("primary");
     font-weight: getFontWeight("nm");
     font-size: getFontSize("3xl");
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 
   & > h2 {
-    color: getTextColor("secondary");
     font-weight: getFontWeight("nm");
     font-size: getFontSize("sm");
+
+    &.dark {
+      color: getTextColor("secondary", dark);
+    }
+
+    &.light {
+      color: getTextColor("secondary", light);
+    }
   }
 }

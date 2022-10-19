@@ -1,4 +1,4 @@
-import {IAboutMeSectionScripts} from "../../utils/LanguageConfigInterfaces";
+import {IAboutMeSectionScripts} from "../../features/languageController/LanguageControllerInterfaces";
 
 const AboutMeSectionScripts = {
     "name": "I am Kağan ",

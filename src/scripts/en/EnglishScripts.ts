@@ -1,4 +1,4 @@
-import {IEnglishTranslates} from '../../utils/LanguageConfigInterfaces';
+import {IEnglishTranslates} from '../../features/languageController/LanguageControllerInterfaces';
 import AboutMeSectionScripts from "./AboutMeSectionScripts";
 import HomeScripts from "./HomeScripts";
 import ProjectsSectionScripts from "./ProjectsSectionScripts";

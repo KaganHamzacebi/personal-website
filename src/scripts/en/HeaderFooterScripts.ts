@@ -1,4 +1,4 @@
-import {IHeaderFooterScripts} from "../../utils/LanguageConfigInterfaces";
+import {IHeaderFooterScripts} from "../../features/languageController/LanguageControllerInterfaces";
 
 const HeaderFooterScripts: IHeaderFooterScripts = {
     "about_me": "About Me",

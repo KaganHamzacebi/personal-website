@@ -2,40 +2,45 @@ import './contactMeInfo.scss';
 
 import {IoMailOutline, IoLocationOutline} from "react-icons/io5";
 import {FiPhoneCall} from 'react-icons/fi';
-import {useSelector} from "react-redux";
-import {selectTranslations} from "../../../../features/langConfig/LangConfigSlice";
+import {selectTranslations} from "../../../../features/languageController/LanguageControllerSlice";
+import {useAppSelector} from "../../../../app/hooks";
+import {selectTheme} from "../../../../features/themeController/ThemeControllerSlice";
 
 function ContactMeInfo() {
-    const t = useSelector(selectTranslations);
+    const t = useAppSelector(selectTranslations);
+    const theme = useAppSelector(selectTheme);
 
     return (
         <div className="contactMeInfo">
-            <div className="contactMeInfo__email">
+            <div className={`contactMeInfo__email ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__email__container">
-                    <div className="logoBG">
-                        <IoMailOutline className="contactMeInfo__email__container__logo"/>
+                    <div className={`logoBG ${theme === 'dark' ? 'dark' : 'light'}`}>
+                        <IoMailOutline
+                            className={`contactMeInfo__email__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className="contactMeInfo__email__container__h1">{t.contactMeSectionScripts.email}</h1>
+                    <h1 className={`contactMeInfo__email__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email}</h1>
                 </div>
-                <h1 className="contactMeInfo__email__h1">{t.contactMeSectionScripts.email_content}</h1>
+                <h1 className={`contactMeInfo__email__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email_content}</h1>
             </div>
-            <div className="contactMeInfo__address">
+            <div className={`contactMeInfo__address ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__address__container">
-                    <div className="logoBG">
-                        <IoLocationOutline className="contactMeInfo__address__container__logo"/>
+                    <div className={`logoBG ${theme === 'dark' ? 'dark' : 'light'}`}>
+                        <IoLocationOutline
+                            className={`contactMeInfo__address__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className="contactMeInfo__address__container__h1">{t.contactMeSectionScripts.address}</h1>
+                    <h1 className={`contactMeInfo__address__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address}</h1>
                 </div>
-                <h1 className="contactMeInfo__address__h1">{t.contactMeSectionScripts.address_content}</h1>
+                <h1 className={`contactMeInfo__address__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address_content}</h1>
             </div>
-            <div className="contactMeInfo__phone">
+            <div className={`contactMeInfo__phone ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__phone__container">
-                    <div className="logoBG">
-                        <FiPhoneCall className="contactMeInfo__phone__container__logo"/>
+                    <div className="logoBG dark">
+                        <FiPhoneCall
+                            className={`contactMeInfo__phone__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className="contactMeInfo__phone__container__h1">{t.contactMeSectionScripts.phone}</h1>
+                    <h1 className={`contactMeInfo__phone__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone}</h1>
                 </div>
-                <h1 className="contactMeInfo__phone__h1">{t.contactMeSectionScripts.phone_content}</h1>
+                <h1 className={`contactMeInfo__phone__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone_content}</h1>
             </div>
         </div>
     )

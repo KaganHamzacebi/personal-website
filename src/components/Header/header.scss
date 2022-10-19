@@ -8,12 +8,20 @@
   height: 100vh;
   width: 200px;
   z-index: 2;
-  background-color: getMainColor("dark-gray");
-  color: getTextColor("primary");
-  border-right: 0.1rem solid rgba(74, 74, 74, 0.8);
   transform: translateX(-20rem);
-  @include flex-center(row);
-  @include set-transition(0.5s);
+  @include flex-center(column);
+
+  &.dark {
+    background-color: getMainColor("dark-gray", dark);
+    color: getTextColor("primary", dark);
+    border-right: 0.1rem solid rgba(74, 74, 74, 0.8);
+  }
+
+  &.light {
+    background-color: getMainColor("dark-gray", light);
+    color: getTextColor("primary", light);
+    border-right: 0.1rem solid rgba(236, 227, 227, 0.8);
+  }
 
   @include media-md {
     transform: translateX(0);
@@ -33,9 +41,16 @@
     height: 2.5rem;
     padding: 0.25rem;
     cursor: pointer;
-    color: getTextColor("secondary");
+    color: getTextColor("secondary", dark);
     border-radius: 0.25rem;
-    background-color: getMainColor("dark-gray");
+
+    &.dark {
+      background-color: getMainColor("dark-gray", dark);
+    }
+
+    &.light {
+      background-color: getMainColor("dark-gray", light);
+    }
 
     @include media-md {
       visibility: hidden;
@@ -91,8 +106,15 @@
           width: 100%;
           font-weight: getFontWeight("sbold");
           font-size: getFontSize("xl");
-          color: getTextColor("secondary");
           @include slide-right(0.5s, 0);
+
+          &.dark {
+            color: getTextColor("secondary", dark);
+          }
+
+          &.light {
+            color: getTextColor("secondary", light);
+          }
 
           @include media-md {
             font-size: getFontSize("lg");
@@ -107,14 +129,22 @@
   position: fixed;
   visibility: visible;
   z-index: 2;
-  border-bottom: 1px solid getMainColor("light-gray");
   padding: 1rem;
   width: 100%;
-  background-color: getMainColor("thirdy");
   display: flex;
   align-items: center;
   justify-content: space-between;
   @include slide-bottom(0.35s, -140px);
+
+  &.dark {
+    border-bottom: 1px solid getMainColor("light-gray", dark);
+    background-color: getMainColor("thirdy", dark);
+  }
+
+  &.light {
+    border-bottom: 1px solid getMainColor("light-gray", light);
+    background-color: getMainColor("thirdy", light);
+  }
 
   @include media-md {
     visibility: hidden;
@@ -124,5 +154,30 @@
 .header__nav__mobile__logo {
   width: 3rem;
   height: 3rem;
-  color: getTextColor("primary");
+
+  &.dark {
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    color: getTextColor("primary", light);
+  }
+}
+
+.themeChangerMobileWrapper {
+  visibility: visible;
+  margin-right: 2rem;
+  margin-left: auto;
+
+  @include media-md {
+    visibility: hidden;
+  }
+}
+
+.themeChangerWrapper {
+  visibility: hidden;
+
+  @include media-md {
+    visibility: visible;
+  }
 }

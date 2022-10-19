@@ -4,14 +4,28 @@
 .contactMessageMain {
   padding: 2rem;
   border-radius: 0.25rem;
-  background-color: getMainColor("secondary");
+
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
 
   & > h1 {
-    color: getTextColor("primary");
     font-size: getFontSize("xl");
     font-weight: getFontWeight("medium");
     text-align: center;
     margin-bottom: 2rem;
+
+    &.dark {
+      color: getTextColor("primary", dark);
+    }
+
+    &.light {
+      color: getTextColor("primary", light);
+    }
   }
 }
 
@@ -29,15 +43,35 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background-color: getMainColor("gray");
-  color: getTextColor("primary");
+
+  &.dark {
+    background-color: getMainColor("gray", dark);
+    color: getTextColor("primary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("xxlight-gray", light);
+    color: getTextColor("grid_text", light);
+  }
 
   &::placeholder {
-    color: getTextColor("secondary");
+    &.dark {
+      color: getTextColor("secondary", dark);
+    }
+
+    &.light {
+      color: getTextColor("secondary", light);
+    }
   }
 
   &:focus {
-    outline: 1px solid getMainColor("xxlight-gray")
+    &.dark {
+      outline: 1px solid getMainColor("xxlight-gray", dark);
+    }
+
+    &.light {
+      outline: 1px solid getMainColor("xxlight-gray", light);
+    }
   }
 }
 
