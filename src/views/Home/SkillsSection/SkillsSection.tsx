@@ -49,14 +49,14 @@ function SkillsSection() {
                         <FaReact className="grid__item__bg__react-logo"/>
                     </div>
                     <h1 className="grid__item__react-h1">{t.skillsSectionScripts.react_h1}</h1>
-                    <p className="dark">{t.skillsSectionScripts.react_desc}</p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.react_desc}</p>
                 </div>
                 <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsNodeDotActive(true)}
                      onMouseLeave={() => setIsNodeDotActive(false)}
                 >
                     <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
-                        <div className={`service-dot dark ${isNodeDotActive && 'active'}`}>
+                        <div className={`service-dot ${isNodeDotActive && 'active'}`}>
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`}/>
                             <div className={`dot2 ${theme === 'dark' ? 'dark' : 'light'}`}/>
                         </div>
@@ -70,9 +70,9 @@ function SkillsSection() {
                      onMouseLeave={() => setIsHtmlCssDotActive(false)}
                 >
                     <div className={`grid__item__double-container ${theme === 'dark' ? 'dark' : 'light'}`}>
-                        <div className='service-dot-double dark'>
-                            <div className={`dot1-double dark ${isHtmlCssDotActive && 'active'}`}/>
-                            <div className={`dot2-double dark ${isHtmlCssDotActive && 'active'}`}/>
+                        <div className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
+                            <div className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
+                            <div className={`dot2-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
                         </div>
                         <FaHtml5 className="grid__item__double-container__css"/>
                         <FaCss3Alt className="grid__item__double-container__html"/>
@@ -107,7 +107,7 @@ function SkillsSection() {
                      onMouseOver={() => setIsMongoDotActive(true)}
                      onMouseLeave={() => setIsMongoDotActive(false)}
                 >
-                    <div className="grid__item__bg dark">
+                    <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div
                             className={`service-dot ${isMongoDotActive && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}>
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`}/>
@@ -128,9 +128,10 @@ function SkillsSection() {
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`}/>
                             <div className={`dot2 ${theme === 'dark' ? 'dark' : 'light'}`}/>
                         </div>
-                        <TbSocial className="grid__item__bg__integration-logo"/>
+                        <TbSocial
+                            className={`grid__item__bg__integration-logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className="grid__item__integration-h1">{t.skillsSectionScripts.third_party_h1}</h1>
+                    <h1 className={`grid__item__integration-h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.third_party_h1}</h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.third_party_desc}</p>
                 </div>
             </div>
