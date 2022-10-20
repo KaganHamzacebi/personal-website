@@ -8,7 +8,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Navigation, A11y, Zoom, Lazy} from 'swiper';
 // Swiper Styles
 import 'swiper/scss'
-import "swiper/css/lazy";
+import "swiper/scss/lazy";
 import "swiper/scss/zoom";
 import 'swiper/scss/pagination';
 import 'swiper/scss/navigation';

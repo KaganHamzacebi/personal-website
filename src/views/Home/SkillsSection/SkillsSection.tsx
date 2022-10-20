@@ -20,6 +20,7 @@ import {useState} from "react";
 import {selectTranslations} from "../../../features/languageController/LanguageControllerSlice";
 import {useAppSelector} from "../../../app/hooks";
 import {selectTheme} from "../../../features/themeController/ThemeControllerSlice";
+import SkillsSlider from "./SkillsSlider/SkillsSlider";
 
 
 function SkillsSection() {
@@ -71,8 +72,10 @@ function SkillsSection() {
                 >
                     <div className={`grid__item__double-container ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
-                            <div className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
-                            <div className={`dot2-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
+                            <div
+                                className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
+                            <div
+                                className={`dot2-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`}/>
                         </div>
                         <FaHtml5 className="grid__item__double-container__css"/>
                         <FaCss3Alt className="grid__item__double-container__html"/>
@@ -135,6 +138,7 @@ function SkillsSection() {
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.third_party_desc}</p>
                 </div>
             </div>
+            <SkillsSlider/>
         </div>
     )
 }
