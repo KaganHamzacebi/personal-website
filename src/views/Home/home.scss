@@ -10,6 +10,11 @@
     background-color: getMainColor("primary", light);
   }
 
+  &.wide {
+    left: 20px;
+    max-width: calc(100vw - 20px);
+  }
+
   @include media-md {
     position: absolute;
     left: 200px;

@@ -8,16 +8,21 @@ import Logo from '../../assets/general/k-logo.png';
 import {selectTranslations} from "../../features/languageController/LanguageControllerSlice";
 import ThemeChangerButton from "../ThemeChangerButton/ThemeChangerButton";
 import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
+import {BsBoxArrowInLeft} from 'react-icons/bs';
+import {selectHeader, setMinimize} from "../../features/headerController/HeaderControllerSlice";
+
 
 function Header(
     {
         refs
     }: any) {
 
-    const [showHeader, setShowHeader] = useState(false);
+    const [showHeader, setShowHeader] = useState<boolean>(false);
+    const [showMinimizeButton, setShowMinimizeButton] = useState<boolean>(false);
     const s = useAppSelector(getNavSelector)
     const t = useAppSelector(selectTranslations);
     const theme = useAppSelector(selectTheme);
+    const h = useAppSelector(selectHeader);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -37,13 +42,25 @@ function Header(
     return (
         <div>
             <div className={`header-btn-wrapper ${theme === 'dark' ? 'dark' : 'light'}`}>
-                <img src={Logo} alt="header_mobile_logo" className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                <img src={Logo} alt="header_mobile_logo"
+                     className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                 <div className="themeChangerMobileWrapper">
                     <ThemeChangerButton/>
                 </div>
-                <MdMenu onClick={() => setShowHeader(!showHeader)} className={`header__btn ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                <MdMenu onClick={() => setShowHeader(!showHeader)}
+                        className={`header__btn ${theme === 'dark' ? 'dark' : 'light'}`}/>
             </div>
-            <div className={`header ${showHeader && "mobile"} ${theme === 'dark' ? 'dark' : 'light'}`}>
+            <div
+                className={`header ${showHeader && "mobile"} ${h.minimized && 'minimized'} ${theme === 'dark' ? 'dark' : 'light'}`}
+                onMouseEnter={() => setShowMinimizeButton(true)}
+                onMouseLeave={() => setShowMinimizeButton(false)}
+            >
+                {/* Header Minimize Button */}
+                <div className="header-minimize-button"
+                     onClick={() => dispatch(setMinimize(!h.minimized))}>
+                    <BsBoxArrowInLeft
+                        className={`header-minimize-button__icon ${theme === 'dark' ? 'dark' : 'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}/>
+                </div>
                 <nav className="header__nav">
                     <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)}
                          className="header__nav__logo"/>

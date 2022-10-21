@@ -5,7 +5,7 @@ const SkillsSectionScripts = {
     "react_desc": "React is my favorite frontend framework and Im still learning about it. It is very deep and enjoyable. " +
         "I mostly used hooks but also have a limited knowledge to old class components.",
     "node_h1": "Node.JS",
-    "node_desc": "I mostly used Node.JS on backend and the reason I like it javascript :) Express Server and JS puts it " +
+    "node_desc": "I mostly used Node.JS on backend and the reason I like it is javascript. Express Server and JS puts it " +
         "forward for me.",
     "html_h1": "HTML",
     "css_h1": "CSS",

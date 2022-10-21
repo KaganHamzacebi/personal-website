@@ -1,5 +1,5 @@
-import {  createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import {createSlice} from '@reduxjs/toolkit';
+import {RootState} from '../../app/store';
 import ReactGA from "react-ga";
 
 export const scrollControllerSlice = createSlice({
@@ -20,7 +20,7 @@ export const scrollControllerSlice = createSlice({
 });
 
 // Actions
-export const { setScroll, setNav } = scrollControllerSlice.actions
+export const {setScroll, setNav} = scrollControllerSlice.actions
 // Selectors
 export const getNavSelector = (state: RootState) => state.scrollController.navSection;
 export const getScrollSelector = (state: RootState) => state.scrollController.scrollSection;
