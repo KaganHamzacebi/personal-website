@@ -1,0 +1,84 @@
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.loadingScreenMain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  @include flex-center(row);
+
+  &.dark {
+    background-color: getMainColor("thirdy", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("dark-gray", light);
+  }
+}
+
+.loader1 {
+  position: fixed;
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  @include infinite-rotate(2s, normal);
+
+  &.dark {
+    border: 4px solid getMainColor("thirdy", dark);
+    border-top: 4px solid getTextColor("gray", dark);
+  }
+
+  &.light {
+    border: 4px solid getMainColor("dark-gray", light);
+    border-top: 4px solid getTextColor("brown", light);
+  }
+}
+
+.loader2 {
+  position: fixed;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  @include infinite-rotate(3s, reverse);
+
+  &.dark {
+    border: 4px solid getMainColor("thirdy", dark);
+    border-left: 4px solid getTextColor("light-gray", dark);
+  }
+
+  &.light {
+    border: 4px solid getMainColor("dark-gray", light);
+    border-left: 4px solid getMainColor("secondary", light);
+  }
+}
+
+.loader3 {
+  position: fixed;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  @include infinite-rotate(2.5s, normal);
+
+  &.dark {
+    border: 4px solid getMainColor("thirdy", dark);
+    border-bottom: 4px solid getMainColor("xlight-gray", dark);
+  }
+
+  &.light {
+    border: 4px solid getMainColor("dark-gray", light);
+    border-bottom: 4px solid getMainColor("button", light);
+  }
+}
+
+.loadingLogo {
+  position: fixed;
+  width: 120px;
+  @include fade-in(2s);
+}
+
+
+
+
+
+

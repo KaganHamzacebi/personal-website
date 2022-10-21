@@ -3,13 +3,15 @@ import languageControllerReducer from '../features/languageController/LanguageCo
 import scrollCenterReducer from '../features/scrollController/ScrollControllerSlice';
 import themeControllerReducer from '../features/themeController/ThemeControllerSlice';
 import headerControllerReducer from '../features/headerController/HeaderControllerSlice';
+import loadingControllerReducer from '../features/loadingController/LoadingControllerSlice';
 
 export const store = configureStore({
     reducer: {
         languageController: languageControllerReducer,
         scrollController: scrollCenterReducer,
         themeController: themeControllerReducer,
-        headerController: headerControllerReducer
+        headerController: headerControllerReducer,
+        loadingController: loadingControllerReducer
     },
     middleware: (getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false
