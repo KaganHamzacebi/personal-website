@@ -30,12 +30,25 @@
   &.mobile {
     transform: translateX(0);
     width: 100%;
-    opacity: 0.99;
+    opacity: 0.95;
   }
 
   &.minimized {
+    cursor: pointer;
     transform: translateX(-11rem);
+    opacity: 0.95;
 
+    &.dark {
+      border-right: 0.2rem solid rgba(74, 74, 74, 0.8);
+    }
+
+    &.light {
+      border-right: 0.2rem solid rgba(236, 227, 227, 0.8);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__btn {
