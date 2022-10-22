@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {RootState} from '../../app/store';
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 export const scrollControllerSlice = createSlice({
     name: 'scrollControllerSelector',

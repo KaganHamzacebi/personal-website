@@ -11,7 +11,7 @@ import {useCookies} from "react-cookie";
 
 function CookieAlert() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [cookies, setCookie] = useCookies(['cookiePreferences']);
+    const [cookies, setCookie, removeCookie] = useCookies();
     const c = useAppSelector(selectCookieAlerter);
     const theme = useAppSelector(selectTheme);
     const dispatch = useAppDispatch();
@@ -36,6 +36,8 @@ function CookieAlert() {
                         dispatch(showCookieAlert(false));
                         dispatch(rejectCookie());
                         setCookie('cookiePreferences', {rejected: true});
+                        removeCookie('header');
+                        removeCookie('theme');
                     }}
                 >
                     Reject

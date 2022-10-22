@@ -1,6 +1,6 @@
 import './contactMeMessage.scss';
 import {Resolver, useForm} from "react-hook-form";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import {selectTranslations} from "../../../../features/languageController/LanguageControllerSlice";
 import {useAppSelector} from "../../../../app/hooks";
 import {selectTheme} from "../../../../features/themeController/ThemeControllerSlice";

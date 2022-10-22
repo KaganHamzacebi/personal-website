@@ -6,11 +6,13 @@ import {useEffect} from "react";
 import {useCookies} from "react-cookie";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {selectTheme, setCurrentTheme} from "../../features/themeController/ThemeControllerSlice";
+import {selectCookieAlerter} from "../../features/cookieAlertController/CookieAlertControllerSlice";
 
 function ThemeChangerButton() {
 
     const [cookies, setCookie] = useCookies(['theme']);
     const theme = useAppSelector(selectTheme);
+    const c = useAppSelector(selectCookieAlerter);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -23,8 +25,10 @@ function ThemeChangerButton() {
                 type="checkbox"
                 checked={theme === 'dark'}
                 onChange={() => {
-                    setCookie('theme', theme === 'dark' ? 'light' : 'dark');
-                    dispatch(setCurrentTheme(theme));
+                    if (c.accepted) {
+                        setCookie('theme', theme === 'dark' ? 'light' : 'dark');
+                    }
+                    dispatch(setCurrentTheme(theme === 'dark' ? 'light' : 'dark'));
                 }}
                 className="checkbox"
                 id="chk"

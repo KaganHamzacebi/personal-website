@@ -11,7 +11,7 @@ import {useState} from "react";
 import {selectTranslations} from "../../../features/languageController/LanguageControllerSlice";
 import {IProjectsSectionScripts} from "../../../features/languageController/LanguageControllerInterfaces";
 import ProjectModal from "./ProjectModal/ProjectModal";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import {useAppSelector} from "../../../app/hooks";
 import {selectTheme} from "../../../features/themeController/ThemeControllerSlice";
 

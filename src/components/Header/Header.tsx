@@ -12,6 +12,7 @@ import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
 import {BsBoxArrowInLeft} from 'react-icons/bs';
 import {selectHeader, setMinimize} from "../../features/headerController/HeaderControllerSlice";
 import {useCookies} from "react-cookie";
+import {selectCookieAlerter} from "../../features/cookieAlertController/CookieAlertControllerSlice";
 
 function Header(
     {
@@ -25,6 +26,7 @@ function Header(
     const t = useAppSelector(selectTranslations);
     const theme = useAppSelector(selectTheme);
     const h = useAppSelector(selectHeader);
+    const c = useAppSelector(selectCookieAlerter);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -33,13 +35,13 @@ function Header(
         return () => {
             window.removeEventListener('resize', handleWindowSize);
         };
-    }, []);
+    });
 
     useEffect(() => {
         if (cookies.header?.minimized) {
             dispatch(setMinimize(true));
         }
-    }, [cookies.header])
+    }, [cookies.header, dispatch])
 
     function handleWindowSize() {
         if (window.innerWidth > 800) {
@@ -71,7 +73,9 @@ function Header(
                 onClick={() => {
                     if (h.minimized) {
                         dispatch(setMinimize(false));
-                        setCookie('header', {minimized: false});
+                        if (c.accepted) {
+                            setCookie('header', {minimized: false});
+                        }
                     }
                 }}
             >
@@ -79,7 +83,9 @@ function Header(
                 <div className="header-minimize-button"
                      onClick={() => {
                          dispatch(setMinimize(!h.minimized));
-                         setCookie('header', {minimized: true});
+                         if (c.accepted) {
+                             setCookie('header', {minimized: true});
+                         }
                      }}>
                     <BsBoxArrowInLeft
                         className={`header-minimize-button__icon ${theme === 'dark' ? 'dark' : 'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}/>

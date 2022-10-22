@@ -5,10 +5,10 @@ import {store} from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/_global.scss';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import {HelmetProvider} from 'react-helmet-async';
 
-const TRACKING_ID = "UA-245283332-1";
+const TRACKING_ID = "G-CSHH5QZZ54";
 ReactGA.initialize(TRACKING_ID);
 
 const container = document.getElementById('root')!;

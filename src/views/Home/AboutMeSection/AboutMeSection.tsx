@@ -3,7 +3,7 @@ import profilePhoto from '../../../assets/general/profilePhoto.png'
 import {selectTranslations} from "../../../features/languageController/LanguageControllerSlice";
 import Resume from '../../../assets/general/KaganHamzacebiResume.pdf';
 import {scrollTo} from '../../../features/scrollController/ScrollUtils';
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import {useAppSelector} from "../../../app/hooks";
 import {selectTheme} from "../../../features/themeController/ThemeControllerSlice";
 
@@ -16,13 +16,16 @@ function AboutMeSection({
 
     return (
         <div className={`aboutMeMain ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <img className={`aboutMeMain__pp ${theme === 'dark' ? 'dark' : 'light'}`} alt="profile_photo" src={profilePhoto}/>
+            <img className={`aboutMeMain__pp ${theme === 'dark' ? 'dark' : 'light'}`} alt="profile_photo"
+                 src={profilePhoto}/>
             <h2 className={`aboutMeMain__name ${theme === 'dark' ? 'dark' : 'light'}`}>{t.aboutMeSectionScripts.name}<span
-                className={`aboutMeMain__surname ${theme === 'dark' ? 'dark' : 'light'}`}>{t.aboutMeSectionScripts.surname}</span></h2>
+                className={`aboutMeMain__surname ${theme === 'dark' ? 'dark' : 'light'}`}>{t.aboutMeSectionScripts.surname}</span>
+            </h2>
             <h1 className="aboutMeMain__webdev">{t.aboutMeSectionScripts.webdev}</h1>
             <p className={`aboutMeMain__bio ${theme === 'dark' ? 'dark' : 'light'}`}>
                 {t.aboutMeSectionScripts.bio_first_part}
-                <a className={`aboutMeMain__bio__unilink ${theme === 'dark' ? 'dark' : 'light'}`} target="_blank" rel="noopener noreferrer"
+                <a className={`aboutMeMain__bio__unilink ${theme === 'dark' ? 'dark' : 'light'}`} target="_blank"
+                   rel="noopener noreferrer"
                    href="https://www.etu.edu.tr/en"> {t.aboutMeSectionScripts.bio_unilink} </a>
                 {t.aboutMeSectionScripts.bio_second_part}
             </p>
