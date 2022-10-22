@@ -5,13 +5,13 @@ import {getNavSelector, setNav} from "../../features/scrollController/ScrollCont
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {scrollTo} from "../../features/scrollController/ScrollUtils";
 import Logo from '../../assets/general/k-logo.png';
+import LogoBrown from '../../assets/general/k-logo-brown.png';
 import {selectTranslations} from "../../features/languageController/LanguageControllerSlice";
 import ThemeChangerButton from "../ThemeChangerButton/ThemeChangerButton";
 import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
 import {BsBoxArrowInLeft} from 'react-icons/bs';
 import {selectHeader, setMinimize} from "../../features/headerController/HeaderControllerSlice";
 import {useCookies} from "react-cookie";
-
 
 function Header(
     {
@@ -36,7 +36,6 @@ function Header(
     }, []);
 
     useEffect(() => {
-        console.log(cookies.header?.minimized)
         if (cookies.header?.minimized) {
             dispatch(setMinimize(true));
         }
@@ -51,8 +50,14 @@ function Header(
     return (
         <div>
             <div className={`header-btn-wrapper ${theme === 'dark' ? 'dark' : 'light'}`}>
-                <img src={Logo} alt="header_mobile_logo"
-                     className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                {
+                    theme === 'dark' ?
+                        <img src={Logo} alt="header_mobile_logo"
+                             className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                        :
+                        <img src={LogoBrown} alt="header_mobile_logo"
+                             className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
+                }
                 <div className="themeChangerMobileWrapper">
                     <ThemeChangerButton/>
                 </div>

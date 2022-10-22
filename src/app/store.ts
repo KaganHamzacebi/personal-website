@@ -4,6 +4,7 @@ import scrollCenterReducer from '../features/scrollController/ScrollControllerSl
 import themeControllerReducer from '../features/themeController/ThemeControllerSlice';
 import headerControllerReducer from '../features/headerController/HeaderControllerSlice';
 import loadingControllerReducer from '../features/loadingController/LoadingControllerSlice';
+import cookieAlertControllerReducer from '../features/cookieAlertController/CookieAlertControllerSlice';
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
         scrollController: scrollCenterReducer,
         themeController: themeControllerReducer,
         headerController: headerControllerReducer,
-        loadingController: loadingControllerReducer
+        loadingController: loadingControllerReducer,
+        cookieAlertController: cookieAlertControllerReducer
     },
     middleware: (getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: false
