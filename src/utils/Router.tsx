@@ -13,17 +13,13 @@ import NotFound from "../views/NotFound/NotFound";
 import {useAppDispatch, useAppSelector} from "../app/hooks";
 import {selectLoading, setLoadingActive} from "../features/loadingController/LoadingControllerSlice";
 import LoadingScreen from "../views/LoadingScreen/LoadingScreen";
-import {selectCookieAlerter} from "../features/cookieAlertController/CookieAlertControllerSlice";
 
 function Router() {
     const l = useAppSelector(selectLoading);
-    const c = useAppSelector(selectCookieAlerter);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (c.accepted) {
-            ReactGA.send({hitType: "pageview", page: window.location.pathname + window.location.search});
-        }
+        ReactGA.send({hitType: "pageview", page: window.location.pathname + window.location.search});
     });
 
     useEffect(() => {
