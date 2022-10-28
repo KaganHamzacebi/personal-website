@@ -193,8 +193,12 @@
 }
 
 .desc-upper-text {
-  font-size: getFontSize("md");
-  font-weight: getFontWeight("medium");
+  font-size: getFontSize("sm");
+
+  @include media-sm {
+    font-size: getFontSize("md");
+    font-weight: getFontWeight("medium");
+  }
 
   &.dark {
     color: getTextColor("secondary", dark);
@@ -206,8 +210,12 @@
 }
 
 .desc-lower-text {
-  font-size: getFontSize("lg");
-  font-weight: getFontWeight("sbold");
+  font-size: getFontSize("md");
+
+  @include media-sm {
+    font-size: getFontSize("lg");
+    font-weight: getFontWeight("sbold");
+  }
 
   &.dark {
     color: getTextColor("primary", dark);
