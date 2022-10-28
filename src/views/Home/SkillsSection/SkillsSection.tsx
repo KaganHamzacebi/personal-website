@@ -16,11 +16,12 @@ import {
     from 'react-icons/si'
 
 import {TbSocial} from 'react-icons/tb'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {selectTranslations} from "../../../features/languageController/LanguageControllerSlice";
 import {useAppSelector} from "../../../app/hooks";
 import {selectTheme} from "../../../features/themeController/ThemeControllerSlice";
 import SkillsSlider from "./SkillsSlider/SkillsSlider";
+import isInViewport from "../../../utils/isInViewPort";
 
 
 function SkillsSection() {
@@ -35,10 +36,32 @@ function SkillsSection() {
     const t = useAppSelector(selectTranslations);
     const theme = useAppSelector(selectTheme);
 
+    useEffect(() => {
+        const react_skill = document.querySelector("#react-skill");
+        const nodejs_skill = document.querySelector("#nodejs-skill");
+        const htmlcss_skill = document.querySelector("#htmlcss-skill");
+        const jsts_skill = document.querySelector("#jsts-skill");
+        const mongodb_skill = document.querySelector("#mongodb-skill");
+        const thirdparty_skill = document.querySelector("#thirdparty-skill");
+
+        function gridItemTracker() {
+            if (isInViewport(react_skill)) react_skill?.classList.add('show');
+            if (isInViewport(nodejs_skill)) nodejs_skill?.classList.add('show');
+            if (isInViewport(htmlcss_skill)) htmlcss_skill?.classList.add('show');
+            if (isInViewport(jsts_skill)) jsts_skill?.classList.add('show');
+            if (isInViewport(mongodb_skill)) mongodb_skill?.classList.add('show');
+            if (isInViewport(thirdparty_skill)) thirdparty_skill?.classList.add('show');
+        }
+
+        window.addEventListener('scroll', gridItemTracker);
+        return () => window.removeEventListener('scroll', gridItemTracker);
+    })
+
     return (
         <div className="skillsMain">
             <div className="grid">
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="react-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsReactDotActive(true)}
                      onMouseLeave={() => setIsReactDotActive(false)}
                 >
@@ -52,7 +75,8 @@ function SkillsSection() {
                     <h1 className="grid__item__react-h1">{t.skillsSectionScripts.react_h1}</h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.react_desc}</p>
                 </div>
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="nodejs-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsNodeDotActive(true)}
                      onMouseLeave={() => setIsNodeDotActive(false)}
                 >
@@ -66,7 +90,8 @@ function SkillsSection() {
                     <h1 className="grid__item__nodejs-h1">{t.skillsSectionScripts.node_h1}</h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.node_desc}</p>
                 </div>
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="htmlcss-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsHtmlCssDotActive(true)}
                      onMouseLeave={() => setIsHtmlCssDotActive(false)}
                 >
@@ -86,7 +111,8 @@ function SkillsSection() {
                     </h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.html_css_desc}</p>
                 </div>
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="jsts-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsJSTSDotActive(true)}
                      onMouseLeave={() => setIsJSTSDotActive(false)}
                 >
@@ -106,7 +132,8 @@ function SkillsSection() {
                             className="ts-h1">{t.skillsSectionScripts.ts_h1}</span></h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.js_ts_desc}</p>
                 </div>
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="mongodb-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsMongoDotActive(true)}
                      onMouseLeave={() => setIsMongoDotActive(false)}
                 >
@@ -121,7 +148,8 @@ function SkillsSection() {
                     <h1 className="grid__item__mongo-h1">{t.skillsSectionScripts.mongo_h1}</h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.mongo_desc}</p>
                 </div>
-                <div className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
+                <div id="thirdparty-skill"
+                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                      onMouseOver={() => setIsIntegrationsDotActive(true)}
                      onMouseLeave={() => setIsIntegrationsDotActive(false)}
                 >

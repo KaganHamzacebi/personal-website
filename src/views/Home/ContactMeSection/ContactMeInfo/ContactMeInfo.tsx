@@ -34,7 +34,7 @@ function ContactMeInfo() {
             </div>
             <div className={`contactMeInfo__phone ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__phone__container">
-                    <div className="logoBG dark">
+                    <div className={`logoBG ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <FiPhoneCall
                             className={`contactMeInfo__phone__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>

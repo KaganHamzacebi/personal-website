@@ -29,6 +29,15 @@
     padding: 1rem;
     @include flex-center(column);
     @include shadow-xl;
+    @include set-transition(0.5s);
+
+    &.show {
+      opacity: 1;
+    }
+
+    &:not(.show) {
+      opacity: 0;
+    }
 
     &.dark {
       background-color: getMainColor("thirdy", dark);
