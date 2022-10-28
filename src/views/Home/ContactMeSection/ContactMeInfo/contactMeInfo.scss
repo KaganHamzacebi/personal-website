@@ -62,6 +62,8 @@
       }
 
       &__h1 {
+        font-size: getFontSize("lg");
+
         &.dark {
           color: getTextColor("primary", dark);
         }

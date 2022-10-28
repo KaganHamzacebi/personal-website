@@ -18,9 +18,9 @@ function ContactMeInfo() {
                         <IoMailOutline
                             className={`contactMeInfo__email__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className={`contactMeInfo__email__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email}</h1>
+                    <h2 className={`contactMeInfo__email__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email}</h2>
                 </div>
-                <h1 className={`contactMeInfo__email__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email_content}</h1>
+                <h3 className={`contactMeInfo__email__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.email_content}</h3>
             </div>
             <div className={`contactMeInfo__address ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__address__container">
@@ -28,9 +28,9 @@ function ContactMeInfo() {
                         <IoLocationOutline
                             className={`contactMeInfo__address__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className={`contactMeInfo__address__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address}</h1>
+                    <h2 className={`contactMeInfo__address__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address}</h2>
                 </div>
-                <h1 className={`contactMeInfo__address__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address_content}</h1>
+                <h3 className={`contactMeInfo__address__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.address_content}</h3>
             </div>
             <div className={`contactMeInfo__phone ${theme === 'dark' ? 'dark' : 'light'}`}>
                 <div className="contactMeInfo__phone__container">
@@ -38,9 +38,9 @@ function ContactMeInfo() {
                         <FiPhoneCall
                             className={`contactMeInfo__phone__container__logo ${theme === 'dark' ? 'dark' : 'light'}`}/>
                     </div>
-                    <h1 className={`contactMeInfo__phone__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone}</h1>
+                    <h2 className={`contactMeInfo__phone__container__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone}</h2>
                 </div>
-                <h1 className={`contactMeInfo__phone__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone_content}</h1>
+                <h3 className={`contactMeInfo__phone__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{t.contactMeSectionScripts.phone_content}</h3>
             </div>
         </div>
     )
