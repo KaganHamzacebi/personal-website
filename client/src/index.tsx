@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import './styles/_global.scss';
 import ReactGA from 'react-ga4';
 import {HelmetProvider} from 'react-helmet-async';
+import {ApolloProvider} from "@apollo/client";
+import {client} from "./service/api";
 
 const TRACKING_ID = "G-CSHH5QZZ54";
 ReactGA.initialize(TRACKING_ID);
@@ -18,7 +20,9 @@ root.render(
     <React.StrictMode>
         <HelmetProvider>
             <Provider store={store}>
-                <App/>
+                <ApolloProvider client={client}>
+                    <App/>
+                </ApolloProvider>
             </Provider>
         </HelmetProvider>
     </React.StrictMode>

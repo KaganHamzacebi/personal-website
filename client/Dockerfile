@@ -4,7 +4,7 @@ FROM node:lts
 # Set the working directory to /app inside the container
 WORKDIR /personal-website
 # Copy app files
-COPY . .
+COPY .. .
 # ==== BUILD =====
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
 RUN yarn install
