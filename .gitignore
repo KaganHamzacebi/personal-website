@@ -23,3 +23,11 @@ yarn-debug.log*
 yarn-error.log
 
 /.idea
+
+# client
+/client/node_modules
+/client/yarn-error.log
+
+# server
+/server/node_modules
+/server/yarn-error.log
