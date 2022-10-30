@@ -1,6 +1,6 @@
 # ==== CONFIGURE =====
 # Use a Node LTS base image
-FROM node:lts
+FROM node:lts as builder
 # Set the working directory to /app inside the container
 WORKDIR /personal-website
 # Copy app files
@@ -14,6 +14,8 @@ RUN yarn build
 # Set the env to "production"
 ENV NODE_ENV production
 # Expose the port on which the app will be running (3000 is the default that `serve` uses)
-EXPOSE 3000
+EXPOSE 80
 # Start the app
-CMD [ "yarn", "start" ]
+FROM jawg/nginx-spa:latest
+COPY --from=builder /build/ /usr/share/nginx/html
+RUN chmod -R 777 /usr/share/nginx/html
