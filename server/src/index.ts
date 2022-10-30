@@ -3,6 +3,9 @@ import {startStandaloneServer} from '@apollo/server/standalone';
 import typeDefs from "./gql/typedefs.js";
 import resolvers from "./gql/resolvers.js";
 import connectMongoDB from "./database/connection.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
