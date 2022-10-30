@@ -17,5 +17,5 @@ ENV NODE_ENV production
 EXPOSE 80
 # Start the app
 FROM jawg/nginx-spa:latest
-COPY --from=builder /build/ /usr/share/nginx/html
+COPY --from=builder /client/build/ /usr/share/nginx/html
 RUN chmod -R 777 /usr/share/nginx/html

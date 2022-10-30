@@ -25,6 +25,7 @@ yarn-error.log
 /.idea
 
 # client
+/client/build/
 /client/node_modules
 /client/yarn-error.log
 
