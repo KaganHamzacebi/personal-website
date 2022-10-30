@@ -2,7 +2,7 @@
 # Use a Node LTS base image
 FROM node:lts
 # Set the working directory to /app inside the container
-WORKDIR /app
+WORKDIR /personal-website
 # Copy app files
 COPY . .
 # ==== BUILD =====
