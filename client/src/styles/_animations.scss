@@ -124,6 +124,7 @@
 
 @mixin fade-in($duration) {
   animation: fade-in $duration;
+  animation-fill-mode: forwards;
 
   @keyframes fade-in {
     0% {

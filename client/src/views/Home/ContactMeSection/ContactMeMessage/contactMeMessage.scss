@@ -77,11 +77,64 @@
 
 .send-btn {
   width: 100%;
-  margin-top: 1rem;
   @include standard-btn;
-  cursor: not-allowed;
 
   @include media-md {
     width: 25%;
+  }
+}
+
+.message-sent-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-form {
+  position: relative;
+}
+
+.success-message-info {
+  position: absolute;
+  @include flex-center(column);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+
+  &.dark {
+    background-color: getMainColor("secondary", dark);
+  }
+
+  &.light {
+    background-color: getMainColor("secondary", light);
+  }
+
+  &.active {
+    @include fade-in(1s);
+  }
+
+  &:not(.active) {
+    @include fade-out(1s);
+  }
+}
+
+.success-icon {
+  width: 25%;
+  height: 25%;
+  color: #3e603e;
+}
+
+.success-message {
+  margin-top: 1rem;
+  font-weight: getFontWeight("sbold");
+
+  &.dark {
+    color: getTextColor("secondary", dark);
+  }
+
+  &.light {
+    color: getTextColor("primary", light);
   }
 }

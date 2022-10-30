@@ -1,16 +1,23 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "Node",
-    "target": "esnext",
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "rootDirs": [
+      "src"
+    ],
+    "outDir": "dist",
     "lib": [
-      "esnext"
+      "es2020"
+    ],
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": [
+      "node"
     ]
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "swc": true
+  }
 }
