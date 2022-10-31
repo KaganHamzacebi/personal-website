@@ -47,7 +47,7 @@ function ContactMeMessage() {
                 reset();
             }, 1000)
         }
-    }, [formState])
+    }, [formState, reset])
 
     return (
         <form className="main-form" onSubmit={handleSubmit(onSubmit)}>

@@ -3,18 +3,19 @@ import './themeChangerButton.scss';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {FaSun} from 'react-icons/fa';
 import {useEffect} from "react";
-import {useCookies} from "react-cookie";
+import {Cookies} from "react-cookie";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {selectTheme, setCurrentTheme} from "../../features/themeController/ThemeControllerSlice";
+import moment from "moment";
 
 function ThemeChangerButton() {
 
-    const [cookies, setCookie] = useCookies(['theme']);
+    const cookies = new Cookies();
     const theme = useAppSelector(selectTheme);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(setCurrentTheme(cookies.theme ? cookies.theme : 'dark'));
+        dispatch(setCurrentTheme(cookies.get('theme') ? cookies.get('theme') : 'dark'));
     })
 
     return (
@@ -23,7 +24,7 @@ function ThemeChangerButton() {
                 type="checkbox"
                 checked={theme === 'dark'}
                 onChange={() => {
-                    setCookie('theme', theme === 'dark' ? 'light' : 'dark');
+                    cookies.set('theme', theme === 'dark' ? 'light' : 'dark', {expires: moment().add(1, 'y').toDate()});
                     dispatch(setCurrentTheme(theme === 'dark' ? 'light' : 'dark'));
                 }}
                 className="checkbox"

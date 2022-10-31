@@ -1,5 +1,5 @@
 import './header.scss'
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {MdMenu} from 'react-icons/md'
 import {getNavSelector, setNav} from "../../features/scrollController/ScrollControllerSlice";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
@@ -11,14 +11,17 @@ import ThemeChangerButton from "../ThemeChangerButton/ThemeChangerButton";
 import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
 import {BsBoxArrowInLeft} from 'react-icons/bs';
 import {selectHeader, setMinimize} from "../../features/headerController/HeaderControllerSlice";
-import {useCookies} from "react-cookie";
+import {Cookies} from "react-cookie";
+import moment from "moment";
 
 function Header(
     {
         refs
     }: any) {
 
-    const [cookies, setCookie] = useCookies(['header']);
+    const cookies = useMemo(() => {
+        return new Cookies()
+    }, []);
     const [showHeader, setShowHeader] = useState<boolean>(false);
     const [showMinimizeButton, setShowMinimizeButton] = useState<boolean>(false);
     const s = useAppSelector(getNavSelector)
@@ -36,10 +39,10 @@ function Header(
     });
 
     useEffect(() => {
-        if (cookies.header?.minimized) {
+        if (cookies.get('header')?.minimized) {
             dispatch(setMinimize(true));
         }
-    }, [cookies.header, dispatch])
+    }, [dispatch, cookies])
 
     function handleWindowSize() {
         if (window.innerWidth > 800) {
@@ -71,7 +74,7 @@ function Header(
                 onClick={() => {
                     if (h.minimized) {
                         dispatch(setMinimize(false));
-                        setCookie('header', {minimized: false});
+                        cookies.set('header', {minimized: false}, {expires: moment().add(1, 'y').toDate()});
                     }
                 }}
             >
@@ -79,7 +82,7 @@ function Header(
                 <div className="header-minimize-button"
                      onClick={() => {
                          dispatch(setMinimize(!h.minimized));
-                         setCookie('header', {minimized: true});
+                         cookies.set('header', {minimized: true}, {expires: moment().add(1, 'y').toDate()});
                      }}>
                     <BsBoxArrowInLeft
                         className={`header-minimize-button__icon ${theme === 'dark' ? 'dark' : 'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}/>

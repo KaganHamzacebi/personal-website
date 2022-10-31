@@ -6,10 +6,11 @@ import {
     selectCookieAlerter,
     showCookieAlert
 } from "../../features/cookieAlertController/CookieAlertControllerSlice";
-import {useCookies} from "react-cookie";
+import {Cookies} from "react-cookie";
+import moment from "moment";
 
 function CookieAlert() {
-    const [cookies, setCookie] = useCookies();
+    const cookies = new Cookies();
     const c = useAppSelector(selectCookieAlerter);
     const theme = useAppSelector(selectTheme);
     const dispatch = useAppDispatch();
@@ -23,7 +24,7 @@ function CookieAlert() {
                 onClick={() => {
                     dispatch(showCookieAlert(false));
                     dispatch(acceptCookie());
-                    setCookie('cookiePreferences', {accepted: true});
+                    cookies.set('cookiePreferences', {accepted: true}, {expires: moment().add(1, 'y').toDate()});
                 }}
             >
                 Okay
