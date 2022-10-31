@@ -1,15 +1,12 @@
 import './goHomeButton.scss';
 
-import {scrollTo} from '../../features/scrollController/ScrollUtils'
-import {BiUpArrowAlt} from 'react-icons/bi';
-import {useEffect, useState} from "react";
-import {useAppSelector} from "../../app/hooks";
-import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
+import { scrollTo } from '../../features/scrollController/ScrollUtils';
+import { BiUpArrowAlt } from 'react-icons/bi';
+import { useEffect, useState } from 'react';
+import { useAppSelector } from '../../app/hooks';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 
-function GoHomeButton({
-                          refs
-                      }: any) {
-
+function GoHomeButton({ refs }: any) {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
     const theme = useAppSelector(selectTheme);
 
@@ -18,7 +15,7 @@ function GoHomeButton({
         return () => {
             window.removeEventListener('scroll', scrollTracker);
         };
-    })
+    });
 
     function scrollTracker() {
         if (window.scrollY > 400) {
@@ -34,12 +31,15 @@ function GoHomeButton({
 
     return (
         <div
-            className={`goHomeButtonMain ${isButtonVisible && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-            onClick={goToHome}
-        >
-            <BiUpArrowAlt className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`}/>
+            className={`goHomeButtonMain ${isButtonVisible && 'active'} ${
+                theme === 'dark' ? 'dark' : 'light'
+            }`}
+            onClick={goToHome}>
+            <BiUpArrowAlt
+                className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`}
+            />
         </div>
-    )
+    );
 }
 
 export default GoHomeButton;

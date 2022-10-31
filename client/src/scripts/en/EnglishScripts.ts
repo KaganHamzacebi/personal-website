@@ -1,10 +1,10 @@
-import {IEnglishTranslates} from '../../features/languageController/LanguageControllerInterfaces';
-import AboutMeSectionScripts from "./AboutMeSectionScripts";
-import HomeScripts from "./HomeScripts";
-import ProjectsSectionScripts from "./ProjectsSectionScripts";
-import SkillsSectionScripts from "./SkillsSectionScripts";
-import ContactMeSectionScripts from "./ContactMeSectionScripts";
-import HeaderFooterScripts from "./HeaderFooterScripts";
+import { IEnglishTranslates } from '../../features/languageController/LanguageControllerInterfaces';
+import AboutMeSectionScripts from './AboutMeSectionScripts';
+import HomeScripts from './HomeScripts';
+import ProjectsSectionScripts from './ProjectsSectionScripts';
+import SkillsSectionScripts from './SkillsSectionScripts';
+import ContactMeSectionScripts from './ContactMeSectionScripts';
+import HeaderFooterScripts from './HeaderFooterScripts';
 
 const EnglishScripts: IEnglishTranslates = {
     homeScripts: HomeScripts,
@@ -13,6 +13,6 @@ const EnglishScripts: IEnglishTranslates = {
     projectsSectionScripts: ProjectsSectionScripts,
     contactMeSectionScripts: ContactMeSectionScripts,
     headerFooterScripts: HeaderFooterScripts
-}
+};
 
 export default EnglishScripts;

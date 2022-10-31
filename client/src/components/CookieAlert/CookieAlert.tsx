@@ -1,13 +1,13 @@
 import './cookieAlert.scss';
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
-import {selectTheme} from "../../features/themeController/ThemeControllerSlice";
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 import {
     acceptCookie,
     selectCookieAlerter,
     showCookieAlert
-} from "../../features/cookieAlertController/CookieAlertControllerSlice";
-import {Cookies} from "react-cookie";
-import moment from "moment";
+} from '../../features/cookieAlertController/CookieAlertControllerSlice';
+import { Cookies } from 'react-cookie';
+import moment from 'moment';
 
 function CookieAlert() {
     const cookies = new Cookies();
@@ -16,21 +16,29 @@ function CookieAlert() {
     const dispatch = useAppDispatch();
 
     return (
-        <div className={`cookieAlertMain ${c.show && 'show'} ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <p>This website using cookies to ensure giving best user experience. By continuing to use this website, you
-                consent to the use of cookies.</p>
+        <div
+            className={`cookieAlertMain ${c.show && 'show'} ${
+                theme === 'dark' ? 'dark' : 'light'
+            }`}>
+            <p>
+                This website using cookies to ensure giving best user experience. By continuing to
+                use this website, you consent to the use of cookies.
+            </p>
             <button
                 className={`cookie-btn ${theme === 'dark' ? 'dark' : 'light'}`}
                 onClick={() => {
                     dispatch(showCookieAlert(false));
                     dispatch(acceptCookie());
-                    cookies.set('cookiePreferences', {accepted: true}, {expires: moment().add(1, 'y').toDate()});
-                }}
-            >
+                    cookies.set(
+                        'cookiePreferences',
+                        { accepted: true },
+                        { expires: moment().add(1, 'y').toDate() }
+                    );
+                }}>
                 Okay
             </button>
         </div>
-    )
+    );
 }
 
 export default CookieAlert;

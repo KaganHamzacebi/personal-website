@@ -5,6 +5,6 @@ export function isReachedElement(e: Element) {
 // @ts-ignore
 export const scrollTo = (e) => {
     e.current.scrollIntoView({
-        behavior: "smooth"
+        behavior: 'smooth'
     });
 };

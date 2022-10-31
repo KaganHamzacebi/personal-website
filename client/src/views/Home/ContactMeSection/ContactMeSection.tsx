@@ -1,6 +1,6 @@
 import './contactMeSection.scss';
-import ContactMeInfo from "./ContactMeInfo/ContactMeInfo";
-import ContactMeMessage from "./ContactMeMessage/ContactMeMessage";
+import ContactMeInfo from './ContactMeInfo/ContactMeInfo';
+import ContactMeMessage from './ContactMeMessage/ContactMeMessage';
 
 function ContactMeSection() {
     return (
@@ -12,7 +12,7 @@ function ContactMeSection() {
                 <ContactMeMessage />
             </section>
         </div>
-    )
+    );
 }
 
 export default ContactMeSection;

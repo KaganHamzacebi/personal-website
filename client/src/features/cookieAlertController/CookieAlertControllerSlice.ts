@@ -1,14 +1,13 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {RootState} from '../../app/store';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
 
-export const defaultLanguage: string = "en";
+export const defaultLanguage: string = 'en';
 
-
-const initialState: ({ show: boolean, accepted: boolean, delay: number }) = {
+const initialState: { show: boolean; accepted: boolean; delay: number } = {
     show: false,
     accepted: false,
     delay: 2000
-}
+};
 
 export const cookieAlertControllerSlice = createSlice({
     name: 'cookieAlertSelector',
@@ -19,10 +18,10 @@ export const cookieAlertControllerSlice = createSlice({
         },
         acceptCookie: (state) => {
             state.accepted = true;
-        },
-    },
+        }
+    }
 });
 
-export const {showCookieAlert, acceptCookie} = cookieAlertControllerSlice.actions;
-export const selectCookieAlerter = (state: RootState) => state.cookieAlertController
+export const { showCookieAlert, acceptCookie } = cookieAlertControllerSlice.actions;
+export const selectCookieAlerter = (state: RootState) => state.cookieAlertController;
 export default cookieAlertControllerSlice.reducer;

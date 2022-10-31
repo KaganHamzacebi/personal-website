@@ -1,13 +1,13 @@
-import Router from "./utils/Router";
-import CookieAlert from "./components/CookieAlert/CookieAlert";
-import {useAppDispatch, useAppSelector} from "./app/hooks";
+import Router from './utils/Router';
+import CookieAlert from './components/CookieAlert/CookieAlert';
+import { useAppDispatch, useAppSelector } from './app/hooks';
 import {
     acceptCookie,
     selectCookieAlerter,
     showCookieAlert
-} from "./features/cookieAlertController/CookieAlertControllerSlice";
-import {useEffect, useState} from "react";
-import {Cookies} from "react-cookie";
+} from './features/cookieAlertController/CookieAlertControllerSlice';
+import { useEffect, useState } from 'react';
+import { Cookies } from 'react-cookie';
 
 function App() {
     const cookies = new Cookies();
@@ -21,7 +21,7 @@ function App() {
                 setTimeout(() => {
                     dispatch(showCookieAlert(true));
                 }, c.delay)
-            )
+            );
         } else {
             clearTimeout(cookieTimeout);
             dispatch(acceptCookie);
@@ -31,11 +31,8 @@ function App() {
 
     return (
         <div>
-            {
-                c.show &&
-                <CookieAlert/>
-            }
-            <Router/>
+            {c.show && <CookieAlert />}
+            <Router />
         </div>
     );
 }
