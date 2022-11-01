@@ -11,12 +11,14 @@ function LoadingScreen() {
     document.body.style.overflow = 'hidden';
   });
 
-  return (<div className={`loadingScreenMain ${theme === 'dark' ? 'dark' : 'light'}`}>
-    <img src={Logo} alt="loadingLogo" className="loadingLogo" />
-    <div className={`loader1 ${theme === 'dark' ? 'dark' : 'light'}`} />
-    <div className={`loader2 ${theme === 'dark' ? 'dark' : 'light'}`} />
-    <div className={`loader3 ${theme === 'dark' ? 'dark' : 'light'}`} />
-  </div>);
+  return (
+    <div className={`loadingScreenMain ${theme === 'dark' ? 'dark' : 'light'}`}>
+      <img src={Logo} alt="loadingLogo" className="loadingLogo" />
+      <div className={`loader1 ${theme === 'dark' ? 'dark' : 'light'}`} />
+      <div className={`loader2 ${theme === 'dark' ? 'dark' : 'light'}`} />
+      <div className={`loader3 ${theme === 'dark' ? 'dark' : 'light'}`} />
+    </div>
+  );
 }
 
 export default LoadingScreen;

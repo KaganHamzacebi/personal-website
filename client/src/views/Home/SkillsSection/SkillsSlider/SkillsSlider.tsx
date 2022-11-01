@@ -83,46 +83,48 @@ function SkillsSlider() {
     <SiJava data-tip="Java" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />
   ];
 
-  return (<div className={`skillsSliderMain ${theme === 'dark' ? 'dark' : 'light'}`}>
-    <ReactTooltip
-      place={'bottom'}
-      effect={'solid'}
-      className="skillsSliderTooltip"
-      backgroundColor={theme === 'dark' ? '#202020' : '#A0816C'}
-      border={true}
-      borderColor={theme === 'dark' ? '#757575' : '#eedbcc'}
-    />
-    <Swiper
-      className="skills-slider"
-      modules={[A11y, Lazy, Autoplay]}
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false
-      }}
-      loop={true}
-      breakpoints={{
-        0: {
-          slidesPerView: 3
-        },
-        650: {
-          slidesPerView: 5
-        },
-        1024: {
-          slidesPerView: 7
-        },
-        1280: {
-          slidesPerView: 9
-        },
-        1536: {
-          slidesPerView: 12
-        }
-      }}
-    >
-      {skillIcons.map((s, index) => (<SwiperSlide className="icon-swiper" key={index}>
-        {s}
-      </SwiperSlide>))}
-    </Swiper>
-  </div>);
+  return (
+    <div className={`skillsSliderMain ${theme === 'dark' ? 'dark' : 'light'}`}>
+      <ReactTooltip
+        place={'bottom'}
+        effect={'solid'}
+        className="skillsSliderTooltip"
+        backgroundColor={theme === 'dark' ? '#202020' : '#A0816C'}
+        border={true}
+        borderColor={theme === 'dark' ? '#757575' : '#eedbcc'}
+      />
+      <Swiper
+        className="skills-slider"
+        modules={[A11y, Lazy, Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false
+        }}
+        loop={true}
+        breakpoints={{
+          0: {
+            slidesPerView: 3
+          },
+          650: {
+            slidesPerView: 5
+          },
+          1024: {
+            slidesPerView: 7
+          },
+          1280: {
+            slidesPerView: 9
+          },
+          1536: {
+            slidesPerView: 12
+          }
+        }}
+      >
+        {skillIcons.map((s, index) => (<SwiperSlide className="icon-swiper" key={index}>
+          {s}
+        </SwiperSlide>))}
+      </Swiper>
+    </div>
+  );
 }
 
 export default SkillsSlider;

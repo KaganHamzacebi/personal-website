@@ -34,12 +34,14 @@ function GoHomeButton({ refs }: { refs: { aboutMeSectionRef: RefObject<HTMLEleme
     scrollTo(refs.aboutMeSectionRef);
   }
 
-  return (<div
-    className={`goHomeButtonMain ${isButtonVisible && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-    onClick={goToHome}
-  >
-    <BiUpArrowAlt className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`} />
-  </div>);
+  return (
+    <div
+      className={`goHomeButtonMain ${isButtonVisible && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+      onClick={goToHome}
+    >
+      <BiUpArrowAlt className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`} />
+    </div>
+  );
 }
 
 export default GoHomeButton;

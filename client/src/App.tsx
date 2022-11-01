@@ -34,10 +34,12 @@ function App() {
     }
   }, [c.delay, cookieTimeout, cookies, dispatch]);
 
-  return (<div>
-    {c.show && <CookieAlert />}
-    <Router />
-  </div>);
+  return (
+    <div>
+      {c.show && <CookieAlert />}
+      <Router />
+    </div>
+  );
 }
 
 export default App;

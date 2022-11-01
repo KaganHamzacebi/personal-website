@@ -64,118 +64,120 @@ function Header({
 
   }
 
-  return (<div>
-    <div className={`header-btn-wrapper ${theme === 'dark' ? 'dark' : 'light'}`}>
-      {theme === 'dark' ? (<img
-        src={Logo}
-        alt="header_mobile_logo"
-        className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
-      />) : (<img
-        src={LogoBrown}
-        alt="header_mobile_logo"
-        className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
-      />)}
-      <div className="themeChangerMobileWrapper">
-        <ThemeChangerButton />
-      </div>
-      <MdMenu
-        onClick={() => setShowHeader(!showHeader)}
-        className={`header__btn ${theme === 'dark' ? 'dark' : 'light'}`}
-      />
-    </div>
-    <div
-      className={`header ${showHeader && 'mobile'} ${h.minimized && 'minimized'} ${theme === 'dark' ?
-        'dark' :
-        'light'}`}
-      onMouseEnter={() => setShowMinimizeButton(true)}
-      onMouseLeave={() => setShowMinimizeButton(false)}
-      onClick={() => {
-        if(h.minimized) {
-          dispatch(setMinimize(false));
-          cookies.set('header', { minimized: false }, {
-            expires: moment()
-              .add(1, 'y')
-              .toDate()
-          });
-        }
-      }}
-    >
-      {/* Header Minimize Button */}
-      <div
-        className="header-minimize-button"
-        onClick={() => {
-          dispatch(setMinimize(!h.minimized));
-          cookies.set('header', { minimized: true }, {
-            expires: moment()
-              .add(1, 'y')
-              .toDate()
-          });
-        }}
-      >
-        <BsBoxArrowInLeft
-          className={`header-minimize-button__icon ${theme === 'dark' ?
-            'dark' :
-            'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
+  return (
+    <div>
+      <div className={`header-btn-wrapper ${theme === 'dark' ? 'dark' : 'light'}`}>
+        {theme === 'dark' ? (<img
+          src={Logo}
+          alt="header_mobile_logo"
+          className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
+        />) : (<img
+          src={LogoBrown}
+          alt="header_mobile_logo"
+          className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
+        />)}
+        <div className="themeChangerMobileWrapper">
+          <ThemeChangerButton />
+        </div>
+        <MdMenu
+          onClick={() => setShowHeader(!showHeader)}
+          className={`header__btn ${theme === 'dark' ? 'dark' : 'light'}`}
         />
       </div>
-      <nav className="header__nav">
-        <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)} className="header__nav__logo" />
-        <ul>
-          <li>
-            <span
-              onClick={() => setTimeout(() => {
-                dispatch(setNav('aboutMeSection'));
-                scrollTo(refs.aboutMeSectionRef);
-                setShowHeader(false);
-              })}
-              className={`${s === 'aboutMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-            >
-              {t.headerFooterScripts.about_me}
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => setTimeout(() => {
-                dispatch(setNav('skillsSection'));
-                scrollTo(refs.skillsSectionRef);
-                setShowHeader(false);
-              })}
-              className={`${s === 'skillsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-            >
-              {t.headerFooterScripts.skills}
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => setTimeout(() => {
-                dispatch(setNav('projectsSection'));
-                scrollTo(refs.projectsSectionRef);
-                setShowHeader(false);
-              })}
-              className={`${s === 'projectsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-            >
-              {t.headerFooterScripts.projects}
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => setTimeout(() => {
-                dispatch(setNav('contactMeSection'));
-                scrollTo(refs.contactMeSectionRef);
-                setShowHeader(false);
-              })}
-              className={`${s === 'contactMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
-            >
-              {t.headerFooterScripts.contact_me}
-            </span>
-          </li>
-        </ul>
-      </nav>
-      <div className="themeChangerWrapper">
-        <ThemeChangerButton />
+      <div
+        className={`header ${showHeader && 'mobile'} ${h.minimized && 'minimized'} ${theme === 'dark' ?
+          'dark' :
+          'light'}`}
+        onMouseEnter={() => setShowMinimizeButton(true)}
+        onMouseLeave={() => setShowMinimizeButton(false)}
+        onClick={() => {
+          if(h.minimized) {
+            dispatch(setMinimize(false));
+            cookies.set('header', { minimized: false }, {
+              expires: moment()
+                .add(1, 'y')
+                .toDate()
+            });
+          }
+        }}
+      >
+        {/* Header Minimize Button */}
+        <div
+          className="header-minimize-button"
+          onClick={() => {
+            dispatch(setMinimize(!h.minimized));
+            cookies.set('header', { minimized: true }, {
+              expires: moment()
+                .add(1, 'y')
+                .toDate()
+            });
+          }}
+        >
+          <BsBoxArrowInLeft
+            className={`header-minimize-button__icon ${theme === 'dark' ?
+              'dark' :
+              'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
+          />
+        </div>
+        <nav className="header__nav">
+          <img src={Logo} alt="header_logo" onClick={() => setShowHeader(false)} className="header__nav__logo" />
+          <ul>
+            <li>
+              <span
+                onClick={() => setTimeout(() => {
+                  dispatch(setNav('aboutMeSection'));
+                  scrollTo(refs.aboutMeSectionRef);
+                  setShowHeader(false);
+                })}
+                className={`${s === 'aboutMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+              >
+                {t.headerFooterScripts.about_me}
+              </span>
+            </li>
+            <li>
+              <span
+                onClick={() => setTimeout(() => {
+                  dispatch(setNav('skillsSection'));
+                  scrollTo(refs.skillsSectionRef);
+                  setShowHeader(false);
+                })}
+                className={`${s === 'skillsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+              >
+                {t.headerFooterScripts.skills}
+              </span>
+            </li>
+            <li>
+              <span
+                onClick={() => setTimeout(() => {
+                  dispatch(setNav('projectsSection'));
+                  scrollTo(refs.projectsSectionRef);
+                  setShowHeader(false);
+                })}
+                className={`${s === 'projectsSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+              >
+                {t.headerFooterScripts.projects}
+              </span>
+            </li>
+            <li>
+              <span
+                onClick={() => setTimeout(() => {
+                  dispatch(setNav('contactMeSection'));
+                  scrollTo(refs.contactMeSectionRef);
+                  setShowHeader(false);
+                })}
+                className={`${s === 'contactMeSection' && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+              >
+                {t.headerFooterScripts.contact_me}
+              </span>
+            </li>
+          </ul>
+        </nav>
+        <div className="themeChangerWrapper">
+          <ThemeChangerButton />
+        </div>
       </div>
     </div>
-  </div>);
+  );
 }
 
 export default Header;

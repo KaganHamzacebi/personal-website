@@ -47,10 +47,14 @@ function Router() {
     }
   ]);
 
-  return (<div>
-    {l.active && <LoadingScreen />}
-    <RouterProvider router={router} />
-  </div>);
+  return (
+    <div>
+      {
+        l.active && <LoadingScreen />
+      }
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default Router;

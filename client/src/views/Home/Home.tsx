@@ -60,72 +60,76 @@ export function Home() {
     else if(skillsSection && isReachedElement(skillsSection))
       dispatch(setNav('skillsSection'));
 
-    else if(aboutMeSection && isReachedElement(aboutMeSection)) dispatch(setNav('aboutMeSection'));
+    else if(aboutMeSection && isReachedElement(aboutMeSection))
+      dispatch(setNav('aboutMeSection'));
+
   }
 
-  return (<div>
-    <Helmet>
-      <title>{t.homeScripts.title}</title>
-      <meta name="description" content={t.homeScripts.description} />
-      <meta name="keywords" content={t.homeScripts.keywords} />
-      <link rel="canonical" href="/" />
-    </Helmet>
+  return (
     <div>
-      <Header
-        refs={{
-          aboutMeSectionRef,
-          skillsSectionRef,
-          projectsSectionRef,
-          contactMeSectionRef
-        }}
-      />
-      <SocialBar />
-      <div className={`main ${theme === 'dark' ? 'dark' : 'light'} ${h.minimized && 'wide'}`}>
-        <section
-          id="aboutMeSection"
-          ref={aboutMeSectionRef}
-          className={`aboutMeSection ${theme === 'dark' ? 'dark' : 'light'}`}
-        >
-          <AboutMeSection
-            refs={{
-              contactMeSectionRef: contactMeSectionRef
-            }}
-          />
-        </section>
-        <section
-          id="skillsSection"
-          ref={skillsSectionRef}
-          className={`skillsSection ${theme === 'dark' ? 'dark' : 'light'}`}
-        >
-          <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.skills_h1}</h1>
-          <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.skills_h2}</h2>
-          <SkillsSection />
-        </section>
-        <section
-          id="projectsSection"
-          ref={projectsSectionRef}
-          className={`projectsSection ${theme === 'dark' ? 'dark' : 'light'}`}
-        >
-          <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.projects_h1}</h1>
-          <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.projects_h2}</h2>
-          <ProjectsSection />
-        </section>
-        <section
-          id="contactMeSection"
-          ref={contactMeSectionRef}
-          className={`contactMeSection ${theme === 'dark' ? 'dark' : 'light'}`}
-        >
-          <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.contact_h1}</h1>
-          <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.contact_h2}</h2>
-          <ContactMeSection />
-        </section>
-        <GoHomeButton
+      <Helmet>
+        <title>{t.homeScripts.title}</title>
+        <meta name="description" content={t.homeScripts.description} />
+        <meta name="keywords" content={t.homeScripts.keywords} />
+        <link rel="canonical" href="/" />
+      </Helmet>
+      <div>
+        <Header
           refs={{
-            aboutMeSectionRef
+            aboutMeSectionRef,
+            skillsSectionRef,
+            projectsSectionRef,
+            contactMeSectionRef
           }}
         />
-        <Footer />
+        <SocialBar />
+        <div className={`main ${theme === 'dark' ? 'dark' : 'light'} ${h.minimized && 'wide'}`}>
+          <section
+            id="aboutMeSection"
+            ref={aboutMeSectionRef}
+            className={`aboutMeSection ${theme === 'dark' ? 'dark' : 'light'}`}
+          >
+            <AboutMeSection
+              refs={{
+                contactMeSectionRef: contactMeSectionRef
+              }}
+            />
+          </section>
+          <section
+            id="skillsSection"
+            ref={skillsSectionRef}
+            className={`skillsSection ${theme === 'dark' ? 'dark' : 'light'}`}
+          >
+            <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.skills_h1}</h1>
+            <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.skills_h2}</h2>
+            <SkillsSection />
+          </section>
+          <section
+            id="projectsSection"
+            ref={projectsSectionRef}
+            className={`projectsSection ${theme === 'dark' ? 'dark' : 'light'}`}
+          >
+            <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.projects_h1}</h1>
+            <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.projects_h2}</h2>
+            <ProjectsSection />
+          </section>
+          <section
+            id="contactMeSection"
+            ref={contactMeSectionRef}
+            className={`contactMeSection ${theme === 'dark' ? 'dark' : 'light'}`}
+          >
+            <h1 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.contact_h1}</h1>
+            <h2 className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.homeScripts.contact_h2}</h2>
+            <ContactMeSection />
+          </section>
+          <GoHomeButton
+            refs={{
+              aboutMeSectionRef
+            }}
+          />
+          <Footer />
+        </div>
       </div>
     </div>
-  </div>);
+  );
 }

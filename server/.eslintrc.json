@@ -28,8 +28,7 @@
 	"comma-style": "error",
 	"curly": [
 	  "error",
-	  "multi",
-	  "consistent"
+	  "multi-or-nest"
 	],
 	"dot-location": [
 	  "error",

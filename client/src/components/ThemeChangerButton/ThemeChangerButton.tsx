@@ -23,27 +23,29 @@ function ThemeChangerButton() {
     dispatch(setCurrentTheme(cookies.get('theme') ? cookies.get('theme') : 'dark'));
   });
 
-  return (<div className="themeChangerButtonMain">
-    <input
-      type="checkbox"
-      checked={theme === 'dark'}
-      onChange={() => {
-        cookies.set('theme', theme === 'dark' ? 'light' : 'dark', {
-          expires: moment()
-            .add(1, 'y')
-            .toDate()
-        });
-        dispatch(setCurrentTheme(theme === 'dark' ? 'light' : 'dark'));
-      }}
-      className="checkbox"
-      id="chk"
-    />
-    <label className={`label ${theme === 'dark' ? 'dark' : 'light'}`} htmlFor="chk">
-      <BsFillMoonStarsFill className="moon_icon" />
-      <FaSun className="sun_icon" />
-      <div className="ball" />
-    </label>
-  </div>);
+  return (
+    <div className="themeChangerButtonMain">
+      <input
+        type="checkbox"
+        checked={theme === 'dark'}
+        onChange={() => {
+          cookies.set('theme', theme === 'dark' ? 'light' : 'dark', {
+            expires: moment()
+              .add(1, 'y')
+              .toDate()
+          });
+          dispatch(setCurrentTheme(theme === 'dark' ? 'light' : 'dark'));
+        }}
+        className="checkbox"
+        id="chk"
+      />
+      <label className={`label ${theme === 'dark' ? 'dark' : 'light'}`} htmlFor="chk">
+        <BsFillMoonStarsFill className="moon_icon" />
+        <FaSun className="sun_icon" />
+        <div className="ball" />
+      </label>
+    </div>
+  );
 }
 
 export default ThemeChangerButton;

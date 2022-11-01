@@ -1,7 +1,7 @@
 import type { ReportHandler } from 'web-vitals';
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
-  if(onPerfEntry)
+  if(onPerfEntry) {
     import('web-vitals').then(({
       getCLS,
       getFID,
@@ -15,6 +15,7 @@ const reportWebVitals = (onPerfEntry?: ReportHandler) => {
       getLCP(onPerfEntry);
       getTTFB(onPerfEntry);
     });
+  }
 
 };
 
