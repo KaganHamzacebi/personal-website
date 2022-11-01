@@ -1,29 +1,28 @@
-import './projectsSection.scss';
+import { useState } from 'react';
+import ReactGA from 'react-ga4';
+import {
+  A11y,
+  Pagination
+} from 'swiper';
 
 // Swiper
 import {
   Swiper,
   SwiperSlide
 } from 'swiper/react';
-import {
-  A11y,
-  Pagination
-} from 'swiper';
 // Swiper Styles
 import 'swiper/scss';
 import 'swiper/scss/pagination';
-
-import { useState } from 'react';
-import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
+import { useAppSelector } from '../../../app/hooks';
 import type {
   IProject,
   IProjectsSectionScripts,
   IProjectTModal
 } from '../../../features/languageController/LanguageControllerInterfaces';
-import ProjectModal from './ProjectModal/ProjectModal';
-import ReactGA from 'react-ga4';
-import { useAppSelector } from '../../../app/hooks';
+import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
+import ProjectModal from './ProjectModal/ProjectModal';
+import './projectsSection.scss';
 
 function ProjectsSection() {
   const t = useAppSelector(selectTranslations);
@@ -75,7 +74,7 @@ function ProjectsSection() {
                 });
               }}
             >
-                Read
+              Read
             </button>
           </SwiperSlide>);
         })}

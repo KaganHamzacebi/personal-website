@@ -1,8 +1,8 @@
-import './loadingScreen.scss';
-import { useAppSelector } from '../../app/hooks';
-import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
-import Logo from '../../assets/general/k-logo.png';
 import { useLayoutEffect } from 'react';
+import { useAppSelector } from '../../app/hooks';
+import Logo from '../../assets/general/k-logo.png';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import './loadingScreen.scss';
 
 function LoadingScreen() {
   const theme = useAppSelector(selectTheme);

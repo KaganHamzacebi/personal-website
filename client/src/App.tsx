@@ -1,20 +1,20 @@
-import Router from './utils/Router';
-import CookieAlert from './components/CookieAlert/CookieAlert';
-import {
-  useAppDispatch,
-  useAppSelector
-} from './app/hooks';
-import {
-  acceptCookie,
-  selectCookieAlerter,
-  showCookieAlert
-} from './features/cookieAlertController/CookieAlertControllerSlice';
 import {
   useEffect,
   useMemo,
   useState
 } from 'react';
 import { Cookies } from 'react-cookie';
+import {
+  useAppDispatch,
+  useAppSelector
+} from './app/hooks';
+import CookieAlert from './components/CookieAlert/CookieAlert';
+import {
+  acceptCookie,
+  selectCookieAlerter,
+  showCookieAlert
+} from './features/cookieAlertController/CookieAlertControllerSlice';
+import Router from './utils/Router';
 
 function App() {
   const cookies = useMemo(() => new Cookies(), []);

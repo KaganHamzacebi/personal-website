@@ -1,9 +1,9 @@
-import './themeChangerButton.scss';
+import moment from 'moment';
+import { useEffect } from 'react';
+import { Cookies } from 'react-cookie';
 
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { FaSun } from 'react-icons/fa';
-import { useEffect } from 'react';
-import { Cookies } from 'react-cookie';
 import {
   useAppDispatch,
   useAppSelector
@@ -12,7 +12,7 @@ import {
   selectTheme,
   setCurrentTheme
 } from '../../features/themeController/ThemeControllerSlice';
-import moment from 'moment';
+import './themeChangerButton.scss';
 
 function ThemeChangerButton() {
   const cookies = new Cookies();

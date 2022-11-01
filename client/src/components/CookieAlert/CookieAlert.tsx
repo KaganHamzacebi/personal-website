@@ -1,16 +1,16 @@
-import './cookieAlert.scss';
+import moment from 'moment';
+import { Cookies } from 'react-cookie';
 import {
   useAppDispatch,
   useAppSelector
 } from '../../app/hooks';
-import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 import {
   acceptCookie,
   selectCookieAlerter,
   showCookieAlert
 } from '../../features/cookieAlertController/CookieAlertControllerSlice';
-import { Cookies } from 'react-cookie';
-import moment from 'moment';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import './cookieAlert.scss';
 
 function CookieAlert() {
   const cookies = new Cookies();

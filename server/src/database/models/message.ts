@@ -1,9 +1,9 @@
+import moment from 'moment';
 import {
   Document,
   model,
-  Schema,
+  Schema
 } from 'mongoose';
-import moment from 'moment';
 
 interface IMessage extends Document {
   firstName: string;
@@ -17,28 +17,28 @@ interface IMessage extends Document {
 const messageSchema = new Schema<IMessage>({
   firstName: {
     type: String,
-    required: true,
+    required: true
   },
   lastName: {
     type: String,
-    required: true,
+    required: true
   },
   email: {
     type: String,
-    required: true,
+    required: true
   },
   subject: {
     type: String,
-    required: true,
+    required: true
   },
   content: {
     type: String,
-    required: true,
+    required: true
   },
   date: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 });
 
 const Message = model<IMessage>('Message', messageSchema);
@@ -51,7 +51,7 @@ export async function createMessage(message: IMessage) {
     subject: message.subject,
     content: message.content,
     date: moment()
-      .format('DD MMMM YYYY - HH:mm'),
+      .format('DD MMMM YYYY - HH:mm')
   });
 
   const res = await newMessage.save();

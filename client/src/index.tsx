@@ -1,14 +1,14 @@
+import { ApolloProvider } from '@apollo/client';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './styles/_global.scss';
 import ReactGA from 'react-ga4';
 import { HelmetProvider } from 'react-helmet-async';
-import { ApolloProvider } from '@apollo/client';
+import { Provider } from 'react-redux';
+import App from './App';
+import { store } from './app/store';
+import reportWebVitals from './reportWebVitals';
 import { client } from './service/api';
+import './styles/_global.scss';
 
 const TRACKING_ID = 'G-CSHH5QZZ54';
 ReactGA.initialize(TRACKING_ID);

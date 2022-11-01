@@ -3,12 +3,12 @@ import type {
   ThunkAction
 } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
+import cookieAlertControllerReducer from '../features/cookieAlertController/CookieAlertControllerSlice';
+import headerControllerReducer from '../features/headerController/HeaderControllerSlice';
 import languageControllerReducer from '../features/languageController/LanguageControllerSlice';
+import loadingControllerReducer from '../features/loadingController/LoadingControllerSlice';
 import scrollCenterReducer from '../features/scrollController/ScrollControllerSlice';
 import themeControllerReducer from '../features/themeController/ThemeControllerSlice';
-import headerControllerReducer from '../features/headerController/HeaderControllerSlice';
-import loadingControllerReducer from '../features/loadingController/LoadingControllerSlice';
-import cookieAlertControllerReducer from '../features/cookieAlertController/CookieAlertControllerSlice';
 
 export const store = configureStore({
   reducer: {

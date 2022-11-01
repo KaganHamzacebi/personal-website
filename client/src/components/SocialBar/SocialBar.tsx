@@ -1,15 +1,15 @@
-import './socialBar.scss';
-
-import { GoMarkGithub } from 'react-icons/go';
+import { useState } from 'react';
 import {
   FaDiscord,
   FaLinkedinIn
 } from 'react-icons/fa';
-import { useState } from 'react';
+
+import { GoMarkGithub } from 'react-icons/go';
 import { IoLogoWhatsapp } from 'react-icons/io';
-import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../app/hooks';
+import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import './socialBar.scss';
 
 function SocialBar() {
   const [showClipboardCopy, setShowClipboardCopy] = useState(false);
@@ -58,8 +58,8 @@ function SocialBar() {
         {/* Discord Copy Clipboard */}
         <div
           className={`socialBar-li-discord__clipboard ${theme === 'dark' ?
-                'dark' :
-                'light'} tri-right btm-left-in ${showClipboardCopy && 'active'} `}
+            'dark' :
+            'light'} tri-right btm-left-in ${showClipboardCopy && 'active'} `}
         >
           {t.headerFooterScripts.copied}
         </div>

@@ -7,8 +7,8 @@ const resolvers = {
   Mutation: {
     saveMessage: (_, data) => {
       return createMessage(data.message);
-    },
-  },
+    }
+  }
 };
 
 export default resolvers;

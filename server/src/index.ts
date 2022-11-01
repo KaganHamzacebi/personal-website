@@ -1,9 +1,9 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import typeDefs from './gql/typedefs.js';
-import resolvers from './gql/resolvers.js';
-import connectMongoDB from './database/connection.js';
 import dotenv from 'dotenv';
+import connectMongoDB from './database/connection.js';
+import resolvers from './gql/resolvers.js';
+import typeDefs from './gql/typedefs.js';
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ dotenv.config();
 // definition and your set of resolvers.
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  resolvers
 });
 
 connectMongoDB()
@@ -24,8 +24,8 @@ connectMongoDB()
 
 const { url } = await startStandaloneServer(server, {
   listen: {
-    port: 4000,
-  },
+    port: 4000
+  }
 });
 
 console.log(`Server ready at: ${url}`);

@@ -1,12 +1,12 @@
-import './aboutMeSection.scss';
-import profilePhoto from '../../../assets/general/profilePhoto.png';
-import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
-import Resume from '../../../assets/general/KaganHamzacebiResume.pdf';
-import { scrollTo } from '../../../features/scrollController/ScrollUtils';
+import type { RefObject } from 'react';
 import ReactGA from 'react-ga4';
 import { useAppSelector } from '../../../app/hooks';
+import Resume from '../../../assets/general/KaganHamzacebiResume.pdf';
+import profilePhoto from '../../../assets/general/profilePhoto.png';
+import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
+import { scrollTo } from '../../../features/scrollController/ScrollUtils';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
-import type { RefObject } from 'react';
+import './aboutMeSection.scss';
 
 function AboutMeSection({
   refs

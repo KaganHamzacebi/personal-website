@@ -1,19 +1,3 @@
-import './skillsSlider.scss';
-import ReactTooltip from 'react-tooltip';
-import {
-  A11y,
-  Autoplay,
-  Lazy
-} from 'swiper';
-import {
-  Swiper,
-  SwiperSlide
-} from 'swiper/react';
-
-import 'swiper/scss';
-import 'swiper/scss/lazy';
-import 'swiper/scss/autoplay';
-
 // Icons
 import {
   FaCss3Alt,
@@ -47,8 +31,23 @@ import {
   SiTypescript,
   SiWebpack
 } from 'react-icons/si';
+import ReactTooltip from 'react-tooltip';
+import {
+  A11y,
+  Autoplay,
+  Lazy
+} from 'swiper';
+import {
+  Swiper,
+  SwiperSlide
+} from 'swiper/react';
+
+import 'swiper/scss';
+import 'swiper/scss/autoplay';
+import 'swiper/scss/lazy';
 import { useAppSelector } from '../../../../app/hooks';
 import { selectTheme } from '../../../../features/themeController/ThemeControllerSlice';
+import './skillsSlider.scss';
 
 function SkillsSlider() {
   const theme = useAppSelector(selectTheme);

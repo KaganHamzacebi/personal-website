@@ -116,8 +116,8 @@ ij_xml_space_inside_empty_tag = false
 ij_xml_text_wrap = normal
 
 [{*.ats,*.cts,*.mts,*.ts,*.tsx}]
-ij_continuation_indent_size = 4
-ij_smart_tabs = true
+tab_width = 4
+ij_continuation_indent_size = 2
 ij_visual_guides = 80
 ij_typescript_align_imports = false
 ij_typescript_align_multiline_array_initializer_expression = false
@@ -175,7 +175,7 @@ ij_typescript_if_brace_force = if_multiline
 ij_typescript_import_merge_members = global
 ij_typescript_import_prefer_absolute_path = global
 ij_typescript_import_sort_members = true
-ij_typescript_import_sort_module_name = false
+ij_typescript_import_sort_module_name = true
 ij_typescript_import_use_node_resolution = true
 ij_typescript_imports_wrap = split_into_lines
 ij_typescript_indent_case_from_switch = false
@@ -186,7 +186,7 @@ ij_typescript_jsx_attribute_value = braces
 ij_typescript_keep_blank_lines_in_code = 1
 ij_typescript_keep_first_column_comment = true
 ij_typescript_keep_indents_on_empty_lines = false
-ij_typescript_keep_line_breaks = false
+ij_typescript_keep_line_breaks = true
 ij_typescript_keep_simple_blocks_in_one_line = true
 ij_typescript_keep_simple_methods_in_one_line = true
 ij_typescript_line_comment_add_space = true
@@ -296,9 +296,9 @@ ij_shell_redirect_followed_by_space = false
 ij_shell_switch_cases_indented = false
 ij_shell_use_unix_line_separator = true
 
-[{*.cjs,*.js,*.jsx}]
-ij_continuation_indent_size = 4
-ij_smart_tabs = true
+[{*.cjs,*.js}]
+tab_width = 4
+ij_continuation_indent_size = 2
 ij_visual_guides = 80
 ij_javascript_align_imports = false
 ij_javascript_align_multiline_array_initializer_expression = false
@@ -353,7 +353,7 @@ ij_javascript_if_brace_force = if_multiline
 ij_javascript_import_merge_members = global
 ij_javascript_import_prefer_absolute_path = global
 ij_javascript_import_sort_members = true
-ij_javascript_import_sort_module_name = false
+ij_javascript_import_sort_module_name = true
 ij_javascript_import_use_node_resolution = true
 ij_javascript_imports_wrap = split_into_lines
 ij_javascript_indent_case_from_switch = false
@@ -363,7 +363,7 @@ ij_javascript_jsx_attribute_value = braces
 ij_javascript_keep_blank_lines_in_code = 1
 ij_javascript_keep_first_column_comment = true
 ij_javascript_keep_indents_on_empty_lines = false
-ij_javascript_keep_line_breaks = false
+ij_javascript_keep_line_breaks = true
 ij_javascript_keep_simple_blocks_in_one_line = true
 ij_javascript_keep_simple_methods_in_one_line = true
 ij_javascript_line_comment_add_space = true
@@ -576,7 +576,9 @@ ij_json_spaces_within_brackets = false
 ij_json_wrap_long_lines = false
 
 [{*.htm,*.html,*.ng,*.sht,*.shtm,*.shtml}]
-ij_continuation_indent_size = 2
+indent_size = 4
+tab_width = 4
+ij_continuation_indent_size = 4
 ij_visual_guides = 80
 ij_html_add_new_line_before_tags = body, div, p, form, h1, h2, h3
 ij_html_align_attributes = true

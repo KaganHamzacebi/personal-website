@@ -1,32 +1,3 @@
-import type { IProjectsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
-// Personal Website Assets
-import personalWebsiteAboutMe from '../../assets/projects/personal_website/personal-website.png';
-import personalWebsiteSkills from '../../assets/projects/personal_website/personal-website2.png';
-import personalWebsiteProjects from '../../assets/projects/personal_website/personal-website3.png';
-import personalWebsiteContactMe from '../../assets/projects/personal_website/personal-website4.png';
-import personalWebsiteLightMode from '../../assets/projects/personal_website/personal-website5.png';
-// Tetherer Assets
-import tethererMainScreen from '../../assets/projects/tetherer/tetherer.png';
-import tethererMainScreen2 from '../../assets/projects/tetherer/tetherer2.png';
-import tethererMainScreen3 from '../../assets/projects/tetherer/tetherer3.png';
-import tethererPremium from '../../assets/projects/tetherer/tetherer4.png';
-import tethererDashboard from '../../assets/projects/tetherer/tetherer5.png';
-import tethererCreateEvent from '../../assets/projects/tetherer/tetherer6.png';
-import tethererCreateEvent2 from '../../assets/projects/tetherer/tetherer7.png';
-import tethererCreateEvent3 from '../../assets/projects/tetherer/tetherer8.png';
-// Area Violation Detection Assets
-import areaViolationDetectionRed from '../../assets/projects/area_violation_detection/area-violation-detection.png';
-import areaViolationDetectionGreen from '../../assets/projects/area_violation_detection/area-violation-detection2.png';
-import areaViolationDetectionGif from '../../assets/projects/area_violation_detection/area-violation-detection3.gif';
-// 3in1 Assets
-import threeInOneHome from '../../assets/projects/3in1/3in1.png';
-import threeInOneHome2 from '../../assets/projects/3in1/3in1_2.gif';
-import threeInOneRegister from '../../assets/projects/3in1/3in1_3.png';
-import threeInOneLogin from '../../assets/projects/3in1/3in1_4.png';
-import threeInOneProfile from '../../assets/projects/3in1/3in1_5.png';
-import threeInOneSleep from '../../assets/projects/3in1/3in1_6.png';
-import threeInOneMeditation from '../../assets/projects/3in1/3in1_7.png';
-
 // Icons
 import {
   FaCss3Alt,
@@ -56,6 +27,34 @@ import {
   SiTypescript,
   SiWebpack
 } from 'react-icons/si';
+// 3in1 Assets
+import threeInOneHome from '../../assets/projects/3in1/3in1.png';
+import threeInOneHome2 from '../../assets/projects/3in1/3in1_2.gif';
+import threeInOneRegister from '../../assets/projects/3in1/3in1_3.png';
+import threeInOneLogin from '../../assets/projects/3in1/3in1_4.png';
+import threeInOneProfile from '../../assets/projects/3in1/3in1_5.png';
+import threeInOneSleep from '../../assets/projects/3in1/3in1_6.png';
+import threeInOneMeditation from '../../assets/projects/3in1/3in1_7.png';
+// Area Violation Detection Assets
+import areaViolationDetectionRed from '../../assets/projects/area_violation_detection/area-violation-detection.png';
+import areaViolationDetectionGreen from '../../assets/projects/area_violation_detection/area-violation-detection2.png';
+import areaViolationDetectionGif from '../../assets/projects/area_violation_detection/area-violation-detection3.gif';
+// Personal Website Assets
+import personalWebsiteAboutMe from '../../assets/projects/personal_website/personal-website.png';
+import personalWebsiteSkills from '../../assets/projects/personal_website/personal-website2.png';
+import personalWebsiteProjects from '../../assets/projects/personal_website/personal-website3.png';
+import personalWebsiteContactMe from '../../assets/projects/personal_website/personal-website4.png';
+import personalWebsiteLightMode from '../../assets/projects/personal_website/personal-website5.png';
+// Tetherer Assets
+import tethererMainScreen from '../../assets/projects/tetherer/tetherer.png';
+import tethererMainScreen2 from '../../assets/projects/tetherer/tetherer2.png';
+import tethererMainScreen3 from '../../assets/projects/tetherer/tetherer3.png';
+import tethererPremium from '../../assets/projects/tetherer/tetherer4.png';
+import tethererDashboard from '../../assets/projects/tetherer/tetherer5.png';
+import tethererCreateEvent from '../../assets/projects/tetherer/tetherer6.png';
+import tethererCreateEvent2 from '../../assets/projects/tetherer/tetherer7.png';
+import tethererCreateEvent3 from '../../assets/projects/tetherer/tetherer8.png';
+import type { IProjectsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
 
 const ProjectsSectionScripts = {
   personal_website: {

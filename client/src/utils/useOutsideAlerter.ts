@@ -15,9 +15,9 @@ function useOutsideAlerter(ref: RefObject<HTMLDivElement>, callback: Dispatch<Se
      */
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Element;
-      if(ref.current && !ref.current.contains(target)) {
+      if(ref.current && !ref.current.contains(target))
         callback(false);
-      }
+
     }
 
     // Bind the event listener

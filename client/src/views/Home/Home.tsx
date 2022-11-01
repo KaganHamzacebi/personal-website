@@ -1,28 +1,28 @@
-import './home.scss';
-import {
-  useAppDispatch,
-  useAppSelector
-} from '../../app/hooks';
-import { isReachedElement } from '../../features/scrollController/ScrollUtils';
-import { setNav } from '../../features/scrollController/ScrollControllerSlice';
-import { Helmet } from 'react-helmet-async';
 // Partial Components
 import {
   useEffect,
   useRef
 } from 'react';
+import { Helmet } from 'react-helmet-async';
+import {
+  useAppDispatch,
+  useAppSelector
+} from '../../app/hooks';
+import Footer from '../../components/Footer/Footer';
+import GoHomeButton from '../../components/GoHomeButton/GoHomeButton';
 import Header from '../../components/Header/Header';
 import SocialBar from '../../components/SocialBar/SocialBar';
+import { selectHeader } from '../../features/headerController/HeaderControllerSlice';
+import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
+import { setNav } from '../../features/scrollController/ScrollControllerSlice';
+import { isReachedElement } from '../../features/scrollController/ScrollUtils';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 // All Sections of Home screen
 import AboutMeSection from './AboutMeSection/AboutMeSection';
-import SkillsSection from './SkillsSection/SkillsSection';
-import Footer from '../../components/Footer/Footer';
-import ProjectsSection from './ProjectsSection/ProjectsSection';
-import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
 import ContactMeSection from './ContactMeSection/ContactMeSection';
-import GoHomeButton from '../../components/GoHomeButton/GoHomeButton';
-import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
-import { selectHeader } from '../../features/headerController/HeaderControllerSlice';
+import './home.scss';
+import ProjectsSection from './ProjectsSection/ProjectsSection';
+import SkillsSection from './SkillsSection/SkillsSection';
 
 export function Home() {
   const aboutMeSectionRef = useRef<HTMLElement>(null);
@@ -51,7 +51,16 @@ export function Home() {
     const projectsSection = document.getElementById('projectsSection');
     const contactMeSection = document.getElementById('contactMeSection');
 
-    if(contactMeSection && isReachedElement(contactMeSection)) dispatch(setNav('contactMeSection')); else if(projectsSection && isReachedElement(projectsSection)) dispatch(setNav('projectsSection')); else if(skillsSection && isReachedElement(skillsSection)) dispatch(setNav('skillsSection')); else if(aboutMeSection && isReachedElement(aboutMeSection)) dispatch(setNav('aboutMeSection'));
+    if(contactMeSection && isReachedElement(contactMeSection))
+      dispatch(setNav('contactMeSection'));
+
+    else if(projectsSection && isReachedElement(projectsSection))
+      dispatch(setNav('projectsSection'));
+
+    else if(skillsSection && isReachedElement(skillsSection))
+      dispatch(setNav('skillsSection'));
+
+    else if(aboutMeSection && isReachedElement(aboutMeSection)) dispatch(setNav('aboutMeSection'));
   }
 
   return (<div>

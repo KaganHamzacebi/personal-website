@@ -1,6 +1,6 @@
-import './contactMeSection.scss';
 import ContactMeInfo from './ContactMeInfo/ContactMeInfo';
 import ContactMeMessage from './ContactMeMessage/ContactMeMessage';
+import './contactMeSection.scss';
 
 function ContactMeSection() {
   return (<div className="contactMeMain">

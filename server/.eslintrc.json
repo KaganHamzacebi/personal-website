@@ -22,13 +22,13 @@
 	],
 	"comma-dangle": [
 	  "error",
-	  "always-multiline"
+	  "never"
 	],
 	"comma-spacing": "error",
 	"comma-style": "error",
 	"curly": [
 	  "error",
-	  "multi-line",
+	  "multi",
 	  "consistent"
 	],
 	"dot-location": [
@@ -76,13 +76,6 @@
 		  "resolve",
 		  "reject"
 		]
-	  }
-	],
-	"no-trailing-spaces": [
-	  "error",
-	  {
-		"skipBlankLines": true,
-		"ignoreComments": true
 	  }
 	],
 	"no-var": "error",

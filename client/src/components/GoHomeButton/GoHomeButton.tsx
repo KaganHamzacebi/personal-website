@@ -1,14 +1,14 @@
-import './goHomeButton.scss';
-
-import { scrollTo } from '../../features/scrollController/ScrollUtils';
-import { BiUpArrowAlt } from 'react-icons/bi';
 import type { RefObject } from 'react';
 import {
   useEffect,
   useState
 } from 'react';
+import { BiUpArrowAlt } from 'react-icons/bi';
 import { useAppSelector } from '../../app/hooks';
+
+import { scrollTo } from '../../features/scrollController/ScrollUtils';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import './goHomeButton.scss';
 
 function GoHomeButton({ refs }: { refs: { aboutMeSectionRef: RefObject<HTMLElement> } }) {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -22,12 +22,12 @@ function GoHomeButton({ refs }: { refs: { aboutMeSectionRef: RefObject<HTMLEleme
   });
 
   function scrollTracker() {
-    if(window.scrollY > 400) {
+    if(window.scrollY > 400)
       setIsButtonVisible(true);
-    }
-    else {
+
+    else
       setIsButtonVisible(false);
-    }
+
   }
 
   function goToHome() {

@@ -1,13 +1,13 @@
-import './contactMeInfo.scss';
+import { FiPhoneCall } from 'react-icons/fi';
 
 import {
   IoLocationOutline,
   IoMailOutline
 } from 'react-icons/io5';
-import { FiPhoneCall } from 'react-icons/fi';
-import { selectTranslations } from '../../../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../../../app/hooks';
+import { selectTranslations } from '../../../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../../../features/themeController/ThemeControllerSlice';
+import './contactMeInfo.scss';
 
 function ContactMeInfo() {
   const t = useAppSelector(selectTranslations);

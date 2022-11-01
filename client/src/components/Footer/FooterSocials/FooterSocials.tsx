@@ -1,15 +1,15 @@
-import './footerSocials.scss';
-// Social Links
-import { GoMarkGithub } from 'react-icons/go';
+import { useState } from 'react';
 import {
   FaDiscord,
   FaLinkedinIn
 } from 'react-icons/fa';
+// Social Links
+import { GoMarkGithub } from 'react-icons/go';
 import { IoLogoWhatsapp } from 'react-icons/io';
-import { useState } from 'react';
-import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../../app/hooks';
+import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
+import './footerSocials.scss';
 
 function FooterSocials() {
   const [showClipboard, setShowClipboard] = useState(false);
@@ -44,8 +44,8 @@ function FooterSocials() {
     <div className={`footerSocialsMain__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div
         className={`footerSocialsMain__bg__clipboard ${theme === 'dark' ?
-              'dark' :
-              'light'} tri-right btm-left-in ${showClipboard && 'active'}`}
+          'dark' :
+          'light'} tri-right btm-left-in ${showClipboard && 'active'}`}
       >
         {t.headerFooterScripts.copied}
       </div>

@@ -1,32 +1,32 @@
-import './header.scss';
+import moment from 'moment';
 import type { RefObject } from 'react';
 import {
   useEffect,
   useMemo,
   useState
 } from 'react';
+import { Cookies } from 'react-cookie';
+import { BsBoxArrowInLeft } from 'react-icons/bs';
 import { MdMenu } from 'react-icons/md';
-import {
-  getNavSelector,
-  setNav
-} from '../../features/scrollController/ScrollControllerSlice';
 import {
   useAppDispatch,
   useAppSelector
 } from '../../app/hooks';
-import { scrollTo } from '../../features/scrollController/ScrollUtils';
-import Logo from '../../assets/general/k-logo.png';
 import LogoBrown from '../../assets/general/k-logo-brown.png';
-import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
-import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton';
-import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
-import { BsBoxArrowInLeft } from 'react-icons/bs';
+import Logo from '../../assets/general/k-logo.png';
 import {
   selectHeader,
   setMinimize
 } from '../../features/headerController/HeaderControllerSlice';
-import { Cookies } from 'react-cookie';
-import moment from 'moment';
+import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
+import {
+  getNavSelector,
+  setNav
+} from '../../features/scrollController/ScrollControllerSlice';
+import { scrollTo } from '../../features/scrollController/ScrollUtils';
+import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton';
+import './header.scss';
 
 function Header({
   refs
@@ -53,15 +53,15 @@ function Header({
   });
 
   useEffect(() => {
-    if(cookies.get('header')?.minimized) {
+    if(cookies.get('header')?.minimized)
       dispatch(setMinimize(true));
-    }
+
   }, [dispatch, cookies]);
 
   function handleWindowSize() {
-    if(window.innerWidth > 800) {
+    if(window.innerWidth > 800)
       setShowHeader(false);
-    }
+
   }
 
   return (<div>
@@ -85,8 +85,8 @@ function Header({
     </div>
     <div
       className={`header ${showHeader && 'mobile'} ${h.minimized && 'minimized'} ${theme === 'dark' ?
-            'dark' :
-            'light'}`}
+        'dark' :
+        'light'}`}
       onMouseEnter={() => setShowMinimizeButton(true)}
       onMouseLeave={() => setShowMinimizeButton(false)}
       onClick={() => {
@@ -114,8 +114,8 @@ function Header({
       >
         <BsBoxArrowInLeft
           className={`header-minimize-button__icon ${theme === 'dark' ?
-                'dark' :
-                'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
+            'dark' :
+            'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
         />
       </div>
       <nav className="header__nav">

@@ -1,4 +1,7 @@
-import './skillsSection.scss';
+import {
+  useLayoutEffect,
+  useState
+} from 'react';
 // Icons
 import {
   FaCss3Alt,
@@ -14,15 +17,12 @@ import {
 } from 'react-icons/si';
 
 import { TbSocial } from 'react-icons/tb';
-import {
-  useLayoutEffect,
-  useState
-} from 'react';
-import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../../app/hooks';
+import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
-import SkillsSlider from './SkillsSlider/SkillsSlider';
 import isInViewport from '../../../utils/isInViewPort';
+import './skillsSection.scss';
+import SkillsSlider from './SkillsSlider/SkillsSlider';
 
 function SkillsSection() {
   const [isReactDotActive, setIsReactDotActive] = useState(false);

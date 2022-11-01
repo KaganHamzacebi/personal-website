@@ -1,9 +1,9 @@
-import './footer.scss';
-import Logo from '../../assets/general/k-logo.png';
-import FooterSocials from './FooterSocials/FooterSocials';
-import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../app/hooks';
+import Logo from '../../assets/general/k-logo.png';
+import { selectTranslations } from '../../features/languageController/LanguageControllerSlice';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
+import './footer.scss';
+import FooterSocials from './FooterSocials/FooterSocials';
 
 function Footer() {
   const t = useAppSelector(selectTranslations);

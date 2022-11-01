@@ -1,17 +1,17 @@
-import './contactMeMessage.scss';
-import { useForm } from 'react-hook-form';
-import ReactGA from 'react-ga4';
-import { selectTranslations } from '../../../../features/languageController/LanguageControllerSlice';
-import { useAppSelector } from '../../../../app/hooks';
-import { selectTheme } from '../../../../features/themeController/ThemeControllerSlice';
 import { useMutation } from '@apollo/client';
-import { SAVE_MESSAGE } from '../../../../service/contactMeApi/ContactMeApi';
 import {
   useEffect,
   useState
 } from 'react';
+import ReactGA from 'react-ga4';
+import { useForm } from 'react-hook-form';
 
 import { BsFillPatchCheckFill } from 'react-icons/bs';
+import { useAppSelector } from '../../../../app/hooks';
+import { selectTranslations } from '../../../../features/languageController/LanguageControllerSlice';
+import { selectTheme } from '../../../../features/themeController/ThemeControllerSlice';
+import { SAVE_MESSAGE } from '../../../../service/contactMeApi/ContactMeApi';
+import './contactMeMessage.scss';
 
 export type IMessage = {
   firstName: string; lastName: string; email: string; subject: string; content: string;
@@ -36,9 +36,9 @@ function ContactMeMessage() {
       }
     })
       .then((res) => {
-        if(res.data?.saveMessage === true) {
+        if(res.data?.saveMessage === true)
           setShowMessage(true);
-        }
+
         setTimeout(() => {
           setShowMessage(false);
         }, 4000);
@@ -46,11 +46,11 @@ function ContactMeMessage() {
   };
 
   useEffect(() => {
-    if(formState.isSubmitSuccessful) {
+    if(formState.isSubmitSuccessful)
       setTimeout(() => {
         reset();
       }, 1000);
-    }
+
   }, [formState, reset]);
 
   return (<form className="main-form" onSubmit={handleSubmit(onSubmit)}>
