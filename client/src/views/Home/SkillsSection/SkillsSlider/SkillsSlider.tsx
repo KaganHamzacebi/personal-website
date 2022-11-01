@@ -33,7 +33,7 @@ import {
     SiJirasoftware,
     SiPostman,
     SiCsharp,
-    SiJava
+    SiJava,
 } from 'react-icons/si';
 import { useAppSelector } from '../../../../app/hooks';
 import { selectTheme } from '../../../../features/themeController/ThemeControllerSlice';
@@ -42,109 +42,34 @@ function SkillsSlider() {
     const theme = useAppSelector(selectTheme);
 
     const skillIcons = [
-        <FaReact
-            data-tip="ReactJS"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiRedux
-            data-tip="Redux"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiJavascript
-            data-tip="JavaScript (ES6)"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiTypescript
-            data-tip="TypeScript"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <FaHtml5
-            data-tip="HTML5"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <FaCss3Alt
-            data-tip="CSS3"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <FaNodeJs
-            data-tip="Node.JS"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiExpress
-            data-tip="Express Server"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiTailwindcss
-            data-tip="TailwindCSS"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiDocker
-            data-tip="Docker"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiMongodb
-            data-tip="MongoDB"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiFirebase
-            data-tip="Firebase"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <GrGraphQl
-            data-tip="GraphQL"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
+        <FaReact data-tip="ReactJS" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiRedux data-tip="Redux" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiJavascript data-tip="JavaScript (ES6)" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiTypescript data-tip="TypeScript" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <FaHtml5 data-tip="HTML5" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <FaCss3Alt data-tip="CSS3" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <FaNodeJs data-tip="Node.JS" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiExpress data-tip="Express Server" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiTailwindcss data-tip="TailwindCSS" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiDocker data-tip="Docker" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiMongodb data-tip="MongoDB" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiFirebase data-tip="Firebase" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <GrGraphQl data-tip="GraphQL" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
         <SiJest data-tip="Jest" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
-        <SiWebpack
-            data-tip="Webpack"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiPython
-            data-tip="Python"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiTensorflow
-            data-tip="Tensorflow 2"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiAnaconda
-            data-tip="Anaconda"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiOpencv
-            data-tip="OpenCV"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiSpring
-            data-tip="Spring Boot"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiAndroid
-            data-tip="Android Native"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiAngular
-            data-tip="AngularJS & Angular 6+"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiDotnet
-            data-tip=".NET 3+"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiGit
-            data-tip="Git & TFS"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiJirasoftware
-            data-tip="JIRA"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
-        <SiPostman
-            data-tip="Postman"
-            className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-        />,
+        <SiWebpack data-tip="Webpack" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiPython data-tip="Python" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiTensorflow data-tip="Tensorflow 2" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiAnaconda data-tip="Anaconda" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiOpencv data-tip="OpenCV" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiSpring data-tip="Spring Boot" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiAndroid data-tip="Android Native" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiAngular data-tip="AngularJS & Angular 6+" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiDotnet data-tip=".NET 3+" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiGit data-tip="Git & TFS" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiJirasoftware data-tip="JIRA" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
+        <SiPostman data-tip="Postman" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
         <SiCsharp data-tip="C#" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
-        <SiJava data-tip="Java" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />
+        <SiJava data-tip="Java" className={`skill-icon ${theme === 'dark' ? 'dark' : 'light'}`} />,
     ];
 
     return (
@@ -162,33 +87,32 @@ function SkillsSlider() {
                 modules={[A11y, Lazy, Autoplay]}
                 autoplay={{
                     delay: 2000,
-                    disableOnInteraction: false
+                    disableOnInteraction: false,
                 }}
                 loop={true}
                 breakpoints={{
                     0: {
-                        slidesPerView: 3
+                        slidesPerView: 3,
                     },
                     650: {
-                        slidesPerView: 5
+                        slidesPerView: 5,
                     },
                     1024: {
-                        slidesPerView: 7
+                        slidesPerView: 7,
                     },
                     1280: {
-                        slidesPerView: 9
+                        slidesPerView: 9,
                     },
                     1536: {
-                        slidesPerView: 12
-                    }
-                }}>
-                {skillIcons.map((s, index) => {
-                    return (
-                        <SwiperSlide className="icon-swiper" key={index}>
-                            {s}
-                        </SwiperSlide>
-                    );
-                })}
+                        slidesPerView: 12,
+                    },
+                }}
+            >
+                {skillIcons.map((s, index) => (
+                    <SwiperSlide className="icon-swiper" key={index}>
+                        {s}
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </div>
     );

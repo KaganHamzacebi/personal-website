@@ -4,13 +4,13 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import {
     acceptCookie,
     selectCookieAlerter,
-    showCookieAlert
+    showCookieAlert,
 } from './features/cookieAlertController/CookieAlertControllerSlice';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Cookies } from 'react-cookie';
 
 function App() {
-    const cookies = new Cookies();
+    const cookies = useMemo(() => new Cookies(), []);
     const c = useAppSelector(selectCookieAlerter);
     const dispatch = useAppDispatch();
     const [cookieTimeout, setCookieTimeout] = useState<NodeJS.Timeout>();
@@ -26,8 +26,7 @@ function App() {
             clearTimeout(cookieTimeout);
             dispatch(acceptCookie);
         }
-        // eslint-disable-next-line
-    }, [cookies.get('cookiePreferences'), dispatch]);
+    }, [c.delay, cookieTimeout, cookies, dispatch]);
 
     return (
         <div>

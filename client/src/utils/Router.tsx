@@ -8,10 +8,7 @@ import { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 import NotFound from '../views/NotFound/NotFound';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import {
-    selectLoading,
-    setLoadingActive
-} from '../features/loadingController/LoadingControllerSlice';
+import { selectLoading, setLoadingActive } from '../features/loadingController/LoadingControllerSlice';
 import LoadingScreen from '../views/LoadingScreen/LoadingScreen';
 
 function Router() {
@@ -21,7 +18,7 @@ function Router() {
     useEffect(() => {
         ReactGA.send({
             hitType: 'pageview',
-            page: window.location.pathname + window.location.search
+            page: window.location.pathname + window.location.search,
         });
     });
 
@@ -37,8 +34,8 @@ function Router() {
         {
             path: '/',
             element: <Home />,
-            errorElement: <NotFound />
-        }
+            errorElement: <NotFound />,
+        },
     ]);
 
     return (

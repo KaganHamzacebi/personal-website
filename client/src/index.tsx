@@ -13,10 +13,11 @@ import { client } from './service/api';
 const TRACKING_ID = 'G-CSHH5QZZ54';
 ReactGA.initialize(TRACKING_ID);
 
-const container = document.getElementById('root')!;
-const root = createRoot(container);
+const container = document?.getElementById('root');
+let root = null;
+if (container) root = createRoot(container);
 
-root.render(
+root?.render(
     <React.StrictMode>
         <HelmetProvider>
             <Provider store={store}>

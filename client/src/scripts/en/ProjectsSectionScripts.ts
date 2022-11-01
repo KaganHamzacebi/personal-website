@@ -1,4 +1,4 @@
-import { IProjectsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
+import type { IProjectsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
 // Personal Website Assets
 import personalWebsiteAboutMe from '../../assets/projects/personal_website/personal-website.png';
 import personalWebsiteSkills from '../../assets/projects/personal_website/personal-website2.png';
@@ -49,14 +49,13 @@ import {
     SiSpring,
     SiAndroid,
     SiFirebase,
-    SiMongodb
+    SiMongodb,
 } from 'react-icons/si';
 
 const ProjectsSectionScripts = {
     personal_website: {
         heading: 'Personal Website',
-        description:
-            'A personal playground & portfolio website to test frameworks and learn new technologies.',
+        description: 'A personal playground & portfolio website to test frameworks and learn new technologies.',
         modal: {
             tag: 'personal_website',
             heading: 'Personal Website',
@@ -71,7 +70,7 @@ const ProjectsSectionScripts = {
                 'At this project I used react-redux-typescript boilerplate and modularized the main sections. One of my mistake for this project ' +
                 'was selecting ReactJS. I was already experienced at ReactJS, I would select NextJS to learn new one. In this project ' +
                 'the frameworks and libraries I used are ReactJS, Redux, Typescript, SASS (SCSS), Webpack, React-Helmet, react-router-domV6.4, ' +
-                "React-Icons, SwiperV8.4, Google Analytics 4, React-Cookie, React-Hook-FormV7.3, React-Tooltip. As the WebStorm's " +
+                'React-Icons, SwiperV8.4, Google Analytics 4, React-Cookie, React-Hook-FormV7.3, React-Tooltip. As the WebStorm\'s ' +
                 'statistic plugin says I wrote more than 4000 lines of code so far (scss, tsx and ts files). I built this website to ' +
                 'learn new frameworks and libs, getting better at clean code and kiss, solid and dry principles, learning new coding techniques ' +
                 'and lastly creating a portfolio like website for my future career.',
@@ -80,25 +79,14 @@ const ProjectsSectionScripts = {
                 personalWebsiteSkills,
                 personalWebsiteProjects,
                 personalWebsiteContactMe,
-                personalWebsiteLightMode
+                personalWebsiteLightMode,
             ],
-            frameworks: [
-                FaReact,
-                SiRedux,
-                SiTypescript,
-                SiJest,
-                FaHtml5,
-                FaCss3Alt,
-                GrGraphQl,
-                SiWebpack,
-                FaNodeJs
-            ]
-        }
+            frameworks: [FaReact, SiRedux, SiTypescript, SiJest, FaHtml5, FaCss3Alt, GrGraphQl, SiWebpack, FaNodeJs],
+        },
     },
     tetherer: {
         heading: 'Tetherer',
-        description:
-            'Tetherer is a discord bot for creating customizable events on discord channels.',
+        description: 'Tetherer is a discord bot for creating customizable events on discord channels.',
         modal: {
             tag: 'tetherer',
             heading: 'Tetherer',
@@ -121,7 +109,7 @@ const ProjectsSectionScripts = {
                 tethererDashboard,
                 tethererCreateEvent,
                 tethererCreateEvent2,
-                tethererCreateEvent3
+                tethererCreateEvent3,
             ],
             frameworks: [
                 FaReact,
@@ -132,9 +120,9 @@ const ProjectsSectionScripts = {
                 SiExpress,
                 SiDocker,
                 SiMongodb,
-                SiDiscord
-            ]
-        }
+                SiDiscord,
+            ],
+        },
     },
     area_violation_detection: {
         heading: 'Area Violation Detection',
@@ -155,19 +143,14 @@ const ProjectsSectionScripts = {
                 'with OpenCV. Object Detection Model was selected as YOLO. YoloV3 and YoloV5s versions implemented. Between those versions there were some ' +
                 'performance and detection differences. YoloV3 was faster at RTX 2070 and YoloV5s was better as detecting objects. Yolo models loaded with OpenCV and ' +
                 'used numpy library for some performance improvements.',
-            slides: [
-                areaViolationDetectionRed,
-                areaViolationDetectionGreen,
-                areaViolationDetectionGif
-            ],
+            slides: [areaViolationDetectionRed, areaViolationDetectionGreen, areaViolationDetectionGif],
             frameworks: [SiPython, SiOpencv, SiTensorflow, SiAnaconda],
-            src: 'https://github.com/KaganHamzacebi/area-violation-detection'
-        }
+            src: 'https://github.com/KaganHamzacebi/area-violation-detection',
+        },
     },
     three_in_one: {
         heading: '3in1',
-        description:
-            'Capstone project for meditation. App contains sleep analyze, chat and VR meditation modules.',
+        description: 'Capstone project for meditation. App contains sleep analyze, chat and VR meditation modules.',
         modal: {
             tag: '3in1',
             heading: '3in1',
@@ -191,7 +174,7 @@ const ProjectsSectionScripts = {
                 threeInOneLogin,
                 threeInOneProfile,
                 threeInOneSleep,
-                threeInOneMeditation
+                threeInOneMeditation,
             ],
             frameworks: [
                 FaReact,
@@ -202,9 +185,9 @@ const ProjectsSectionScripts = {
                 SiSpring,
                 SiAndroid,
                 SiFirebase,
-                SiMongodb
-            ]
-        }
+                SiMongodb,
+            ],
+        },
     },
     shop_tracker: {
         heading: 'Shop Tracker',
@@ -226,9 +209,9 @@ const ProjectsSectionScripts = {
                 'Customers can follow this screen and get noticed when their food is ready. The application was built with Android Native, Firebase Realtime Database and ' +
                 'Firebase Authentication.',
             slides: [],
-            frameworks: [SiAndroid, SiFirebase]
-        }
-    }
+            frameworks: [SiAndroid, SiFirebase],
+        },
+    },
 } as IProjectsSectionScripts;
 
 export default ProjectsSectionScripts;

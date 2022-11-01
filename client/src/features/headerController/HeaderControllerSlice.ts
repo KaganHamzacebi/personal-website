@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 
-export const defaultLanguage: string = 'en';
+export const defaultLanguage = 'en';
 
 const initialState: { minimized: boolean } = {
-    minimized: false
+    minimized: false,
 };
 
 export const headerControllerSlice = createSlice({
@@ -13,11 +13,10 @@ export const headerControllerSlice = createSlice({
     reducers: {
         setMinimize: (state, action) => {
             state.minimized = action.payload;
-        }
-    }
+        },
+    },
 });
 
 export const { setMinimize } = headerControllerSlice.actions;
-// @ts-ignore
 export const selectHeader = (state: RootState) => state.headerController;
 export default headerControllerSlice.reducer;

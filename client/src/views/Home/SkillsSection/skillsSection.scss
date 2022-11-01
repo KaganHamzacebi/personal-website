@@ -1,333 +1,328 @@
-@import "../../../styles/functions";
-@import "../../../styles/mixins";
+@import '../../../styles/functions';
+@import '../../../styles/mixins';
 
 .skillsMain {
-  width: 100%;
-  height: 100%;
-  margin-top: 3rem;
-  border-radius: 0.25rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    border-radius: 0.25rem;
 }
 
 .grid {
-  height: 100%;
-  margin: 0 auto;
-  display: grid;
-  align-items: stretch;
-  gap: 1rem;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    align-items: stretch;
+    gap: 1rem;
 
-  @include media-md {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media-lg {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  &__item {
-    border-radius: 0.25rem;
-    gap: 2rem;
-    padding: 1rem;
-    @include flex-center(column);
-    @include shadow-xl;
-    @include set-transition(0.5s);
-
-    &.show {
-      opacity: 1;
+    @include media-md {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    &:not(.show) {
-      opacity: 0;
+    @include media-lg {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    &.dark {
-      background-color: getMainColor("thirdy", dark);
-    }
+    &__item {
+        border-radius: 0.25rem;
+        gap: 2rem;
+        padding: 1rem;
+        @include flex-center(column);
+        @include shadow-xl;
+        @include set-transition(0.5s);
 
-    &.light {
-      background-color: getMainColor("thirdy", light);
-    }
+        &.show {
+            opacity: 1;
+        }
 
-    &__bg {
-      position: relative;
-      width: 120px;
-      padding: 1.5rem;
-      border-radius: 50%;
-      @include flex-center(row);
-
-      &.dark {
-        border: 1px solid getTextColor("gray", dark);
-      }
-
-      &.light {
-        border: 1px solid getTextColor("gray", light);
-      }
-
-      &__react-logo {
-        width: 100%;
-        height: 100%;
-        color: #61DAFB;
-      }
-
-      &__nodejs-logo {
-        width: 100%;
-        height: 100%;
-        color: #71B953;
-      }
-
-      &__mongo-logo {
-        width: 100%;
-        height: 100%;
-        color: #3FA037;
-      }
-
-      &__integration-logo {
-        width: 100%;
-        height: 100%;
-        font-size: getFontSize("lg");
+        &:not(.show) {
+            opacity: 0;
+        }
 
         &.dark {
-          color: getMainColor("xlight-gray", dark);
+            background-color: getMainColor('thirdy', dark);
         }
 
         &.light {
-          color: getTextColor("gray", light);
+            background-color: getMainColor('thirdy', light);
         }
-      }
+
+        &__bg {
+            position: relative;
+            width: 120px;
+            padding: 1.5rem;
+            border-radius: 50%;
+            @include flex-center(row);
+
+            &.dark {
+                border: 1px solid getTextColor('gray', dark);
+            }
+
+            &.light {
+                border: 1px solid getTextColor('gray', light);
+            }
+
+            &__react-logo {
+                width: 100%;
+                height: 100%;
+                color: #61dafb;
+            }
+
+            &__nodejs-logo {
+                width: 100%;
+                height: 100%;
+                color: #71b953;
+            }
+
+            &__mongo-logo {
+                width: 100%;
+                height: 100%;
+                color: #3fa037;
+            }
+
+            &__integration-logo {
+                width: 100%;
+                height: 100%;
+                font-size: getFontSize('lg');
+
+                &.dark {
+                    color: getMainColor('xlight-gray', dark);
+                }
+
+                &.light {
+                    color: getTextColor('gray', light);
+                }
+            }
+        }
+
+        &__react-h1 {
+            margin-top: -1.5rem;
+            color: #61dafb;
+            font-size: getFontSize('lg');
+        }
+
+        &__nodejs-h1 {
+            margin-top: -1.5rem;
+            color: #71b953;
+            font-size: getFontSize('lg');
+        }
+
+        &__htmlcss-h1 {
+            margin-top: -1rem;
+        }
+
+        &__tsjs-h1 {
+            margin-top: -1rem;
+        }
+
+        &__integration-h1 {
+            margin-top: -1.5rem;
+
+            &.dark {
+                color: getTextColor('primary', dark);
+            }
+
+            &.light {
+                color: getTextColor('gray', light);
+            }
+        }
+
+        &__mongo-h1 {
+            color: #3fa037;
+            font-size: getFontSize('lg');
+            margin-top: -1.5rem;
+        }
+
+        &__double-container {
+            position: relative;
+            @include flex-center(row);
+            column-gap: 0.5rem;
+            padding: 2rem 0;
+            width: 184px;
+            height: 120px;
+            flex-grow: 0.4;
+            border-radius: 0.25rem;
+
+            &.dark {
+                border: 1px solid getTextColor('gray', dark);
+            }
+
+            &.light {
+                border: 1px solid getTextColor('gray', light);
+            }
+
+            // HTML & CSS
+            &__html {
+                width: 100%;
+                height: 100%;
+                color: #2e49d4;
+            }
+
+            &__css {
+                width: 100%;
+                height: 100%;
+                color: #dd4b25;
+            }
+
+            // TS & JS
+            &__js {
+                width: 85%;
+                height: 85%;
+                color: #fcdc00;
+            }
+
+            &__ts {
+                width: 85%;
+                height: 85%;
+                color: #3278c6;
+            }
+        }
+
+        & > p {
+            padding: 0 2rem;
+            font-weight: getFontWeight('sbold');
+            font-size: getFontSize('sm');
+            text-align: center;
+            line-height: 1.25rem;
+
+            &.dark {
+                color: getTextColor('grid_text', dark);
+            }
+
+            &.light {
+                color: getTextColor('grid_text', light);
+            }
+        }
     }
-
-    &__react-h1 {
-      margin-top: -1.5rem;
-      color: #61DAFB;
-      font-size: getFontSize("lg");
-    }
-
-    &__nodejs-h1 {
-      margin-top: -1.5rem;
-      color: #71B953;
-      font-size: getFontSize("lg");
-    }
-
-    &__htmlcss-h1 {
-      margin-top: -1rem;
-    }
-
-    &__tsjs-h1 {
-      margin-top: -1rem;
-    }
-
-    &__integration-h1 {
-      margin-top: -1.5rem;
-
-      &.dark {
-        color: getTextColor("primary", dark);
-      }
-
-      &.light {
-        color: getTextColor("gray", light);
-      }
-    }
-
-    &__mongo-h1 {
-      color: #3FA037;
-      font-size: getFontSize("lg");
-      margin-top: -1.5rem;
-    }
-
-    &__double-container {
-      position: relative;
-      @include flex-center(row);
-      column-gap: 0.5rem;
-      padding: 2rem 0;
-      width: 184px;
-      height: 120px;
-      flex-grow: 0.4;
-      border-radius: 0.25rem;
-
-      &.dark {
-        border: 1px solid getTextColor("gray", dark);
-      }
-
-      &.light {
-        border: 1px solid getTextColor("gray", light);
-      }
-
-      // HTML & CSS
-      &__html {
-        width: 100%;
-        height: 100%;
-        color: #2E49D4;
-      }
-
-      &__css {
-        width: 100%;
-        height: 100%;
-        color: #DD4B25;
-      }
-
-      // TS & JS
-      &__js {
-        width: 85%;
-        height: 85%;
-        color: #FCDC00;
-      }
-
-      &__ts {
-        width: 85%;
-        height: 85%;
-        color: #3278C6;
-      }
-
-    }
-
-    & > p {
-      padding: 0 2rem;
-      font-weight: getFontWeight("sbold");
-      font-size: getFontSize("sm");
-      text-align: center;
-      line-height: 1.25rem;
-
-      &.dark {
-        color: getTextColor("grid_text", dark);
-      }
-
-      &.light {
-        color: getTextColor("grid_text", light);
-      }
-    }
-
-  }
-
 }
 
 .html-h1 {
-  color: #DD4B25;
-  font-size: getFontSize("lg");
+    color: #dd4b25;
+    font-size: getFontSize('lg');
 }
 
 .css-h1 {
-  color: #2E49D4;
-  font-size: getFontSize("lg");
+    color: #2e49d4;
+    font-size: getFontSize('lg');
 }
 
 .js-h1 {
-  color: #FCDC00;
-  font-size: getFontSize("lg");
-
+    color: #fcdc00;
+    font-size: getFontSize('lg');
 }
 
 .ts-h1 {
-  color: #3278C6;
-  font-size: getFontSize("lg");
-
+    color: #3278c6;
+    font-size: getFontSize('lg');
 }
 
 .middle_text {
-  color: getTextColor("secondary", dark);
-  font-size: getFontSize("md");
+    color: getTextColor('secondary', dark);
+    font-size: getFontSize('md');
 }
 
 .grid_btn {
-  @include standard-btn;
+    @include standard-btn;
 }
 
 .service-dot {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotate(22.5deg);
-  @include rotate-full(2s);
-  animation-play-state: paused;
-
-  &.active {
-    animation-play-state: running;
-  }
-
-  .dot1 {
     position: absolute;
-    border-radius: 50%;
-    content: '';
-    width: 15px;
-    height: 15px;
-    top: 20px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(22.5deg);
+    @include rotate-full(2s);
+    animation-play-state: paused;
 
-    &.dark {
-      background-color: getTextColor("gray", dark);
+    &.active {
+        animation-play-state: running;
     }
 
-    &.light {
-      background-color: getTextColor("gray", light);
-    }
-  }
+    .dot1 {
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        width: 15px;
+        height: 15px;
+        top: 20px;
 
-  .dot2 {
-    position: absolute;
-    border-radius: 50%;
-    content: '';
-    width: 15px;
-    height: 15px;
-    bottom: 20px;
-    right: 0;
+        &.dark {
+            background-color: getTextColor('gray', dark);
+        }
 
-    &.dark {
-      background-color: getTextColor("gray", dark);
+        &.light {
+            background-color: getTextColor('gray', light);
+        }
     }
 
-    &.light {
-      background-color: getTextColor("gray", light);
+    .dot2 {
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        width: 15px;
+        height: 15px;
+        bottom: 20px;
+        right: 0;
+
+        &.dark {
+            background-color: getTextColor('gray', dark);
+        }
+
+        &.light {
+            background-color: getTextColor('gray', light);
+        }
     }
-  }
 }
 
 .service-dot-double {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  .dot1-double {
     position: absolute;
-    border-radius: 50%;
-    content: '';
-    width: 15px;
-    height: 15px;
-    top: 4px;
-    left: -8px;
-    @include rotate-dot1(4s);
-    animation-play-state: paused;
+    width: 100%;
+    height: 100%;
 
-    &.dark {
-      background-color: getTextColor("gray", dark);
+    .dot1-double {
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        width: 15px;
+        height: 15px;
+        top: 4px;
+        left: -8px;
+        @include rotate-dot1(4s);
+        animation-play-state: paused;
+
+        &.dark {
+            background-color: getTextColor('gray', dark);
+        }
+
+        &.light {
+            background-color: getTextColor('gray', light);
+        }
+
+        &.active {
+            animation-play-state: running;
+        }
     }
 
-    &.light {
-      background-color: getTextColor("gray", light);
-    }
+    .dot2-double {
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        width: 15px;
+        height: 15px;
+        bottom: 4px;
+        right: -8px;
+        @include rotate-dot2(4s);
+        animation-play-state: paused;
 
-    &.active {
-      animation-play-state: running;
-    }
-  }
+        &.dark {
+            background-color: getTextColor('gray', dark);
+        }
 
-  .dot2-double {
-    position: absolute;
-    border-radius: 50%;
-    content: '';
-    width: 15px;
-    height: 15px;
-    bottom: 4px;
-    right: -8px;
-    @include rotate-dot2(4s);
-    animation-play-state: paused;
+        &.light {
+            background-color: getTextColor('gray', light);
+        }
 
-    &.dark {
-      background-color: getTextColor("gray", dark);
+        &.active {
+            animation-play-state: running;
+        }
     }
-
-    &.light {
-      background-color: getTextColor("gray", light);
-    }
-
-    &.active {
-      animation-play-state: running;
-    }
-  }
 }

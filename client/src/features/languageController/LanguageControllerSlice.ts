@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 import englishTranslate from '../../scripts/en/EnglishScripts';
-import { ILanguageControllerState, ISupportedLanguages } from './LanguageControllerInterfaces';
+import type { ILanguageControllerState, ISupportedLanguages } from './LanguageControllerInterfaces';
 
 export const defaultLanguage = 'en';
 
 export const supportedLanguages: ISupportedLanguages = {
     en: 'English',
-    tr: 'Turkish'
+    tr: 'Turkish',
 };
 
 const initialState: ILanguageControllerState = {
     language: defaultLanguage,
     supportedLanguages: { ...supportedLanguages },
     translations: {
-        en: englishTranslate
-    }
+        en: englishTranslate,
+    },
 };
 
 export const languageControllerSlice = createSlice({
@@ -24,8 +24,8 @@ export const languageControllerSlice = createSlice({
     reducers: {
         selectLanguage: (state, action) => {
             state.language = action.payload;
-        }
-    }
+        },
+    },
 });
 
 export const { selectLanguage } = languageControllerSlice.actions;

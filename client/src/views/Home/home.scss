@@ -1,91 +1,92 @@
-@import "../../styles/functions";
-@import "../../styles/mixins";
+@import '../../styles/functions';
+@import '../../styles/mixins';
 
 .main {
-  &.dark {
-    background-color: getMainColor("primary", dark);
-  }
-
-  &.light {
-    background-color: getMainColor("primary", light);
-  }
-
-  &.wide {
-    left: 20px;
-    max-width: calc(100vw - 20px);
-  }
-
-  @include media-md {
-    position: absolute;
-    left: 200px;
-    max-width: calc(100vw - 200px);
-  }
-
-  section {
-    & > h2 {
-      margin-top: 0.75rem;
+    &.dark {
+        background-color: getMainColor('primary', dark);
     }
-  }
+
+    &.light {
+        background-color: getMainColor('primary', light);
+    }
+
+    &.wide {
+        left: 20px;
+        max-width: calc(100vw - 20px);
+    }
+
+    @include media-md {
+        position: absolute;
+        left: 200px;
+        max-width: calc(100vw - 200px);
+    }
+
+    section {
+        & > h2 {
+            margin-top: 0.75rem;
+        }
+    }
 }
 
 .aboutMeSection {
-  min-height: 100vh;
-  padding: 7rem 5% 2rem 5%;
-  @include flex-center(row);
+    min-height: 100vh;
+    padding: 7rem 5% 2rem 5%;
+    @include flex-center(row);
 
-  &.dark {
-    background-color: getMainColor("secondary", dark);
-  }
+    &.dark {
+        background-color: getMainColor('secondary', dark);
+    }
 
-  &.light {
-    background-color: getMainColor("secondary", light);
-  }
+    &.light {
+        background-color: getMainColor('secondary', light);
+    }
 
-  @include media-md {
-    padding: 2rem 5%;
-  }
+    @include media-md {
+        padding: 2rem 5%;
+    }
 
-  @include media-xl {
-    padding-right: 20%;
-  }
+    @include media-xl {
+        padding-right: 20%;
+    }
 }
 
 .skillsSection {
-  min-height: 100vh;
-  padding: 3rem 5%;
+    min-height: 100vh;
+    padding: 3rem 5%;
 
-  &.dark {
-    background-color: getMainColor("primary", dark);
-  }
+    &.dark {
+        background-color: getMainColor('primary', dark);
+    }
 
-  &.light {
-    background-color: getMainColor("primary", light);
-  }
+    &.light {
+        background-color: getMainColor('primary', light);
+    }
 
-  > h1, h2 {
-    text-align: center;
-  }
+    > h1,
+    h2 {
+        text-align: center;
+    }
 }
 
 .projectsSection {
-  @extend .skillsSection;
-  display: flex;
-  flex-direction: column;
-  &.dark {
-    background-color: getMainColor("secondary", dark);
-  }
-  &.light {
-    background-color: getMainColor("secondary", light);
-  }
+    @extend .skillsSection;
+    display: flex;
+    flex-direction: column;
+    &.dark {
+        background-color: getMainColor('secondary', dark);
+    }
+    &.light {
+        background-color: getMainColor('secondary', light);
+    }
 }
 
 .contactMeSection {
-  @extend .skillsSection;
+    @extend .skillsSection;
 
-  &.dark {
-    background-color: getMainColor("primary", dark);
-  }
-  &.light {
-    background-color: getMainColor("primary", light);
-  }
+    &.dark {
+        background-color: getMainColor('primary', dark);
+    }
+    &.light {
+        background-color: getMainColor('primary', light);
+    }
 }

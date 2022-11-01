@@ -28,8 +28,8 @@ function ContactMeMessage() {
     const onSubmit = (data: IMessage) => {
         saveMessage({
             variables: {
-                message: data
-            }
+                message: data,
+            },
         }).then((res) => {
             if (res.data?.saveMessage === true) {
                 setShowMessage(true);
@@ -50,10 +50,7 @@ function ContactMeMessage() {
 
     return (
         <form className="main-form" onSubmit={handleSubmit(onSubmit)}>
-            <div
-                className={`success-message-info ${theme === 'dark' ? 'dark' : 'light'} ${
-                    showMessage && 'active'
-                }`}>
+            <div className={`success-message-info ${theme === 'dark' ? 'dark' : 'light'} ${showMessage && 'active'}`}>
                 <BsFillPatchCheckFill className="success-icon" />
                 <span className={`success-message ${theme === 'dark' ? 'dark' : 'light'}`}>
                     Message is successfully sent!
@@ -96,9 +93,8 @@ function ContactMeMessage() {
                 <div className="message-sent-wrapper">
                     <button
                         className={`send-btn ${theme === 'dark' ? 'dark' : 'light'}`}
-                        onClick={() =>
-                            ReactGA.event({ category: 'ContactMeSection', action: 'SendButton' })
-                        }>
+                        onClick={() => ReactGA.event({ category: 'ContactMeSection', action: 'SendButton' })}
+                    >
                         {t.contactMeSectionScripts.send_btn}
                     </button>
                 </div>

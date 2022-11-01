@@ -1,11 +1,10 @@
-import { IAboutMeSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
+import type { IAboutMeSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
 
 const AboutMeSectionScripts = {
     name: 'I am Kağan ',
     surname: 'Hamzaçebi',
     webdev: 'Full Stack Web Developer',
-    bio_first_part:
-        "Welcome to my website, I am Kağan Hamzaçebi and I'm currently senior student at",
+    bio_first_part: 'Welcome to my website, I am Kağan Hamzaçebi and I\'m currently senior student at',
     bio_unilink: 'TOBB ETÜ University',
     bio_second_part:
         'of Computer Science department. I am not actively working for a company, ' +
@@ -15,7 +14,7 @@ const AboutMeSectionScripts = {
         'In this website, I will try to represent myself and demonstrate my personal works.' +
         'The main purpose of this website is the test new things (frameworks, libs and more) and not getting rusted.',
     contact_me: 'Contact Me',
-    resume: 'Resume'
+    resume: 'Resume',
 } as IAboutMeSectionScripts;
 
 export default AboutMeSectionScripts;

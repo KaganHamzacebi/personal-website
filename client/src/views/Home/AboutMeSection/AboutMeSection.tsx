@@ -6,8 +6,15 @@ import { scrollTo } from '../../../features/scrollController/ScrollUtils';
 import ReactGA from 'react-ga4';
 import { useAppSelector } from '../../../app/hooks';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
+import type { RefObject } from 'react';
 
-function AboutMeSection({ refs }: any) {
+function AboutMeSection({
+    refs,
+}: {
+    refs: {
+        contactMeSectionRef: RefObject<HTMLElement>;
+    };
+}) {
     const t = useAppSelector(selectTranslations);
     const theme = useAppSelector(selectTheme);
 
@@ -31,7 +38,8 @@ function AboutMeSection({ refs }: any) {
                     className={`aboutMeMain__bio__unilink ${theme === 'dark' ? 'dark' : 'light'}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://www.etu.edu.tr/en">
+                    href="https://www.etu.edu.tr/en"
+                >
                     {' '}
                     {t.aboutMeSectionScripts.bio_unilink}{' '}
                 </a>
@@ -43,7 +51,8 @@ function AboutMeSection({ refs }: any) {
                     onClick={() => {
                         scrollTo(refs.contactMeSectionRef);
                         ReactGA.event({ category: 'AboutMeSection', action: 'Resume' });
-                    }}>
+                    }}
+                >
                     {t.aboutMeSectionScripts.contact_me}
                 </button>
                 <a
@@ -51,7 +60,8 @@ function AboutMeSection({ refs }: any) {
                     href={Resume}
                     onClick={() => ReactGA.event({ category: 'AboutMeSection', action: 'Resume' })}
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     {t.aboutMeSectionScripts.resume}
                 </a>
             </div>

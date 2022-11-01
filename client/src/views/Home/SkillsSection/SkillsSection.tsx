@@ -5,7 +5,7 @@ import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5 } from 'react-icons/fa';
 import { SiJavascript, SiTypescript, SiMongodb } from 'react-icons/si';
 
 import { TbSocial } from 'react-icons/tb';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { selectTranslations } from '../../../features/languageController/LanguageControllerSlice';
 import { useAppSelector } from '../../../app/hooks';
 import { selectTheme } from '../../../features/themeController/ThemeControllerSlice';
@@ -23,7 +23,7 @@ function SkillsSection() {
     const t = useAppSelector(selectTranslations);
     const theme = useAppSelector(selectTheme);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const react_skill = document.querySelector('#react-skill');
         const nodejs_skill = document.querySelector('#nodejs-skill');
         const htmlcss_skill = document.querySelector('#htmlcss-skill');
@@ -51,7 +51,8 @@ function SkillsSection() {
                     id="react-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsReactDotActive(true)}
-                    onMouseLeave={() => setIsReactDotActive(false)}>
+                    onMouseLeave={() => setIsReactDotActive(false)}
+                >
                     <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div className={`service-dot dark ${isReactDotActive && 'active'}`}>
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`} />
@@ -60,15 +61,14 @@ function SkillsSection() {
                         <FaReact className="grid__item__bg__react-logo" />
                     </div>
                     <h1 className="grid__item__react-h1">{t.skillsSectionScripts.react_h1}</h1>
-                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>
-                        {t.skillsSectionScripts.react_desc}
-                    </p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.react_desc}</p>
                 </div>
                 <div
                     id="nodejs-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsNodeDotActive(true)}
-                    onMouseLeave={() => setIsNodeDotActive(false)}>
+                    onMouseLeave={() => setIsNodeDotActive(false)}
+                >
                     <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div className={`service-dot ${isNodeDotActive && 'active'}`}>
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`} />
@@ -77,21 +77,16 @@ function SkillsSection() {
                         <FaNodeJs className="grid__item__bg__nodejs-logo" />
                     </div>
                     <h1 className="grid__item__nodejs-h1">{t.skillsSectionScripts.node_h1}</h1>
-                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>
-                        {t.skillsSectionScripts.node_desc}
-                    </p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.node_desc}</p>
                 </div>
                 <div
                     id="htmlcss-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsHtmlCssDotActive(true)}
-                    onMouseLeave={() => setIsHtmlCssDotActive(false)}>
-                    <div
-                        className={`grid__item__double-container ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        }`}>
-                        <div
-                            className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
+                    onMouseLeave={() => setIsHtmlCssDotActive(false)}
+                >
+                    <div className={`grid__item__double-container ${theme === 'dark' ? 'dark' : 'light'}`}>
+                        <div className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
                             <div
                                 className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${
                                     isHtmlCssDotActive && 'active'
@@ -111,21 +106,16 @@ function SkillsSection() {
                         <span className="middle_text">&</span>{' '}
                         <span className="css-h1">{t.skillsSectionScripts.css_h1}</span>
                     </h1>
-                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>
-                        {t.skillsSectionScripts.html_css_desc}
-                    </p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.html_css_desc}</p>
                 </div>
                 <div
                     id="jsts-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsJSTSDotActive(true)}
-                    onMouseLeave={() => setIsJSTSDotActive(false)}>
-                    <div
-                        className={`grid__item__double-container ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        }`}>
-                        <div
-                            className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
+                    onMouseLeave={() => setIsJSTSDotActive(false)}
+                >
+                    <div className={`grid__item__double-container ${theme === 'dark' ? 'dark' : 'light'}`}>
+                        <div className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
                             <div
                                 className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${
                                     isJSTSDotActive && 'active'
@@ -145,53 +135,48 @@ function SkillsSection() {
                         <span className="middle_text">&</span>{' '}
                         <span className="ts-h1">{t.skillsSectionScripts.ts_h1}</span>
                     </h1>
-                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>
-                        {t.skillsSectionScripts.js_ts_desc}
-                    </p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.js_ts_desc}</p>
                 </div>
                 <div
                     id="mongodb-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsMongoDotActive(true)}
-                    onMouseLeave={() => setIsMongoDotActive(false)}>
+                    onMouseLeave={() => setIsMongoDotActive(false)}
+                >
                     <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div
                             className={`service-dot ${isMongoDotActive && 'active'} ${
                                 theme === 'dark' ? 'dark' : 'light'
-                            }`}>
+                            }`}
+                        >
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`} />
                             <div className={`dot2 ${theme === 'dark' ? 'dark' : 'light'}`} />
                         </div>
                         <SiMongodb className="grid__item__bg__mongo-logo" />
                     </div>
                     <h1 className="grid__item__mongo-h1">{t.skillsSectionScripts.mongo_h1}</h1>
-                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>
-                        {t.skillsSectionScripts.mongo_desc}
-                    </p>
+                    <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>{t.skillsSectionScripts.mongo_desc}</p>
                 </div>
                 <div
                     id="thirdparty-skill"
                     className={`grid__item ${theme === 'dark' ? 'dark' : 'light'}`}
                     onMouseOver={() => setIsIntegrationsDotActive(true)}
-                    onMouseLeave={() => setIsIntegrationsDotActive(false)}>
+                    onMouseLeave={() => setIsIntegrationsDotActive(false)}
+                >
                     <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
                         <div
                             className={`service-dot ${isIntegrationsDotActive && 'active'} ${
                                 theme === 'dark' ? 'dark' : 'light'
-                            }`}>
+                            }`}
+                        >
                             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`} />
                             <div className={`dot2 ${theme === 'dark' ? 'dark' : 'light'}`} />
                         </div>
                         <TbSocial
-                            className={`grid__item__bg__integration-logo ${
-                                theme === 'dark' ? 'dark' : 'light'
-                            }`}
+                            className={`grid__item__bg__integration-logo ${theme === 'dark' ? 'dark' : 'light'}`}
                         />
                     </div>
-                    <h1
-                        className={`grid__item__integration-h1 ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        }`}>
+                    <h1 className={`grid__item__integration-h1 ${theme === 'dark' ? 'dark' : 'light'}`}>
                         {t.skillsSectionScripts.third_party_h1}
                     </h1>
                     <p className={`${theme === 'dark' ? 'dark' : 'light'}`}>

@@ -1,70 +1,70 @@
-@import "../../styles/mixins";
+@import '../../styles/mixins';
 
 .cookieAlertMain {
-  position: fixed;
-  width: 90%;
-  padding: 0.5rem 2rem;
-  z-index: 6;
-  bottom: 1rem;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border-radius: 1rem;
-  opacity: .95;
-  font-size: getFontSize("sm");
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include shadow-lg;
+    position: fixed;
+    width: 90%;
+    padding: 0.5rem 2rem;
+    z-index: 6;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 1rem;
+    opacity: 0.95;
+    font-size: getFontSize('sm');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include shadow-lg;
 
-  @include media-sm {
-    width: 70%;
-  }
-
-  @include media-md {
-    width: 60%;
-  }
-
-  @include media-lg {
-    width: 50%;
-  }
-
-  @include media-xl {
-    width: 40%;
-  }
-
-  &.show {
-    animation: move-up 0.2s linear;
-
-    @keyframes move-up {
-      0% {
-        opacity: 0;
-        transform: translateY(8rem);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @include media-sm {
+        width: 70%;
     }
-  }
 
-  & > p {
-    font-weight: getFontWeight("sbold");
-    line-height: 1.5rem;
-    max-width: 60%;
-  }
+    @include media-md {
+        width: 60%;
+    }
 
-  &.dark {
-    background-color: getMainColor("light-gray", dark);
-    color: getTextColor("secondary", primary);
-  }
+    @include media-lg {
+        width: 50%;
+    }
 
-  &.light {
-    background-color: getMainColor("dark-brown", light);
-    color: getTextColor("secondary", light);
-  }
+    @include media-xl {
+        width: 40%;
+    }
+
+    &.show {
+        animation: move-up 0.2s linear;
+
+        @keyframes move-up {
+            0% {
+                opacity: 0;
+                transform: translateY(8rem);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    & > p {
+        font-weight: getFontWeight('sbold');
+        line-height: 1.5rem;
+        max-width: 60%;
+    }
+
+    &.dark {
+        background-color: getMainColor('light-gray', dark);
+        color: getTextColor('secondary', primary);
+    }
+
+    &.light {
+        background-color: getMainColor('dark-brown', light);
+        color: getTextColor('secondary', light);
+    }
 }
 
 .cookie-btn {
-  @include standard-btn;
+    @include standard-btn;
 }

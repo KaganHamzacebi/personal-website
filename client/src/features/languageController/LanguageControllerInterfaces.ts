@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 
 export interface ISupportedLanguages {
     en: string;
@@ -49,13 +49,13 @@ export interface IProjectsSectionScripts {
     three_in_one: IProject;
 }
 
-interface IProject {
+export interface IProject {
     heading: string;
     description: string;
     modal: IProjectTModal;
 }
 
-interface IProjectTModal {
+export interface IProjectTModal {
     tag: string;
     heading: string;
     isPrivate: boolean;
@@ -63,8 +63,9 @@ interface IProjectTModal {
     coreFramework: string;
     date: string;
     paragraph: string;
-    slides: typeof Image[];
+    slides: string[];
     frameworks: IconType[];
+    src?: string;
 }
 
 export interface IContactMeSectionScripts {

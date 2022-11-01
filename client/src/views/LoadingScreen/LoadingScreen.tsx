@@ -2,12 +2,12 @@ import './loadingScreen.scss';
 import { useAppSelector } from '../../app/hooks';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 import Logo from '../../assets/general/k-logo.png';
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 function LoadingScreen() {
     const theme = useAppSelector(selectTheme);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         document.body.style.overflow = 'hidden';
     });
 

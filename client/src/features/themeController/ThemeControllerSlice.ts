@@ -1,14 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 
 export const themeControllerSlice = createSlice({
     name: 'themeSelector',
     initialState: 'dark',
     reducers: {
-        setCurrentTheme: (state, action) => {
-            return action.payload;
-        }
-    }
+        setCurrentTheme: (state, action) => action.payload,
+    },
 });
 
 export const { setCurrentTheme } = themeControllerSlice.actions;

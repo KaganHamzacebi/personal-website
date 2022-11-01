@@ -1,57 +1,57 @@
-@import "../../styles/functions";
-@import "../../styles/mixins";
+@import '../../styles/functions';
+@import '../../styles/mixins';
 
 .goHomeButtonMain {
-  position: fixed;
-  width: 3rem;
-  height: 3rem;
-  bottom: 2rem;
-  right: 2rem;
-  border-radius: 50%;
-  padding: 0.5rem;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  @include set-transition(0.15s);
-  @include flex-center(column);
-  outline: none;
-  z-index: 3;
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    @include set-transition(0.15s);
+    @include flex-center(column);
+    outline: none;
+    z-index: 3;
 
-  &.dark {
-    border: 2px solid getMainColor("light-gray", dark);
-    background-color: getMainColor('light-gray', dark);
-  }
-
-  &.light {
-    border: 2px solid getMainColor("button", light);
-    background-color: getMainColor('button', light);
-  }
-
-  &.active {
-    opacity: 100;
-    visibility: visible;
-  }
-
-  &:hover {
     &.dark {
-      background-color: getMainColor("gray", dark);
+        border: 2px solid getMainColor('light-gray', dark);
+        background-color: getMainColor('light-gray', dark);
     }
 
     &.light {
-      background-color: getMainColor("dark-gray", light);
-    }
-  }
-
-  &__arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-
-    &.dark {
-      color: getTextColor("primary", dark);
+        border: 2px solid getMainColor('button', light);
+        background-color: getMainColor('button', light);
     }
 
-    &.light {
-      color: getTextColor("primary", light);
+    &.active {
+        opacity: 100;
+        visibility: visible;
     }
-  }
+
+    &:hover {
+        &.dark {
+            background-color: getMainColor('gray', dark);
+        }
+
+        &.light {
+            background-color: getMainColor('dark-gray', light);
+        }
+    }
+
+    &__arrow {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &.dark {
+            color: getTextColor('primary', dark);
+        }
+
+        &.light {
+            color: getTextColor('primary', light);
+        }
+    }
 }

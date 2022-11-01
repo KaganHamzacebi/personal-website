@@ -1,4 +1,4 @@
-import { IContactMeSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
+import type { IContactMeSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
 
 const ContactMeSectionScripts: IContactMeSectionScripts = {
     firstname: 'Firstname',
@@ -11,7 +11,7 @@ const ContactMeSectionScripts: IContactMeSectionScripts = {
     address: 'Address',
     address_content: 'Çankaya / Ankara / Turkey',
     phone: 'Phone',
-    phone_content: '+90 534 206 78 93'
+    phone_content: '+90 534 206 78 93',
 };
 
 export default ContactMeSectionScripts;

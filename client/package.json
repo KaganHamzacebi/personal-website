@@ -43,8 +43,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint .",
-        "lint:fix": "eslint --fix",
-        "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc"
+        "lint:fix": "eslint --fix .",
+        "prettify": "prettier --write ."
     },
     "eslintConfig": {
         "extends": [
@@ -70,6 +70,7 @@
         "eslint": "^8.26.0",
         "eslint-plugin-react": "^7.31.10",
         "eslint-plugin-react-hooks": "^4.6.0",
+        "prop-types": "^15.8.1",
         "webpack-cli": "^4.10.0"
     }
 }

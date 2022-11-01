@@ -1,4 +1,4 @@
-import { ISkillsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
+import type { ISkillsSectionScripts } from '../../features/languageController/LanguageControllerInterfaces';
 
 const SkillsSectionScripts = {
     react_h1: 'React.JS',
@@ -26,7 +26,7 @@ const SkillsSectionScripts = {
     third_party_h1: '3rd Party Integrations',
     third_party_desc:
         'Third party integrations are important for web and I worked on it for a long time so I wanted to give it a corner here.' +
-        'Reading and using APIs is a skill in my sight.'
+        'Reading and using APIs is a skill in my sight.',
 } as ISkillsSectionScripts;
 
 export default SkillsSectionScripts;

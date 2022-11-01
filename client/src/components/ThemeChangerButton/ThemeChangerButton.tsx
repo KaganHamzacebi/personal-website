@@ -24,7 +24,7 @@ function ThemeChangerButton() {
                 checked={theme === 'dark'}
                 onChange={() => {
                     cookies.set('theme', theme === 'dark' ? 'light' : 'dark', {
-                        expires: moment().add(1, 'y').toDate()
+                        expires: moment().add(1, 'y').toDate(),
                     });
                     dispatch(setCurrentTheme(theme === 'dark' ? 'light' : 'dark'));
                 }}

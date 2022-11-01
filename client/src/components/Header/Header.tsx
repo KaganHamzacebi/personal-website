@@ -1,4 +1,5 @@
 import './header.scss';
+import type { RefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { MdMenu } from 'react-icons/md';
 import { getNavSelector, setNav } from '../../features/scrollController/ScrollControllerSlice';
@@ -14,10 +15,17 @@ import { selectHeader, setMinimize } from '../../features/headerController/Heade
 import { Cookies } from 'react-cookie';
 import moment from 'moment';
 
-function Header({ refs }: any) {
-    const cookies = useMemo(() => {
-        return new Cookies();
-    }, []);
+function Header({
+    refs,
+}: {
+    refs: {
+        aboutMeSectionRef: RefObject<HTMLElement>;
+        skillsSectionRef: RefObject<HTMLElement>;
+        projectsSectionRef: RefObject<HTMLElement>;
+        contactMeSectionRef: RefObject<HTMLElement>;
+    };
+}) {
+    const cookies = useMemo(() => new Cookies(), []);
     const [showHeader, setShowHeader] = useState<boolean>(false);
     const [showMinimizeButton, setShowMinimizeButton] = useState<boolean>(false);
     const s = useAppSelector(getNavSelector);
@@ -53,17 +61,13 @@ function Header({ refs }: any) {
                     <img
                         src={Logo}
                         alt="header_mobile_logo"
-                        className={`header__nav__mobile__logo ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        }`}
+                        className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
                     />
                 ) : (
                     <img
                         src={LogoBrown}
                         alt="header_mobile_logo"
-                        className={`header__nav__mobile__logo ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        }`}
+                        className={`header__nav__mobile__logo ${theme === 'dark' ? 'dark' : 'light'}`}
                     />
                 )}
                 <div className="themeChangerMobileWrapper">
@@ -83,30 +87,22 @@ function Header({ refs }: any) {
                 onClick={() => {
                     if (h.minimized) {
                         dispatch(setMinimize(false));
-                        cookies.set(
-                            'header',
-                            { minimized: false },
-                            { expires: moment().add(1, 'y').toDate() }
-                        );
+                        cookies.set('header', { minimized: false }, { expires: moment().add(1, 'y').toDate() });
                     }
-                }}>
+                }}
+            >
                 {/* Header Minimize Button */}
                 <div
                     className="header-minimize-button"
                     onClick={() => {
                         dispatch(setMinimize(!h.minimized));
-                        cookies.set(
-                            'header',
-                            { minimized: true },
-                            { expires: moment().add(1, 'y').toDate() }
-                        );
-                    }}>
+                        cookies.set('header', { minimized: true }, { expires: moment().add(1, 'y').toDate() });
+                    }}
+                >
                     <BsBoxArrowInLeft
-                        className={`header-minimize-button__icon ${
-                            theme === 'dark' ? 'dark' : 'light'
-                        } ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${
-                            showHeader && 'invisible'
-                        }`}
+                        className={`header-minimize-button__icon ${theme === 'dark' ? 'dark' : 'light'} ${
+                            showMinimizeButton && 'show'
+                        } ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
                     />
                 </div>
                 <nav className="header__nav">
@@ -128,7 +124,8 @@ function Header({ refs }: any) {
                                 }
                                 className={`${s === 'aboutMeSection' && 'active'} ${
                                     theme === 'dark' ? 'dark' : 'light'
-                                }`}>
+                                }`}
+                            >
                                 {t.headerFooterScripts.about_me}
                             </span>
                         </li>
@@ -143,7 +140,8 @@ function Header({ refs }: any) {
                                 }
                                 className={`${s === 'skillsSection' && 'active'} ${
                                     theme === 'dark' ? 'dark' : 'light'
-                                }`}>
+                                }`}
+                            >
                                 {t.headerFooterScripts.skills}
                             </span>
                         </li>
@@ -158,7 +156,8 @@ function Header({ refs }: any) {
                                 }
                                 className={`${s === 'projectsSection' && 'active'} ${
                                     theme === 'dark' ? 'dark' : 'light'
-                                }`}>
+                                }`}
+                            >
                                 {t.headerFooterScripts.projects}
                             </span>
                         </li>
@@ -173,7 +172,8 @@ function Header({ refs }: any) {
                                 }
                                 className={`${s === 'contactMeSection' && 'active'} ${
                                     theme === 'dark' ? 'dark' : 'light'
-                                }`}>
+                                }`}
+                            >
                                 {t.headerFooterScripts.contact_me}
                             </span>
                         </li>

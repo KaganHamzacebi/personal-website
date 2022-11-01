@@ -56,7 +56,8 @@ function SocialBar() {
                     <div
                         className={`socialBar-li-discord__clipboard ${
                             theme === 'dark' ? 'dark' : 'light'
-                        } tri-right btm-left-in ${showClipboardCopy && 'active'} `}>
+                        } tri-right btm-left-in ${showClipboardCopy && 'active'} `}
+                    >
                         {t.headerFooterScripts.copied}
                     </div>
                 </li>
@@ -64,9 +65,7 @@ function SocialBar() {
                     <hr className={`socialBar__divider ${theme === 'dark' ? 'dark' : 'light'}`} />
                 </li>
                 <li>
-                    <span className={`socialBar__writing ${theme === 'dark' ? 'dark' : 'light'}`}>
-                        socials
-                    </span>
+                    <span className={`socialBar__writing ${theme === 'dark' ? 'dark' : 'light'}`}>socials</span>
                 </li>
             </ul>
         </div>

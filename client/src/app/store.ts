@@ -1,4 +1,5 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import type { ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import languageControllerReducer from '../features/languageController/LanguageControllerSlice';
 import scrollCenterReducer from '../features/scrollController/ScrollControllerSlice';
 import themeControllerReducer from '../features/themeController/ThemeControllerSlice';
@@ -13,19 +14,14 @@ export const store = configureStore({
         themeController: themeControllerReducer,
         headerController: headerControllerReducer,
         loadingController: loadingControllerReducer,
-        cookieAlertController: cookieAlertControllerReducer
+        cookieAlertController: cookieAlertControllerReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: false
-        })
+            serializableCheck: false,
+        }),
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-    ReturnType,
-    RootState,
-    unknown,
-    Action<string>
->;
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;

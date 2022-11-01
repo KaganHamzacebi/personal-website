@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 
 const initialState: { active: boolean } = {
-    active: false
+    active: false,
 };
 
 export const loadingControllerSlice = createSlice({
@@ -11,8 +11,8 @@ export const loadingControllerSlice = createSlice({
     reducers: {
         setLoadingActive: (state, action) => {
             state.active = action.payload;
-        }
-    }
+        },
+    },
 });
 
 export const { setLoadingActive } = loadingControllerSlice.actions;

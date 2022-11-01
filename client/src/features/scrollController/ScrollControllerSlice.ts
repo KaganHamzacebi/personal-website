@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import type { RootState } from '../../app/store';
 import ReactGA from 'react-ga4';
 
 export const scrollControllerSlice = createSlice({
     name: 'scrollControllerSelector',
     initialState: {
         navSection: 'aboutMeSection',
-        scrollSection: 'aboutMeSection'
+        scrollSection: 'aboutMeSection',
     },
     reducers: {
         setNav: (state, action) => {
@@ -15,8 +15,8 @@ export const scrollControllerSlice = createSlice({
         },
         setScroll: (state, action) => {
             state.scrollSection = action.payload;
-        }
-    }
+        },
+    },
 });
 
 // Actions

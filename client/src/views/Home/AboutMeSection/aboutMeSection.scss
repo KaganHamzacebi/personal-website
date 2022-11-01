@@ -2,127 +2,124 @@
 @import '../../../styles/mixins';
 
 .aboutMeMain {
-  position: relative;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  @include shadow-lg;
-
-  &.dark {
-    background-color: getMainColor("dark-gray", dark);
-    color: getTextColor("primary", dark);
-  }
-
-  &.light {
-    background-color: getMainColor("dark-gray", light);
-    color: getTextColor("primary", light);
-  }
-
-  @include media-md {
-    padding: 4rem;
-  }
-
-  &__pp {
-    position: absolute;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    right: -1rem;
-    top: -1rem;
+    position: relative;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    @include shadow-lg;
 
     &.dark {
-      border: 0.25rem solid getMainColor("primary", dark);
+        background-color: getMainColor('dark-gray', dark);
+        color: getTextColor('primary', dark);
     }
 
     &.light {
-      border: 0.25rem solid getMainColor("primary", light);
+        background-color: getMainColor('dark-gray', light);
+        color: getTextColor('primary', light);
     }
 
     @include media-md {
-      right: -1.5rem;
-      top: -1.5rem;
-    }
-  }
-
-  &__name {
-    padding-top: 2rem;
-    font-weight: getFontWeight("light");
-    font-size: getFontSize("lg");
-
-    &.dark {
-      color: getTextColor("primary", dark);
+        padding: 4rem;
     }
 
-    &.light {
-      color: getTextColor("primary", light);
-    }
-  }
+    &__pp {
+        position: absolute;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        right: -1rem;
+        top: -1rem;
 
-  &__surname {
-    font-weight: getFontWeight("bold");
+        &.dark {
+            border: 0.25rem solid getMainColor('primary', dark);
+        }
 
-    &.dark {
-      color: getTextColor("red", dark);
-    }
+        &.light {
+            border: 0.25rem solid getMainColor('primary', light);
+        }
 
-    &.light {
-      color: getTextColor("red", light);
-    }
-  }
-
-  &__webdev {
-    margin-top: 1rem;
-    font-weight: getFontWeight("bold");
-    font-size: getFontSize("3xl")
-  }
-
-  &__bio {
-    font-size: getFontSize("sm");
-    margin-top: 1rem;
-
-    &.dark {
-      color: getTextColor("secondary", dark);
+        @include media-md {
+            right: -1.5rem;
+            top: -1.5rem;
+        }
     }
 
-    &.light {
-      color: getTextColor("secondary", light);
+    &__name {
+        padding-top: 2rem;
+        font-weight: getFontWeight('light');
+        font-size: getFontSize('lg');
+
+        &.dark {
+            color: getTextColor('primary', dark);
+        }
+
+        &.light {
+            color: getTextColor('primary', light);
+        }
     }
 
-    @include media-xl {
-      max-width: 75%;
+    &__surname {
+        font-weight: getFontWeight('bold');
+
+        &.dark {
+            color: getTextColor('red', dark);
+        }
+
+        &.light {
+            color: getTextColor('red', light);
+        }
     }
 
-
-    &__unilink {
-      &.dark {
-        color: getTextColor("light-gray", dark);
-      }
-
-      &.light {
-        color: getTextColor("light-gray", light);
-      }
+    &__webdev {
+        margin-top: 1rem;
+        font-weight: getFontWeight('bold');
+        font-size: getFontSize('3xl');
     }
-  }
+
+    &__bio {
+        font-size: getFontSize('sm');
+        margin-top: 1rem;
+
+        &.dark {
+            color: getTextColor('secondary', dark);
+        }
+
+        &.light {
+            color: getTextColor('secondary', light);
+        }
+
+        @include media-xl {
+            max-width: 75%;
+        }
+
+        &__unilink {
+            &.dark {
+                color: getTextColor('light-gray', dark);
+            }
+
+            &.light {
+                color: getTextColor('light-gray', light);
+            }
+        }
+    }
 }
 
 .btnContainer {
-  display: flex;
-  column-gap: 0.5rem;
+    display: flex;
+    column-gap: 0.5rem;
 
-  &__contactBtn {
-    margin-top: 1.5rem;
-    width: 100%;
-    text-align: center;
-    font-size: getFontSize("sm");
-    @include standard-btn;
+    &__contactBtn {
+        margin-top: 1.5rem;
+        width: 100%;
+        text-align: center;
+        font-size: getFontSize('sm');
+        @include standard-btn;
 
-    @include media-md {
-      width: auto;
+        @include media-md {
+            width: auto;
+        }
     }
-  }
 
-  &__resumeBtn {
-    @extend .btnContainer__contactBtn;
-  }
+    &__resumeBtn {
+        @extend .btnContainer__contactBtn;
+    }
 }
-
-

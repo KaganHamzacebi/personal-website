@@ -1,46 +1,45 @@
 @import '../../styles/functions';
 @import '../../styles/mixins';
 
-
 .footerMain {
-  width: 100%;
-  height: 300px;
-  padding: 2rem 1rem;
-  @include flex-center(column);
-  row-gap: 2rem;
-
-  &.dark {
-    background-color: getMainColor("secondary", dark);
-  }
-
-  &.light {
-    background-color: getMainColor("secondary", light);
-  }
-
-  &__logo {
-    width: 6rem;
-    height: 6rem;
+    width: 100%;
+    height: 300px;
+    padding: 2rem 1rem;
+    @include flex-center(column);
+    row-gap: 2rem;
 
     &.dark {
-      color: getTextColor("primary", dark);
+        background-color: getMainColor('secondary', dark);
     }
 
     &.light {
-      color: getTextColor("primary", light);
-    }
-  }
-
-  &__copyright {
-    height: 20%;
-    font-weight: getFontWeight("thin");
-    font-size: getFontSize("nm");
-
-    &.dark {
-      color: getTextColor("primary", dark)
+        background-color: getMainColor('secondary', light);
     }
 
-    &.light {
-      color: getTextColor("primary", light)
+    &__logo {
+        width: 6rem;
+        height: 6rem;
+
+        &.dark {
+            color: getTextColor('primary', dark);
+        }
+
+        &.light {
+            color: getTextColor('primary', light);
+        }
     }
-  }
+
+    &__copyright {
+        height: 20%;
+        font-weight: getFontWeight('thin');
+        font-size: getFontSize('nm');
+
+        &.dark {
+            color: getTextColor('primary', dark);
+        }
+
+        &.light {
+            color: getTextColor('primary', light);
+        }
+    }
 }

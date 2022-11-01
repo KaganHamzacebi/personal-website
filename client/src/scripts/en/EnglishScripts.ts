@@ -1,4 +1,4 @@
-import { IEnglishTranslates } from '../../features/languageController/LanguageControllerInterfaces';
+import type { IEnglishTranslates } from '../../features/languageController/LanguageControllerInterfaces';
 import AboutMeSectionScripts from './AboutMeSectionScripts';
 import HomeScripts from './HomeScripts';
 import ProjectsSectionScripts from './ProjectsSectionScripts';
@@ -12,7 +12,7 @@ const EnglishScripts: IEnglishTranslates = {
     skillsSectionScripts: SkillsSectionScripts,
     projectsSectionScripts: ProjectsSectionScripts,
     contactMeSectionScripts: ContactMeSectionScripts,
-    headerFooterScripts: HeaderFooterScripts
+    headerFooterScripts: HeaderFooterScripts,
 };
 
 export default EnglishScripts;

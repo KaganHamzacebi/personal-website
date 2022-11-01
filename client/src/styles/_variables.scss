@@ -4,84 +4,84 @@
 
 // Responsive Window Sizes
 $screen-sizes: (
-        "sm": 640px,
-        "md": 768px,
-        "lg": 1024px,
-        "xl": 1280px,
-        "2xl": 1536px
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px,
+    '2xl': 1536px,
 );
 
 // Font Weights
 $font-weights: (
-        "thin": 100,
-        "light": 300,
-        "normal": 400,
-        "medium": 500,
-        "sbold": 600,
-        "bold": 700
+    'thin': 100,
+    'light': 300,
+    'normal': 400,
+    'medium': 500,
+    'sbold': 600,
+    'bold': 700,
 );
 
 // Font Size
 $font-sizes: (
-        "2xs": xx-small,
-        "xs": x-small,
-        "sm": small,
-        "md": medium,
-        "lg": large,
-        "xl": x-large,
-        "2xl": xx-large,
-        "3xl": xxx-large
+    '2xs': xx-small,
+    'xs': x-small,
+    'sm': small,
+    'md': medium,
+    'lg': large,
+    'xl': x-large,
+    '2xl': xx-large,
+    '3xl': xxx-large,
 );
 
 // Theme Colors
 $main-colors-dark: (
-        "primary": #2A2A2A,
-        "secondary": #202020,
-        "thirdy": #222222,
-        "dark-gray": #191919,
-        "gray": #333333,
-        "light-gray": #4A4A4A,
-        "xlight-gray": #C6C6C6,
-        "xxlight-gray": #F5F5F5,
-        "black": #000000,
-        "button": #222222
+    'primary': #2a2a2a,
+    'secondary': #202020,
+    'thirdy': #222222,
+    'dark-gray': #191919,
+    'gray': #333333,
+    'light-gray': #4a4a4a,
+    'xlight-gray': #c6c6c6,
+    'xxlight-gray': #f5f5f5,
+    'black': #000000,
+    'button': #222222,
 );
 
 $main-colors-light: (
-        "primary": #daccb9,
-        "secondary": #D1C0A8,
-        "thirdy": #eedbcc,
-        "dark-gray": #A0816C,
-        "gray": #c9c9c9,
-        "light-gray": #989898,
-        "xlight-gray": #c2bfbf,
-        "xxlight-gray": #e8dbce,
-        "black": #000000,
-        "button": #725b46,
-        "dark-brown": #ad8464
+    'primary': #daccb9,
+    'secondary': #d1c0a8,
+    'thirdy': #eedbcc,
+    'dark-gray': #a0816c,
+    'gray': #c9c9c9,
+    'light-gray': #989898,
+    'xlight-gray': #c2bfbf,
+    'xxlight-gray': #e8dbce,
+    'black': #000000,
+    'button': #725b46,
+    'dark-brown': #ad8464,
 );
 
 $text-colors-dark: (
-        "primary": #F5F6F7,
-        "secondary": #afafaf,
-        "paragraph": #cccccc,
-        "grid_text": #afafaf,
-        "red": #963232,
-        "gray": #5A5A5A,
-        "light-gray": #757575,
-        "dark-gray": #212529,
-        "button": #afafaf
+    'primary': #f5f6f7,
+    'secondary': #afafaf,
+    'paragraph': #cccccc,
+    'grid_text': #afafaf,
+    'red': #963232,
+    'gray': #5a5a5a,
+    'light-gray': #757575,
+    'dark-gray': #212529,
+    'button': #afafaf,
 );
 
 $text-colors-light: (
-        "primary": #FFFFFF,
-        "secondary": #ebe4da,
-        "paragraph": #ebe4da,
-        "grid_text": #625446,
-        "red": #963232,
-        "gray": #A0816C,
-        "light-gray": #757575,
-        "dark-gray": #212529,
-        "button": #ebe4da,
-        "brown": #836755
+    'primary': #ffffff,
+    'secondary': #ebe4da,
+    'paragraph': #ebe4da,
+    'grid_text': #625446,
+    'red': #963232,
+    'gray': #a0816c,
+    'light-gray': #757575,
+    'dark-gray': #212529,
+    'button': #ebe4da,
+    'brown': #836755,
 );

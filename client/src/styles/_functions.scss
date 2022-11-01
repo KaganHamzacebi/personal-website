@@ -5,31 +5,29 @@
 @import 'variables';
 
 @function getScreenSize($size) {
-  @return map-get($screen-sizes, $size)
+    @return map-get($screen-sizes, $size);
 }
 
 @function getFontWeight($size) {
-  @return map-get($font-weights, $size)
+    @return map-get($font-weights, $size);
 }
 
 @function getFontSize($size) {
-  @return map-get($font-sizes, $size)
+    @return map-get($font-sizes, $size);
 }
 
 @function getMainColor($color, $theme) {
-  @if ($theme == dark) {
-    @return map-get($main-colors-dark, $color)
-  }
-  @else {
-    @return map-get($main-colors-light, $color)
-  }
+    @if ($theme == dark) {
+        @return map-get($main-colors-dark, $color);
+    } @else {
+        @return map-get($main-colors-light, $color);
+    }
 }
 
 @function getTextColor($color, $theme) {
-  @if ($theme == dark) {
-    @return map-get($text-colors-dark, $color)
-  }
-  @else {
-    @return map-get($text-colors-light, $color)
-  }
+    @if ($theme == dark) {
+        @return map-get($text-colors-dark, $color);
+    } @else {
+        @return map-get($text-colors-light, $color);
+    }
 }

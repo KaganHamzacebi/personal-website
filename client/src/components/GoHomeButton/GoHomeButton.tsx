@@ -2,11 +2,12 @@ import './goHomeButton.scss';
 
 import { scrollTo } from '../../features/scrollController/ScrollUtils';
 import { BiUpArrowAlt } from 'react-icons/bi';
+import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
 
-function GoHomeButton({ refs }: any) {
+function GoHomeButton({ refs }: { refs: { aboutMeSectionRef: RefObject<HTMLElement> } }) {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
     const theme = useAppSelector(selectTheme);
 
@@ -31,13 +32,10 @@ function GoHomeButton({ refs }: any) {
 
     return (
         <div
-            className={`goHomeButtonMain ${isButtonVisible && 'active'} ${
-                theme === 'dark' ? 'dark' : 'light'
-            }`}
-            onClick={goToHome}>
-            <BiUpArrowAlt
-                className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`}
-            />
+            className={`goHomeButtonMain ${isButtonVisible && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
+            onClick={goToHome}
+        >
+            <BiUpArrowAlt className={`goHomeButtonMain__arrow ${theme === 'dark' ? 'dark' : 'light'}`} />
         </div>
     );
 }

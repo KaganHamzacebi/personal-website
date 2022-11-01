@@ -11,11 +11,7 @@ function Footer() {
 
     return (
         <div className={`footerMain ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <img
-                src={Logo}
-                alt={`footer_logo ${theme === 'dark' ? 'dark' : 'light'}`}
-                className="footerMain__logo"
-            />
+            <img src={Logo} alt={`footer_logo ${theme === 'dark' ? 'dark' : 'light'}`} className="footerMain__logo" />
             <FooterSocials />
             <h3 className={`footerMain__copyright ${theme === 'dark' ? 'dark' : 'light'}`}>
                 {t.headerFooterScripts.copyright}
