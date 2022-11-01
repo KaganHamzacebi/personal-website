@@ -2,35 +2,35 @@
 @import '../../../../styles/mixins';
 
 .skillsSliderMain {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    margin-top: 2rem;
-    @include shadow-xl;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  @include shadow-xl;
 
-    &.dark {
-        background-color: getMainColor('thirdy', dark);
-    }
+  &.dark {
+	background-color: getMainColor('thirdy', dark);
+  }
 
-    &.light {
-        background-color: getMainColor('thirdy', light);
-    }
+  &.light {
+	background-color: getMainColor('thirdy', light);
+  }
 }
 
 .skill-icon {
-    position: relative;
-    width: 4rem;
-    height: 4rem;
-    z-index: 3;
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  z-index: 3;
 
-    &.dark {
-        color: getTextColor('secondary', dark);
-    }
+  &.dark {
+	color: getTextColor('secondary', dark);
+  }
 
-    &.light {
-        color: getTextColor('gray', light);
-    }
+  &.light {
+	color: getTextColor('gray', light);
+  }
 }
 
 .icon-swiper {
-    @include flex-center(row);
+  @include flex-center(row);
 }

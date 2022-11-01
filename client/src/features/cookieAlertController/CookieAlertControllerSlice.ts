@@ -4,24 +4,27 @@ import type { RootState } from '../../app/store';
 export const defaultLanguage = 'en';
 
 const initialState: { show: boolean; accepted: boolean; delay: number } = {
-    show: false,
-    accepted: false,
-    delay: 2000,
+  show: false,
+  accepted: false,
+  delay: 2000
 };
 
 export const cookieAlertControllerSlice = createSlice({
-    name: 'cookieAlertSelector',
-    initialState,
-    reducers: {
-        showCookieAlert: (state, action) => {
-            state.show = action.payload;
-        },
-        acceptCookie: (state) => {
-            state.accepted = true;
-        },
+  name: 'cookieAlertSelector',
+  initialState,
+  reducers: {
+    showCookieAlert: (state, action) => {
+      state.show = action.payload;
     },
+    acceptCookie: (state) => {
+      state.accepted = true;
+    }
+  }
 });
 
-export const { showCookieAlert, acceptCookie } = cookieAlertControllerSlice.actions;
+export const {
+  showCookieAlert,
+  acceptCookie
+} = cookieAlertControllerSlice.actions;
 export const selectCookieAlerter = (state: RootState) => state.cookieAlertController;
 export default cookieAlertControllerSlice.reducer;

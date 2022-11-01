@@ -1,4 +1,7 @@
-import type { ThunkAction, Action } from '@reduxjs/toolkit';
+import type {
+  Action,
+  ThunkAction
+} from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import languageControllerReducer from '../features/languageController/LanguageControllerSlice';
 import scrollCenterReducer from '../features/scrollController/ScrollControllerSlice';
@@ -8,18 +11,17 @@ import loadingControllerReducer from '../features/loadingController/LoadingContr
 import cookieAlertControllerReducer from '../features/cookieAlertController/CookieAlertControllerSlice';
 
 export const store = configureStore({
-    reducer: {
-        languageController: languageControllerReducer,
-        scrollController: scrollCenterReducer,
-        themeController: themeControllerReducer,
-        headerController: headerControllerReducer,
-        loadingController: loadingControllerReducer,
-        cookieAlertController: cookieAlertControllerReducer,
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false,
-        }),
+  reducer: {
+    languageController: languageControllerReducer,
+    scrollController: scrollCenterReducer,
+    themeController: themeControllerReducer,
+    headerController: headerControllerReducer,
+    loadingController: loadingControllerReducer,
+    cookieAlertController: cookieAlertControllerReducer
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  })
 });
 
 export type AppDispatch = typeof store.dispatch;

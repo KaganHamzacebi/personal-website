@@ -2,56 +2,56 @@
 @import 'functions';
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+  'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 p {
-    line-height: 1.875rem;
+  line-height: 1.875rem;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 
-    &.dark {
-        color: getTextColor('primary', dark);
-    }
+  &.dark {
+	color: getTextColor('primary', dark);
+  }
 
-    &.light {
-        color: getTextColor('primary', light);
-    }
+  &.light {
+	color: getTextColor('primary', light);
+  }
 }
 
 section {
-    & > h1 {
-        font-weight: getFontWeight('nm');
-        font-size: getFontSize('3xl');
+  & > h1 {
+	font-weight: getFontWeight('nm');
+	font-size: getFontSize('3xl');
 
-        &.dark {
-            color: getTextColor('primary', dark);
-        }
+	&.dark {
+	  color: getTextColor('primary', dark);
+	}
 
-        &.light {
-            color: getTextColor('primary', light);
-        }
-    }
+	&.light {
+	  color: getTextColor('primary', light);
+	}
+  }
 
-    & > h2 {
-        font-weight: getFontWeight('nm');
-        font-size: getFontSize('sm');
+  & > h2 {
+	font-weight: getFontWeight('nm');
+	font-size: getFontSize('sm');
 
-        &.dark {
-            color: getTextColor('secondary', dark);
-        }
+	&.dark {
+	  color: getTextColor('secondary', dark);
+	}
 
-        &.light {
-            color: getTextColor('secondary', light);
-        }
-    }
+	&.light {
+	  color: getTextColor('secondary', light);
+	}
+  }
 }

@@ -5,20 +5,18 @@ import Logo from '../../assets/general/k-logo.png';
 import { useLayoutEffect } from 'react';
 
 function LoadingScreen() {
-    const theme = useAppSelector(selectTheme);
+  const theme = useAppSelector(selectTheme);
 
-    useLayoutEffect(() => {
-        document.body.style.overflow = 'hidden';
-    });
+  useLayoutEffect(() => {
+    document.body.style.overflow = 'hidden';
+  });
 
-    return (
-        <div className={`loadingScreenMain ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <img src={Logo} alt="loadingLogo" className="loadingLogo" />
-            <div className={`loader1 ${theme === 'dark' ? 'dark' : 'light'}`} />
-            <div className={`loader2 ${theme === 'dark' ? 'dark' : 'light'}`} />
-            <div className={`loader3 ${theme === 'dark' ? 'dark' : 'light'}`} />
-        </div>
-    );
+  return (<div className={`loadingScreenMain ${theme === 'dark' ? 'dark' : 'light'}`}>
+    <img src={Logo} alt="loadingLogo" className="loadingLogo" />
+    <div className={`loader1 ${theme === 'dark' ? 'dark' : 'light'}`} />
+    <div className={`loader2 ${theme === 'dark' ? 'dark' : 'light'}`} />
+    <div className={`loader3 ${theme === 'dark' ? 'dark' : 'light'}`} />
+  </div>);
 }
 
 export default LoadingScreen;

@@ -15,19 +15,17 @@ ReactGA.initialize(TRACKING_ID);
 
 const container = document?.getElementById('root');
 let root = null;
-if (container) root = createRoot(container);
+if(container) root = createRoot(container);
 
-root?.render(
-    <React.StrictMode>
-        <HelmetProvider>
-            <Provider store={store}>
-                <ApolloProvider client={client}>
-                    <App />
-                </ApolloProvider>
-            </Provider>
-        </HelmetProvider>
-    </React.StrictMode>
-);
+root?.render(<React.StrictMode>
+  <HelmetProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Provider>
+  </HelmetProvider>
+</React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

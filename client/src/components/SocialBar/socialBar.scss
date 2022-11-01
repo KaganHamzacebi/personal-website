@@ -2,144 +2,144 @@
 @import '../../styles/functions';
 
 .socialBar {
-    position: absolute;
-    top: 25%;
-    right: 4.5rem;
-    z-index: 2;
-    visibility: hidden;
-    transform: rotate(-90deg);
-    transform-origin: 100% 0;
-    padding: 1.5rem 2.5rem;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+  position: absolute;
+  top: 25%;
+  right: 4.5rem;
+  z-index: 2;
+  visibility: hidden;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0;
+  padding: 1.5rem 2.5rem;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 
-    &.dark {
-        background-color: getMainColor('dark-gray', dark);
-    }
+  &.dark {
+	background-color: getMainColor('dark-gray', dark);
+  }
 
-    &.light {
-        background-color: getMainColor('dark-gray', light);
-    }
+  &.light {
+	background-color: getMainColor('dark-gray', light);
+  }
 
-    @include media-xl {
-        visibility: visible;
-    }
+  @include media-xl {
+	visibility: visible;
+  }
 
-    & > ul {
-        gap: 1rem;
-        list-style-type: none;
-        @include flex-center(row);
-    }
+  & > ul {
+	gap: 1rem;
+	list-style-type: none;
+	@include flex-center(row);
+  }
 
-    &__github {
-        width: 1.2rem;
-        height: 1.2rem;
-        cursor: pointer;
+  &__github {
+	width: 1.2rem;
+	height: 1.2rem;
+	cursor: pointer;
 
-        &.dark {
-            color: getTextColor('primary', dark);
-        }
+	&.dark {
+	  color: getTextColor('primary', dark);
+	}
 
-        &.light {
-            color: getTextColor('primary', light);
-        }
+	&.light {
+	  color: getTextColor('primary', light);
+	}
 
-        &:not(:hover) {
-            @include scale-rotate(0.8s, 1, 0deg);
-        }
+	&:not(:hover) {
+	  @include scale-rotate(0.8s, 1, 0deg);
+	}
 
-        &:hover {
-            @include scale-rotate(0.8s, 1.5, 90deg);
-        }
-    }
+	&:hover {
+	  @include scale-rotate(0.8s, 1.5, 90deg);
+	}
+  }
 
-    &__linkedin {
-        @extend .socialBar__github;
-    }
+  &__linkedin {
+	@extend .socialBar__github;
+  }
 
-    &__whatsapp {
-        position: relative;
-        @extend .socialBar__github;
-    }
+  &__whatsapp {
+	position: relative;
+	@extend .socialBar__github;
+  }
 
-    &__discord {
-        position: relative;
-        @extend .socialBar__github;
-    }
+  &__discord {
+	position: relative;
+	@extend .socialBar__github;
+  }
 
-    &__divider {
-        width: 7rem;
+  &__divider {
+	width: 7rem;
 
-        &.dark {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
+	&.dark {
+	  border-top: 1px solid rgba(255, 255, 255, 0.2);
+	}
 
-        &.light {
-            border-top: 1px solid rgba(185, 183, 159, 0.8);
-        }
-    }
+	&.light {
+	  border-top: 1px solid rgba(185, 183, 159, 0.8);
+	}
+  }
 
-    &__writing {
-        font-weight: getFontWeight('sbold');
-        font-size: getFontSize('lg');
-        letter-spacing: 0.5rem;
-        text-transform: uppercase;
+  &__writing {
+	font-weight: getFontWeight('sbold');
+	font-size: getFontSize('lg');
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
 
-        &.dark {
-            color: getTextColor('primary', dark);
-        }
+	&.dark {
+	  color: getTextColor('primary', dark);
+	}
 
-        &.light {
-            color: getTextColor('primary', light);
-        }
-    }
+	&.light {
+	  color: getTextColor('primary', light);
+	}
+  }
 }
 
 .socialBar-li-discord {
-    position: relative;
+  position: relative;
 
-    &__clipboard {
-        position: absolute;
-        transform: rotate(90deg);
-        border-radius: 0.25rem;
-        font-size: getFontSize('sm');
-        top: -1rem;
-        left: 1rem;
-        padding: 0.5rem 1rem;
-        opacity: 0;
-        @include set-transition(0.3s);
+  &__clipboard {
+	position: absolute;
+	transform: rotate(90deg);
+	border-radius: 0.25rem;
+	font-size: getFontSize('sm');
+	top: -1rem;
+	left: 1rem;
+	padding: 0.5rem 1rem;
+	opacity: 0;
+	@include set-transition(0.3s);
 
-        &.active {
-            opacity: 100;
-        }
+	&.active {
+	  opacity: 100;
+	}
 
-        &.dark {
-            background-color: #4ece74;
-            color: #ffffff;
-        }
+	&.dark {
+	  background-color: #4ece74;
+	  color: #ffffff;
+	}
 
-        &.light {
-            background-color: #4ece74;
-            color: #ffffff;
-        }
-    }
+	&.light {
+	  background-color: #4ece74;
+	  color: #ffffff;
+	}
+  }
 }
 
 .tri-right.btm-left-in:before {
-    content: ' ';
-    position: absolute;
-    left: 63%;
-    bottom: -4px;
-    border: 0.3rem solid;
-    border-color: #4ece74 transparent transparent #4ece74;
+  content: ' ';
+  position: absolute;
+  left: 63%;
+  bottom: -4px;
+  border: 0.3rem solid;
+  border-color: #4ece74 transparent transparent #4ece74;
 }
 
 .tri-right.btm-left-in:after {
-    content: ' ';
-    position: absolute;
-    right: 37%;
-    transform: rotate(90deg);
-    bottom: -4px;
-    border: 0.3rem solid;
-    border-color: #4ece74 transparent transparent #4ece74;
+  content: ' ';
+  position: absolute;
+  right: 37%;
+  transform: rotate(90deg);
+  bottom: -4px;
+  border: 0.3rem solid;
+  border-color: #4ece74 transparent transparent #4ece74;
 }

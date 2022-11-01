@@ -116,7 +116,7 @@ ij_xml_space_inside_empty_tag = false
 ij_xml_text_wrap = normal
 
 [{*.ats,*.cts,*.mts,*.ts,*.tsx}]
-ij_continuation_indent_size = 2
+ij_continuation_indent_size = 4
 ij_smart_tabs = true
 ij_visual_guides = 80
 ij_typescript_align_imports = false
@@ -296,8 +296,8 @@ ij_shell_redirect_followed_by_space = false
 ij_shell_switch_cases_indented = false
 ij_shell_use_unix_line_separator = true
 
-[{*.cjs,*.js}]
-ij_continuation_indent_size = 2
+[{*.cjs,*.js,*.jsx}]
+ij_continuation_indent_size = 4
 ij_smart_tabs = true
 ij_visual_guides = 80
 ij_javascript_align_imports = false
