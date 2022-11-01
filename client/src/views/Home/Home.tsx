@@ -73,7 +73,11 @@ export function Home() {
         <meta name="description" content={t.homeScripts.description} />
         <meta name="keywords" content={t.homeScripts.keywords} />
         <link rel="canonical" href="https://kaganhamzacebi.com/" />
+        <link rel="canonical" href="http://kaganhamzacebi.com/" />
+        <link rel="canonical" href="https://kaganhamzacebi.com:443/" />
         <link rel="canonical" href="https://www.kaganhamzacebi.com/" />
+        <link rel="canonical" href="http://www.kaganhamzacebi.com/" />
+        <link rel="canonical" href="https://www.kaganhamzacebi.com:443/" />
       </Helmet>
       <div>
         <Header
