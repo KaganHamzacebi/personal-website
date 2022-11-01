@@ -20,9 +20,9 @@ function CookieAlert() {
 
   return (<div className={`cookieAlertMain ${c.show && 'show'} ${theme === 'dark' ? 'dark' : 'light'}`}>
     <p>
-          This website using cookies to ensure giving best user experience. By continuing to use this website, you
-          consent
-          to the use of cookies.
+      This website using cookies to ensure giving best user experience. By continuing to use this website, you
+      consent
+      to the use of cookies.
     </p>
     <button
       className={`cookie-btn ${theme === 'dark' ? 'dark' : 'light'}`}
@@ -36,7 +36,7 @@ function CookieAlert() {
         });
       }}
     >
-          Okay
+      Okay
     </button>
   </div>);
 }

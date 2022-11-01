@@ -44,8 +44,8 @@ function FooterSocials() {
     <div className={`footerSocialsMain__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div
         className={`footerSocialsMain__bg__clipboard ${theme === 'dark' ?
-                  'dark' :
-                  'light'} tri-right btm-left-in ${showClipboard && 'active'}`}
+              'dark' :
+              'light'} tri-right btm-left-in ${showClipboard && 'active'}`}
       >
         {t.headerFooterScripts.copied}
       </div>

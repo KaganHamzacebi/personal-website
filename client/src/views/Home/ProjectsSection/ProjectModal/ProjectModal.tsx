@@ -63,8 +63,8 @@ function ProjectModal({
       <h1 className={`modal-content-heading ${theme === 'dark' ? 'dark' : 'light'}`}>
         {props.modalProps?.heading}
         {props.modalProps?.isPrivate ?
-                (<BsShieldFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />) :
-                (<BsShieldSlashFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />)}
+            (<BsShieldFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />) :
+            (<BsShieldSlashFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />)}
         {props.modalProps?.src && (
           <FiLink className="modal-link" onClick={() => window.open(props.modalProps?.src, '_target')} />)}
       </h1>
@@ -109,8 +109,7 @@ function ProjectModal({
         </Swiper>
       </div>
       <div className={`modal-content-footer ${theme === 'dark' ? 'dark' : 'light'}`}>
-        {props.modalProps?.frameworks && props.modalProps?.frameworks.map((
-          f: IconType,
+        {props.modalProps?.frameworks && props.modalProps?.frameworks.map((f: IconType,
           index: number
         ) => React.createElement(f, {
           className: `fw-icon dark ${theme === 'dark' ? 'dark' : 'light'}`,

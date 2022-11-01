@@ -75,7 +75,7 @@ function ProjectsSection() {
                 });
               }}
             >
-                        Read
+                Read
             </button>
           </SwiperSlide>);
         })}

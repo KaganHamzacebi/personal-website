@@ -98,12 +98,8 @@ function SkillsSection() {
       >
         <div className={`grid__item__double-container ${theme === 'dark' ? 'dark' : 'light'}`}>
           <div className={`service-dot-double ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <div className={`dot1-double ${theme === 'dark' ?
-                    'dark' :
-                    'light'} ${isHtmlCssDotActive && 'active'}`} />
-            <div className={`dot2-double ${theme === 'dark' ?
-                    'dark' :
-                    'light'} ${isHtmlCssDotActive && 'active'}`} />
+            <div className={`dot1-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`} />
+            <div className={`dot2-double ${theme === 'dark' ? 'dark' : 'light'} ${isHtmlCssDotActive && 'active'}`} />
           </div>
           <FaHtml5 className="grid__item__double-container__css" />
           <FaCss3Alt className="grid__item__double-container__html" />
@@ -159,9 +155,7 @@ function SkillsSection() {
       >
         <div className={`grid__item__bg ${theme === 'dark' ? 'dark' : 'light'}`}>
           <div
-            className={`service-dot ${isIntegrationsDotActive && 'active'} ${theme === 'dark' ?
-                      'dark' :
-                      'light'}`}
+            className={`service-dot ${isIntegrationsDotActive && 'active'} ${theme === 'dark' ? 'dark' : 'light'}`}
           >
             <div className={`dot1 ${theme === 'dark' ? 'dark' : 'light'}`} />
             <div className={`dot2 ${theme === 'dark' ? 'dark' : 'light'}`} />

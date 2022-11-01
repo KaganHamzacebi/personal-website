@@ -58,8 +58,8 @@ function SocialBar() {
         {/* Discord Copy Clipboard */}
         <div
           className={`socialBar-li-discord__clipboard ${theme === 'dark' ?
-                    'dark' :
-                    'light'} tri-right btm-left-in ${showClipboardCopy && 'active'} `}
+                'dark' :
+                'light'} tri-right btm-left-in ${showClipboardCopy && 'active'} `}
         >
           {t.headerFooterScripts.copied}
         </div>

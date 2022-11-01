@@ -85,8 +85,8 @@ function Header({
     </div>
     <div
       className={`header ${showHeader && 'mobile'} ${h.minimized && 'minimized'} ${theme === 'dark' ?
-                'dark' :
-                'light'}`}
+            'dark' :
+            'light'}`}
       onMouseEnter={() => setShowMinimizeButton(true)}
       onMouseLeave={() => setShowMinimizeButton(false)}
       onClick={() => {
@@ -114,8 +114,8 @@ function Header({
       >
         <BsBoxArrowInLeft
           className={`header-minimize-button__icon ${theme === 'dark' ?
-                    'dark' :
-                    'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
+                'dark' :
+                'light'} ${showMinimizeButton && 'show'} ${h.minimized && 'minimized'} ${showHeader && 'invisible'}`}
         />
       </div>
       <nav className="header__nav">
