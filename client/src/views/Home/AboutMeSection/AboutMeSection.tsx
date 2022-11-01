@@ -47,6 +47,7 @@ function AboutMeSection({
       </p>
       <div className="btnContainer">
         <button
+          type="button"
           className={`btnContainer__contactBtn ${theme === 'dark' ? 'dark' : 'light'}`}
           onClick={() => {
             scrollTo(refs.contactMeSectionRef);

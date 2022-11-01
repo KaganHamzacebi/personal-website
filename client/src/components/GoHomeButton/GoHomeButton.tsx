@@ -28,6 +28,7 @@ function GoHomeButton({ refs }: { refs: { aboutMeSectionRef: RefObject<HTMLEleme
     else
       setIsButtonVisible(false);
 
+
   }
 
   function goToHome() {

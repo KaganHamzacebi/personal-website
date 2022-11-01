@@ -56,11 +56,13 @@ function Header({
     if(cookies.get('header')?.minimized)
       dispatch(setMinimize(true));
 
+
   }, [dispatch, cookies]);
 
   function handleWindowSize() {
     if(window.innerWidth > 800)
       setShowHeader(false);
+
 
   }
 

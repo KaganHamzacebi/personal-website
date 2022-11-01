@@ -27,20 +27,15 @@
   },
   "eslintConfig": {
 	"extends": [
-	  "react-app",
-	  "react-app/jest"
+	  "react-app", "react-app/jest"
 	]
   },
   "browserslist": {
 	"production": [
-	  ">0.2%",
-	  "not dead",
-	  "not op_mini all"
+	  ">0.2%", "not dead", "not op_mini all"
 	],
 	"development": [
-	  "last 1 chrome version",
-	  "last 1 firefox version",
-	  "last 1 safari version"
+	  "last 1 chrome version", "last 1 firefox version", "last 1 safari version"
 	]
   },
   "devDependencies": {
@@ -59,7 +54,6 @@
 	"eslint-plugin-react": "^7.31.10",
 	"eslint-plugin-react-hooks": "^4.6.0",
 	"html-webpack-plugin": "^5.5.0",
-	"prop-types": "^15.8.1",
 	"react": "^18.2.0",
 	"react-redux": "^8.0.1",
 	"sass": "^1.54.9",

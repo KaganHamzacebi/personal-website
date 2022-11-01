@@ -34,61 +34,66 @@ import { selectTheme } from '../../../../features/themeController/ThemeControlle
 import useOutsideAlerter from '../../../../utils/useOutsideAlerter';
 import './projectModal.scss';
 
+type Props = {
+  openModal: boolean;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  modalProps: IProjectTModal | undefined;
+};
+
 function ProjectModal({
-  props
-}: {
-  props: {
-    openModal: boolean; setOpenModal: React.Dispatch<React.SetStateAction<boolean>>; modalProps: IProjectTModal | undefined;
-  };
-}) {
+  openModal,
+  setOpenModal,
+  modalProps
+}: Props) {
   const modalRef = useRef(null);
   const theme = useAppSelector(selectTheme);
-  useOutsideAlerter(modalRef, props.setOpenModal);
+  useOutsideAlerter(modalRef, setOpenModal);
 
   useEffect(() => {
-    if(props.openModal)
+    if(openModal)
       document.body.style.overflowY = 'hidden';
 
     else
       document.body.style.overflowY = 'auto';
 
-  }, [props]);
+
+  }, [openModal]);
 
   return (
-    <div className={`projectModalMain ${props.openModal ? 'open' : 'close'}`}>
+    <div className={`projectModalMain ${openModal ? 'open' : 'close'}`}>
       <div ref={modalRef} className={`modal-content ${theme === 'dark' ? 'dark' : 'light'}`}>
         <IoMdClose
           className={`modal-close-icon ${theme === 'dark' ? 'dark' : 'light'}`}
-          onClick={() => props.setOpenModal(false)}
+          onClick={() => setOpenModal(false)}
         />
         <h1 className={`modal-content-heading ${theme === 'dark' ? 'dark' : 'light'}`}>
-          {props.modalProps?.heading}
-          {props.modalProps?.isPrivate ?
+          {modalProps?.heading}
+          {modalProps?.isPrivate ?
             (<BsShieldFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />) :
             (<BsShieldSlashFill className={`modal-private-icon ${theme === 'dark' ? 'dark' : 'light'}`} />)}
-          {props.modalProps?.src && (
-            <FiLink className="modal-link" onClick={() => window.open(props.modalProps?.src, '_target')} />)}
+          {modalProps?.src && (
+            <FiLink className="modal-link" onClick={() => window.open(modalProps?.src, '_target')} />)}
         </h1>
         <div className={`modal-content-desc ${theme === 'dark' ? 'dark' : 'light'}`}>
           <div className={`modal-desc-container ${theme === 'dark' ? 'dark' : 'light'}`}>
             <span className={`desc-upper-text ${theme === 'dark' ? 'dark' : 'light'}`}>Project Type</span>
             <span className={`desc-lower-text ${theme === 'dark' ? 'dark' : 'light'}`}>
-              {props.modalProps?.projectType}
+              {modalProps?.projectType}
             </span>
           </div>
           <div className={`modal-desc-container middle-desc ${theme === 'dark' ? 'dark' : 'light'}`}>
             <span className={`desc-upper-text ${theme === 'dark' ? 'dark' : 'light'}`}>Core Framework</span>
             <span className={`desc-lower-text ${theme === 'dark' ? 'dark' : 'light'}`}>
-              {props.modalProps?.coreFramework}
+              {modalProps?.coreFramework}
             </span>
           </div>
           <div className={`modal-desc-container ${theme === 'dark' ? 'dark' : 'light'}`}>
             <span className={`desc-upper-text ${theme === 'dark' ? 'dark' : 'light'}`}>Date</span>
-            <span className={`desc-lower-text ${theme === 'dark' ? 'dark' : 'light'}`}>{props.modalProps?.date}</span>
+            <span className={`desc-lower-text ${theme === 'dark' ? 'dark' : 'light'}`}>{modalProps?.date}</span>
           </div>
         </div>
         <p className={`modal-content-paragraph ${theme === 'dark' ? 'dark' : 'light'}`}>
-          {props.modalProps?.paragraph}
+          {modalProps?.paragraph}
         </p>
         <div className="modal-content-gallery">
           <Swiper
@@ -101,7 +106,7 @@ function ProjectModal({
             lazy={true}
             pagination={{ clickable: true }}
           >
-            {props.modalProps?.slides && props.modalProps?.slides.map((s: string, index: number) => (
+            {modalProps?.slides && modalProps?.slides.map((s: string, index: number) => (
               <SwiperSlide className={`modal-slide ${theme === 'dark' ? 'dark' : 'light'}`} key={index}>
                 <div className="swiper-zoom-container">
                   <img src={s} alt={`modal-slide-img-${index}`} />
@@ -110,7 +115,7 @@ function ProjectModal({
           </Swiper>
         </div>
         <div className={`modal-content-footer ${theme === 'dark' ? 'dark' : 'light'}`}>
-          {props.modalProps?.frameworks && props.modalProps?.frameworks.map((
+          {modalProps?.frameworks && modalProps?.frameworks.map((
             f: IconType,
             index: number
           ) => React.createElement(f, {

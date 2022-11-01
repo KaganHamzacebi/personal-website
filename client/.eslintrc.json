@@ -4,10 +4,7 @@
 	"es2021": true
   },
   "extends": [
-	"eslint:recommended",
-	"plugin:react/recommended",
-	"plugin:react-hooks/recommended",
-	"plugin:@typescript-eslint/recommended"
+	"eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:@typescript-eslint/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -18,9 +15,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
 	"indent": [
-	  "error",
-	  2,
-	  {
+	  "error", 2, {
 		"ignoredNodes": ["ConditionalExpression"]
 	  }
 	],
@@ -28,46 +23,38 @@
 	"semi": ["error", "always"],
 	"react/react-in-jsx-scope": "off",
 	"react/self-closing-comp": [
-	  "error",
-	  {
+	  "error", {
 		"component": true,
 		"html": true
 	  }
 	],
 	"@typescript-eslint/consistent-type-imports": "error",
 	"react/jsx-key": "off",
-	"react/prop-types": "off",
+	"react/prop-types": "error",
 	"brace-style": [
-	  "error",
-	  "stroustrup",
-	  {
+	  "error", "stroustrup", {
 		"allowSingleLine": true
 	  }
 	],
 	"comma-dangle": [
-	  "error",
-	  "never"
+	  "error", "never"
 	],
 	"comma-spacing": "error",
 	"comma-style": "error",
 	"curly": [
-	  "error",
-	  "multi-or-nest"
+	  "error", "multi-or-nest"
 	],
 	"dot-location": [
-	  "error",
-	  "property"
+	  "error", "property"
 	],
 	"handle-callback-err": "off",
 	"max-nested-callbacks": [
-	  "error",
-	  {
+	  "error", {
 		"max": 4
 	  }
 	],
 	"max-statements-per-line": [
-	  "error",
-	  {
+	  "error", {
 		"max": 2
 	  }
 	],
@@ -77,33 +64,27 @@
 	"no-lonely-if": "error",
 	"no-multi-spaces": "error",
 	"no-multiple-empty-lines": [
-	  "error",
-	  {
+	  "error", {
 		"max": 2,
 		"maxEOF": 1,
 		"maxBOF": 0
 	  }
 	],
 	"no-shadow": [
-	  "error",
-	  {
+	  "error", {
 		"allow": [
-		  "err",
-		  "resolve",
-		  "reject"
+		  "err", "resolve", "reject"
 		]
 	  }
 	],
 	"no-var": "error",
 	"object-curly-spacing": [
-	  "error",
-	  "always"
+	  "error", "always"
 	],
 	"prefer-const": "error",
 	"space-before-blocks": "error",
 	"space-before-function-paren": [
-	  "error",
-	  {
+	  "error", {
 		"anonymous": "always",
 		"named": "never",
 		"asyncArrow": "always"
@@ -113,7 +94,10 @@
 	"space-infix-ops": "error",
 	"space-unary-ops": "error",
 	"spaced-comment": "error",
-	"yoda": "error"
+	"yoda": "error",
+	"react-hooks/rules-of-hooks": "error",
+	"react-hooks/exhaustive-deps": "warn",
+	"react/button-has-type": "error"
   },
   "settings": {
 	"react": {

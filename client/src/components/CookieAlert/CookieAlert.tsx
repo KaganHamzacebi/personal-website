@@ -26,6 +26,7 @@ function CookieAlert() {
         to the use of cookies.
       </p>
       <button
+        type="button"
         className={`cookie-btn ${theme === 'dark' ? 'dark' : 'light'}`}
         onClick={() => {
           dispatch(showCookieAlert(false));

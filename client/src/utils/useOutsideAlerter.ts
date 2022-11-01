@@ -18,6 +18,7 @@ function useOutsideAlerter(ref: RefObject<HTMLDivElement>, callback: Dispatch<Se
       if(ref.current && !ref.current.contains(target))
         callback(false);
 
+
     }
 
     // Bind the event listener

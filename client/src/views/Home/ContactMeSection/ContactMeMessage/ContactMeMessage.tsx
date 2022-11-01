@@ -39,6 +39,7 @@ function ContactMeMessage() {
         if(res.data?.saveMessage === true)
           setShowMessage(true);
 
+
         setTimeout(() => {
           setShowMessage(false);
         }, 4000);
@@ -97,6 +98,7 @@ function ContactMeMessage() {
         </div>
         <div className="message-sent-wrapper">
           <button
+            type="button"
             className={`send-btn ${theme === 'dark' ? 'dark' : 'light'}`}
             onClick={() => ReactGA.event({
               category: 'ContactMeSection',

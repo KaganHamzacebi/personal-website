@@ -66,6 +66,7 @@ function ProjectsSection() {
                 <span className={`slide__h1 ${theme === 'dark' ? 'dark' : 'light'}`}>{data.heading}</span>
                 <p className={`slide__desc ${theme === 'dark' ? 'dark' : 'light'}`}>{data.description}</p>
                 <button
+                  type="button"
                   className={`slide__btn ${theme === 'dark' ? 'dark' : 'light'}`}
                   onClick={() => {
                     setOpenModal(true);
@@ -83,11 +84,9 @@ function ProjectsSection() {
           })}
       </Swiper>
       <ProjectModal
-        props={{
-          openModal: openModal,
-          setOpenModal: setOpenModal,
-          modalProps: modalProps
-        }}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        modalProps={modalProps}
       />
     </div>
   );

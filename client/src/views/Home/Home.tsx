@@ -63,6 +63,7 @@ export function Home() {
     else if(aboutMeSection && isReachedElement(aboutMeSection))
       dispatch(setNav('aboutMeSection'));
 
+
   }
 
   return (

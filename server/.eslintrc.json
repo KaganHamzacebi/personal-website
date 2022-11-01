@@ -14,43 +14,34 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
 	"brace-style": [
-	  "error",
-	  "stroustrup",
-	  {
+	  "error", "stroustrup", {
 		"allowSingleLine": true
 	  }
 	],
 	"comma-dangle": [
-	  "error",
-	  "never"
+	  "error", "never"
 	],
 	"comma-spacing": "error",
 	"comma-style": "error",
 	"curly": [
-	  "error",
-	  "multi-or-nest"
+	  "error", "multi-or-nest"
 	],
 	"dot-location": [
-	  "error",
-	  "property"
+	  "error", "property"
 	],
 	"handle-callback-err": "off",
 	"indent": [
-	  "error",
-	  2,
-	  {
+	  "error", 2, {
 		"ignoredNodes": ["ConditionalExpression"]
 	  }
 	],
 	"max-nested-callbacks": [
-	  "error",
-	  {
+	  "error", {
 		"max": 4
 	  }
 	],
 	"max-statements-per-line": [
-	  "error",
-	  {
+	  "error", {
 		"max": 2
 	  }
 	],
@@ -60,41 +51,33 @@
 	"no-lonely-if": "error",
 	"no-multi-spaces": "error",
 	"no-multiple-empty-lines": [
-	  "error",
-	  {
+	  "error", {
 		"max": 2,
 		"maxEOF": 1,
 		"maxBOF": 0
 	  }
 	],
 	"no-shadow": [
-	  "error",
-	  {
+	  "error", {
 		"allow": [
-		  "err",
-		  "resolve",
-		  "reject"
+		  "err", "resolve", "reject"
 		]
 	  }
 	],
 	"no-var": "error",
 	"object-curly-spacing": [
-	  "error",
-	  "always"
+	  "error", "always"
 	],
 	"prefer-const": "error",
 	"quotes": [
-	  "error",
-	  "single"
+	  "error", "single"
 	],
 	"semi": [
-	  "error",
-	  "always"
+	  "error", "always"
 	],
 	"space-before-blocks": "error",
 	"space-before-function-paren": [
-	  "error",
-	  {
+	  "error", {
 		"anonymous": "always",
 		"named": "never",
 		"asyncArrow": "always"
