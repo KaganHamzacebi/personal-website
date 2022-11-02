@@ -1,4 +1,3 @@
-import { useLayoutEffect } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import Logo from '../../assets/general/k-logo.png';
 import { selectTheme } from '../../features/themeController/ThemeControllerSlice';
@@ -6,10 +5,6 @@ import './loadingScreen.scss';
 
 function LoadingScreen() {
   const theme = useAppSelector(selectTheme);
-
-  useLayoutEffect(() => {
-    document.body.style.overflow = 'hidden';
-  });
 
   return (
     <div className={`loadingScreenMain ${theme === 'dark' ? 'dark' : 'light'}`}>
