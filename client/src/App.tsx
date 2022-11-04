@@ -23,7 +23,6 @@ function App() {
   const [cookieTimeout, setCookieTimeout] = useState<NodeJS.Timeout>();
 
   useEffect(() => {
-    console.log(!cookies.get('cookiePreferences'));
     if(!cookies.get('cookiePreferences')) {
       setCookieTimeout(setTimeout(() => {
         dispatch(showCookieAlert(true));

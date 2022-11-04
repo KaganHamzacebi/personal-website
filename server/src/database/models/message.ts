@@ -55,5 +55,6 @@ export async function createMessage(message: IMessage) {
   });
 
   const res = await newMessage.save();
+  console.log('A message is saved to MongoDB');
   return res !== undefined;
 }
