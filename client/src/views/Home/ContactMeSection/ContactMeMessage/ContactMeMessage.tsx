@@ -99,6 +99,7 @@ function ContactMeMessage() {
         <div className="message-sent-wrapper">
           <button
             type="submit"
+            disabled={true}
             className={`send-btn ${theme === 'dark' ? 'dark' : 'light'}`}
             onClick={() => ReactGA.event({
               category: 'ContactMeSection',
